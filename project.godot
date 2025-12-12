@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="GWJ88"
+run/main_scene="uid://d3ksey2fw1u7v"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
