@@ -6,6 +6,12 @@ extends Node2D
 var speed = 30
 var player_position
 
+func _ready() -> void:
+	GameState.gameOver.connect(on_game_over)
+
+func on_game_over():
+	pause = true
+
 func _process(delta: float) -> void:
 	if !pause:
 		tile_map_layer.position = tile_map_layer.position - Vector2(1,1) * speed

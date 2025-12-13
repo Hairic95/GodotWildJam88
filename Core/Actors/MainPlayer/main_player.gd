@@ -3,7 +3,14 @@ extends CharacterBody2D
 @export var path : Path2D
 @export var path_follow : PathFollow2D
 var speed = 20
+@onready var health_manager: HealthManager = $HealthManager
+signal take_dmg
+func _ready() -> void:
+	health_manager.took_damage.connect(on_take_dmg)
 
+func on_take_dmg(amount):
+	take_dmg.emit(amount)
+	print("took %s dmg"%[amount])
 
 func _process(_delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right",  "ui_down", "ui_up")
