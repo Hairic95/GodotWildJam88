@@ -4,9 +4,16 @@ extends CharacterBody2D
 @export var path_follow : PathFollow2D
 var speed = 20
 @onready var health_manager: HealthManager = $HealthManager
+@onready var hitbox: Area2D = $Hitbox
 signal take_dmg
+
+
 func _ready() -> void:
 	health_manager.took_damage.connect(on_take_dmg)
+	hitbox.increase_speed.connect(on_increase_speed)
+
+func on_increase_speed(amount):
+	speed  +=amount
 
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
