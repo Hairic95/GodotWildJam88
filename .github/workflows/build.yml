@@ -40,7 +40,7 @@ jobs:
 
         steps:
             - name: Setup Godot
-              uses: solarlabyrinth/action-setup/godot@v2
+              uses: solarlabyrinth/action-setup-godot@v2
               with:
                   godot_version: ${{ env.GODOT_VERSION }}
 
