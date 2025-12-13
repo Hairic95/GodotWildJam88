@@ -1,0 +1,84 @@
+name: "Build"
+
+on:
+    push:
+        branches:
+            - main
+        tags:
+            - "v*"
+
+env:
+    GODOT_VERSION: 4.5-stable
+    EXPORT_NAME: "Snow Way, Bro"
+
+jobs:
+    # ----------------------------------------------
+    # JOB 1: BUILD
+    # This runs on every push to main AND every tag.
+    # If this fails, the workflow stops here.
+    # ----------------------------------------------
+    build:
+        name: Build for ${{ matrix.platform }}
+        runs-on: ubuntu-latest
+        container:
+            image: barichello/godot-ci:4.5
+        strategy:
+            matrix:
+                platform: [windows, linux, macos]
+                include:
+                    - platform: windows
+                      preset: "Windows Desktop"
+                      # Windows builds usually output multiple files, we zip the folder later
+                      binary_name: "game.exe"
+                    - platform: linux
+                      preset: "Linux/X11"
+                      binary_name: "game.x86_64"
+                    - platform: macos
+                      preset: "macOS"
+                      # Mac exports from Linux usually result in a zip directly
+                      binary_name: "game.zip"
+
+        steps:
+            - name: Setup Godot
+              uses: solarlabyrinth/action-setup/godot@v2
+              with:
+                  godot_version: ${{ env.GODOT_VERSION }}
+
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  lfs: true
+
+            - name: Setup Build Directory
+              run: mkdir -p build/${{ matrix.platform }}
+
+            # Step 1: Run the Godot Export command
+            - name: Export Game
+              run: |
+                  # Define the full path for the output
+                  OUTPUT_PATH="build/${{ matrix.platform }}/${{ matrix.binary_name }}"
+
+                  echo "Exporting ${{ matrix.platform }} to $OUTPUT_PATH..."
+
+                  # Run the headless export
+                  godot --headless --verbose --export-release "${{ matrix.preset }}" "$OUTPUT_PATH"
+
+            # Step 2: Zip the results (Standardizing the artifact)
+            - name: Archive Build
+              run: |
+                  cd build/${{ matrix.platform }}
+                  
+                  if [ "${{ matrix.platform }}" == "macos" ]; then
+                      mv "${{ matrix.binary_name }}" ../../${{ env.EXPORT_NAME }}-${{ matrix.platform }}.zip
+                  else
+                      # For Windows/Linux, zip all generated files (pck, exe, libs)
+                      zip -r ../../${{ env.EXPORT_NAME }}-${{ matrix.platform }}.zip .
+                  fi
+
+            # Step 3: Upload the zip to GitHub Actions (temporary storage)
+            - name: Upload Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: ${{ matrix.platform }}-artifact
+                  path: ${{ env.EXPORT_NAME }}-${{ matrix.platform }}.zip
+                  if-no-files-found: error

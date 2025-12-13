@@ -1,0 +1,55 @@
+name: "Release"
+on:
+    workflow_run:
+        workflows: ["Build"]
+        types: [completed]
+
+jobs:
+    release:
+        name: Create Release
+        # Only run if build workflow succeeded and was triggered by a tag (head_branch is empty for tags)
+        if: ${{ github.event.workflow_run.conclusion == 'success' && !github.event.workflow_run.head_branch }}
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.event.workflow_run.head_sha }}
+
+            - name: Get Tag Name
+              id: tag
+              run: |
+                  # Get the tag name from the workflow run's head commit
+                  TAG=$(git describe --tags --exact-match ${{ github.event.workflow_run.head_sha }} 2>/dev/null || echo "")
+                  echo "tag=$TAG" >> $GITHUB_OUTPUT
+                  echo "Found tag: $TAG"
+
+            - name: Download Windows Artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: windows-artifact
+                  path: dist
+                  run_id: ${{ github.event.workflow_run.id }}
+
+            - name: Download Linux Artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: linux-artifact
+                  path: dist
+                  run_id: ${{ github.event.workflow_run.id }}
+
+            - name: Download macOS Artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: macos-artifact
+                  path: dist
+                  run_id: ${{ github.event.workflow_run.id }}
+
+            - name: Publish to GitHub Releases
+              uses: softprops/action-gh-release@v1
+              with:
+                  tag_name: ${{ steps.tag.outputs.tag }}
+                  files: dist/*.zip
+                  generate_release_notes: false
