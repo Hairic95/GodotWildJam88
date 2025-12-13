@@ -8,7 +8,7 @@ radius = 49.10975
 height = 272.04367
 
 [node name="Rock" instance=ExtResource("1_rygwk")]
-damage = 2
+damage = 20
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_gbkmm")

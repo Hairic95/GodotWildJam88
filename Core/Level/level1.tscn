@@ -94,6 +94,7 @@ rotation = -0.7042661
 loop = false
 
 [node name="MainPlayer" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("6_ropvc")]
+position = Vector2(13.272224, -19.209785)
 skew = 0.5270894
 path = NodePath("../..")
 path_follow = NodePath("..")
