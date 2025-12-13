@@ -1,14 +1,15 @@
 extends Node2D
-@onready var tile_map_layer: TileMapLayer = $ground
+@onready var tile_map_layer: TileMapLayer = $GroundTiles
+@onready var obstacle_tiles: TileMapLayer = $ObstacleTiles
 
-
-var speed = 50
+@export var pause : bool = false
+var speed = 30
 var player_position
 
-
 func _process(delta: float) -> void:
-	tile_map_layer.position = tile_map_layer.position - Vector2(1,1) * speed
-
+	if !pause:
+		tile_map_layer.position = tile_map_layer.position - Vector2(1,1) * speed
+		obstacle_tiles.position = tile_map_layer.position- Vector2(1,1) * speed
 
 
 
