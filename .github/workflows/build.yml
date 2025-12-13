@@ -37,15 +37,26 @@ jobs:
                       binary_name: "game.zip"
 
         steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  lfs: true
+
+            - name: Install Dependencies
+              run: |
+                  apt-get update
+                  apt-get install -y fontconfig libfontconfig1
+
             - name: Setup Godot
               uses: solarlabyrinth/action-setup-godot@v2
               with:
                   version: ${{ env.GODOT_VERSION }}
 
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                  lfs: true
+            # Import assets into cache separately to avoid export command from timing out
+            - name: Import Assets
+              run: |
+                  echo "Opening project to force asset import..."
+                  timeout 600 godot --headless --editor --quit || true
 
             - name: Setup Build Directory
               run: mkdir -p build/${{ matrix.platform }}
@@ -54,9 +65,6 @@ jobs:
               run: |
                   OUTPUT_PATH="build/${{ matrix.platform }}/${{ matrix.binary_name }}"
 
-                  echo "Exporting ${{ matrix.platform }} to $OUTPUT_PATH..."
-
-                  # Run the headless export
                   godot --headless --verbose --export-release "${{ matrix.preset }}" "$OUTPUT_PATH"
 
             - name: Archive Build
@@ -66,7 +74,6 @@ jobs:
                   if [ "${{ matrix.platform }}" == "macos" ]; then
                       mv "${{ matrix.binary_name }}" ../../${{ env.EXPORT_NAME }}-${{ matrix.platform }}.zip
                   else
-                      # For Windows/Linux, zip all generated files (pck, exe, libs)
                       zip -r ../../${{ env.EXPORT_NAME }}-${{ matrix.platform }}.zip .
                   fi
 

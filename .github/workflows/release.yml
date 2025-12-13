@@ -1,5 +1,8 @@
 name: "Release"
 on:
+    push:
+        tags:
+            - "v*"
     workflow_run:
         workflows: ["Build"]
         types: [completed]
@@ -7,8 +10,6 @@ on:
 jobs:
     release:
         name: Create Release
-        # Only run if build workflow succeeded and was triggered by a tag (head_branch is empty for tags)
-        if: ${{ github.event.workflow_run.conclusion == 'success' && !github.event.workflow_run.head_branch }}
         runs-on: ubuntu-latest
         permissions:
             contents: write
@@ -21,7 +22,6 @@ jobs:
             - name: Get Tag Name
               id: tag
               run: |
-                  # Get the tag name from the workflow run's head commit
                   TAG=$(git describe --tags --exact-match ${{ github.event.workflow_run.head_sha }} 2>/dev/null || echo "")
                   echo "tag=$TAG" >> $GITHUB_OUTPUT
                   echo "Found tag: $TAG"
