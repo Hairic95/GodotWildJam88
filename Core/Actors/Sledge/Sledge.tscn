@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://faap0u0mnmse"]
+
+[ext_resource type="Texture2D" uid="uid://hga30pi2g6xa" path="res://assets/textures/player_sleigh.png" id="1_ekavg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b8bci"]
+radius = 100.0
+height = 582.498
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ekavg"]
+radius = 71.0
+height = 192.0
+
+[node name="CharacterBody" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-27, 27)
+rotation = -0.7347836
+shape = SubResource("CapsuleShape2D_b8bci")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ekavg")
+hframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(133, 166)
+shape = SubResource("CapsuleShape2D_ekavg")

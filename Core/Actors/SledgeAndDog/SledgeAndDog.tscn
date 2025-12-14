@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://qhe5j1o6q3r0"]
+
+[ext_resource type="PackedScene" uid="uid://hj8a032o00v8" path="res://Core/Actors/MainPlayer/MainPlayer.tscn" id="1_tyicj"]
+[ext_resource type="PackedScene" uid="uid://faap0u0mnmse" path="res://Core/Actors/Sledge/Sledge.tscn" id="2_c3rqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyicj"]
+size = Vector2(15, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3rqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyicj"]
+height = 85.97406
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c3rqv"]
+height = 89.180786
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgbi6"]
+height = 91.77872
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idlp3"]
+height = 90.46979
+
+[node name="Node" type="Node2D"]
+
+[node name="PinJoint2D0" type="PinJoint2D" parent="."]
+position = Vector2(-53, -37)
+node_a = NodePath("../CharacterBody/StaticBody2D")
+node_b = NodePath("../RigidBody1")
+
+[node name="CharacterBody" parent="." instance=ExtResource("2_c3rqv")]
+position = Vector2(-226, -305)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CharacterBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody/StaticBody2D"]
+position = Vector2(172.5, 253)
+shape = SubResource("RectangleShape2D_tyicj")
+
+[node name="Dog" parent="." instance=ExtResource("1_tyicj")]
+position = Vector2(374, 424)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Dog"]
+position = Vector2(-381, -427)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dog/StaticBody2D2"]
+position = Vector2(309, 246)
+shape = SubResource("RectangleShape2D_c3rqv")
+
+[node name="PinJoint2D1" type="PinJoint2D" parent="."]
+position = Vector2(5, 59)
+node_a = NodePath("../RigidBody1")
+node_b = NodePath("../RigidBody2")
+
+[node name="RigidBody1" type="RigidBody2D" parent="."]
+position = Vector2(-218, -287)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody1"]
+position = Vector2(190, 300)
+rotation = -0.5864306
+shape = SubResource("CapsuleShape2D_tyicj")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(88, 136)
+node_a = NodePath("../RigidBody2")
+node_b = NodePath("../RigidBody3")
+
+[node name="RigidBody2" type="RigidBody2D" parent="."]
+position = Vector2(-218, -287)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2"]
+position = Vector2(263, 386.99997)
+rotation = -0.8517207
+shape = SubResource("CapsuleShape2D_c3rqv")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(200, 164)
+node_a = NodePath("../RigidBody3")
+node_b = NodePath("../RigidBody4")
+
+[node name="RigidBody3" type="RigidBody2D" parent="."]
+position = Vector2(-218, -287)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody3"]
+position = Vector2(361, 442)
+rotation = -1.3823007
+shape = SubResource("CapsuleShape2D_rgbi6")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(299, 221)
+node_a = NodePath("../RigidBody4")
+node_b = NodePath("../Dog/StaticBody2D2")
+
+[node name="RigidBody4" type="RigidBody2D" parent="."]
+position = Vector2(-218, -287)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RigidBody4"]
+position = Vector2(468.99997, 477)
+rotation = -0.9948377
+shape = SubResource("CapsuleShape2D_idlp3")

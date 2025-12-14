@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var main_player: CharacterBody2D = $"../Path2D/PathFollow2D/MainPlayer"
+@onready var main_player: CharacterBody2D = $"../Path2D/PathFollow2D/Node/Dog"
 @onready var health_bar: ProgressBar = %HealthBar
 
 func _ready() -> void:

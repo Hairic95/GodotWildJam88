@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="2_ro1wp"]
 [ext_resource type="Texture2D" uid="uid://m03ht014cy2o" path="res://assets/textures/tile_test_3.png" id="4_fqbln"]
 [ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/rock.tscn" id="6_ro1wp"]
-[ext_resource type="PackedScene" uid="uid://hj8a032o00v8" path="res://Core/Actors/MainPlayer/MainPlayer.tscn" id="6_ropvc"]
 [ext_resource type="PackedScene" uid="uid://covatu2xq60u8" path="res://Core/PowerUps/Instantiations/speed_boost.tscn" id="7_560uh"]
+[ext_resource type="PackedScene" uid="uid://qhe5j1o6q3r0" path="res://Core/Actors/SledgeAndDog/SledgeAndDog.tscn" id="8_5n11m"]
 [ext_resource type="Script" uid="uid://bnwicb3khduet" path="res://Core/UI/ui.gd" id="8_732fy"]
 [ext_resource type="Shader" uid="uid://dwwq05am4cpj6" path="res://VFX/snow_shader.gdshader" id="10_5n11m"]
 
@@ -68,7 +68,7 @@ shader = ExtResource("10_5n11m")
 shader_parameter/count = 300
 shader_parameter/slant = 0.06200000620488
 shader_parameter/speed = 5.2430002490425
-shader_parameter/blur = 0.00450000021375
+shader_parameter/blur = 0.00250000011875
 shader_parameter/colour = Color(1, 1, 1, 1)
 shader_parameter/size = Vector2(0.04, 0.065)
 
@@ -103,11 +103,12 @@ position = Vector2(-1249, 823)
 rotation = -0.7042661
 loop = false
 
-[node name="MainPlayer" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("6_ropvc")]
-position = Vector2(13.272224, -19.209785)
-skew = 0.5270894
-path = NodePath("../..")
-path_follow = NodePath("..")
+[node name="Node" parent="Path2D/PathFollow2D" instance=ExtResource("8_5n11m")]
+
+[node name="Dog" parent="Path2D/PathFollow2D/Node" index="3" node_paths=PackedStringArray("path", "path_follow")]
+position = Vector2(384.1779, 407.1886)
+path = NodePath("../../..")
+path_follow = NodePath("../..")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("8_732fy")
@@ -122,6 +123,7 @@ grow_vertical = 2
 
 [node name="HealthBar" type="ProgressBar" parent="UI/Control"]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
 offset_right = 373.0
 offset_bottom = 27.0
@@ -138,3 +140,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[editable path="Path2D/PathFollow2D/Node"]
