@@ -1,0 +1,3 @@
+[submodule "godot-cpp-rope"]
+	path = godot-cpp-rope
+	url = https://github.com/thedanvail/godot-cpp-rope.git
