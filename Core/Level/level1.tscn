@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=45 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -20,9 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://bhq8wb02jih8y" path="res://assets/textures/tiles/tile_border_bottom_left.png" id="15_5fr0s"]
 [ext_resource type="Texture2D" uid="uid://ktet7t7c7dwa" path="res://assets/textures/tiles/tile_border_bottom_right.png" id="16_cdrmq"]
 [ext_resource type="Texture2D" uid="uid://dpcgfkbma4irp" path="res://assets/textures/tiles/tile_border_left.png" id="17_7xqgc"]
+[ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
 [ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://cfk4533jtx3ob" path="res://assets/textures/ui/health_bar_progress.png" id="22_xo5lp"]
+[ext_resource type="PackedScene" uid="uid://dt0vn8rdyltr" path="res://Core/Actors/SnowBall/snow_ball.tscn" id="25_xo5lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_732fy"]
 texture = ExtResource("2_ro1wp")
@@ -219,7 +221,7 @@ tile_set = SubResource("TileSet_ropvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(165, 509)
-zoom = Vector2(0.165, 0.165)
+zoom = Vector2(0.115, 0.115)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-527.5754, -116.47416)
@@ -229,13 +231,21 @@ curve = SubResource("Curve2D_ropvc")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-1249, 823)
 rotation = -0.7042661
+rotates = false
 loop = false
 
-[node name="MainPlayer" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("6_ropvc")]
+[node name="Dog" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("6_ropvc")]
 position = Vector2(13.272224, -19.209785)
+rotation = 0.38571778
 skew = 0.5270894
 path = NodePath("../..")
 path_follow = NodePath("..")
+
+[node name="Sledge" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("dog") instance=ExtResource("18_rnlp0")]
+position = Vector2(240.56787, -614.1623)
+rotation = 0.70426613
+scale = Vector2(0.5808155, 1.1616514)
+dog = NodePath("../Dog")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("8_732fy")
@@ -250,11 +260,14 @@ grow_vertical = 2
 
 [node name="HealthBar" type="TextureProgressBar" parent="UI/Control"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 643.0
-offset_bottom = 119.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -402.0
+offset_right = 225.00024
+offset_bottom = 103.0
+grow_horizontal = 0
 scale = Vector2(0.6, 0.6)
 value = 100.0
 texture_under = ExtResource("20_42rlp")
@@ -262,11 +275,16 @@ texture_over = ExtResource("21_rnlp0")
 texture_progress = ExtResource("22_xo5lp")
 
 [node name="ColorRect" type="ColorRect" parent="UI/Control"]
+visible = false
 material = SubResource("ShaderMaterial_k0qhl")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = 2.0
+offset_right = 71.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -275,10 +293,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.0
-offset_right = 203.0
-offset_bottom = 95.0
+offset_left = -153.5
+offset_right = 153.5
+offset_bottom = 78.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 57
 text = "300"
 horizontal_alignment = 1
+
+[node name="SnowBall" parent="." instance=ExtResource("25_xo5lp")]
+visible = false
+position = Vector2(-3054, -1038)

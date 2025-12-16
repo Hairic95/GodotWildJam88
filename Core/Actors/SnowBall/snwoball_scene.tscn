@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj4mfqf2by6t8"]
+
+[ext_resource type="PackedScene" uid="uid://bhn18e8hl55j2" path="res://Core/Actors/SnowBall/snowball_finished.tscn" id="1_peyss"]
+[ext_resource type="Script" uid="uid://1npcs8s5oqyr" path="res://Core/Actors/SnowBall/snow_momentum.gd" id="2_l5kwt"]
+
+[node name="SnowballScene" type="Node3D"]
+
+[node name="snowball" parent="." instance=ExtResource("1_peyss")]
+transform = Transform3D(1, 0, 0, 0, -0.19427237, -0.98108083, 0, 0.98108083, -0.19427237, 0, 0, 0)
+script = ExtResource("2_l5kwt")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.21225166, -0.30140483, 0.92957217, -0.06709379, 0.9534963, 0.2938423, -0.97490907, 0, -0.22260356, 5.876772, -0.45562506, -3.8520596)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.57633245, 0, 0.8172154, 0, 1, 0, -0.8172154, 0, -0.57633245, 4.155074, 4.05625, -9.158677)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt0vn8rdyltr"]
+
+[ext_resource type="Texture2D" uid="uid://cxjbqr7pd7ls1" path="res://assets/textures/snowball/lil_circle.png" id="1_apnol"]
+[ext_resource type="Script" uid="uid://c4nnycvtojblr" path="res://Core/Actors/SnowBall/snow_ball.gd" id="1_cyvo2"]
+[ext_resource type="Texture2D" uid="uid://br0q8e2rbrnh4" path="res://assets/textures/snowball/snow_ball_lil_face.png" id="2_cyvo2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyvo2"]
+radius = 279.0448
+
+[node name="SnowBall" type="Area2D"]
+script = ExtResource("1_cyvo2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_apnol")
+
+[node name="FaceSprite" type="Sprite2D" parent="."]
+position = Vector2(48, -9)
+texture = ExtResource("2_cyvo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cyvo2")
