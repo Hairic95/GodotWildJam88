@@ -22,8 +22,7 @@ GameState="*res://Core/Level/GameState.gd"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/Jackie/Downloads/movie_snowball.avi"
-movie_writer/fps=30
+movie_writer/main_scene=""
 
 [editor_plugins]
 

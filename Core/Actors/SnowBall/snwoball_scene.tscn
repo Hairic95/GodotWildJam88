@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj4mfqf2by6t8"]
+[gd_scene load_steps=6 format=3 uid="uid://dj4mfqf2by6t8"]
 
 [ext_resource type="PackedScene" uid="uid://bhn18e8hl55j2" path="res://Core/Actors/SnowBall/snowball_finished.tscn" id="1_peyss"]
 [ext_resource type="Script" uid="uid://1npcs8s5oqyr" path="res://Core/Actors/SnowBall/snow_momentum.gd" id="2_l5kwt"]
+[ext_resource type="Shader" uid="uid://d1agr7lkae2yi" path="res://VFX/3d_Pixelation.gdshader" id="3_ujwsq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0agp7"]
+render_priority = 0
+shader = ExtResource("3_ujwsq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6tnki"]
+lightmap_size_hint = Vector2i(102, 102)
+size = Vector2(20, 20)
 
 [node name="SnowballScene" type="Node3D"]
 
 [node name="snowball" parent="." instance=ExtResource("1_peyss")]
-transform = Transform3D(1, 0, 0, 0, -0.5560515, -0.83135855, 0, 0.83135855, -0.5560515, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.438741, 0.8989634, 0, -0.8989634, 0.438741, 0, 0, 0)
 script = ExtResource("2_l5kwt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -14,3 +23,9 @@ transform = Transform3D(-0.21225166, -0.30140483, 0.92957217, -0.06709379, 0.953
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.57633245, 0, 0.8172154, 0, 1, 0, -0.8172154, 0, -0.57633245, 4.155074, 4.05625, -9.158677)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.010122678, 0, 0.99994874, 0, 1, 0, -0.99994874, 0, 0.010122678, 5.2314043, 0, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_0agp7")
+mesh = SubResource("QuadMesh_6tnki")

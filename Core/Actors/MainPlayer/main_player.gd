@@ -40,7 +40,7 @@ func on_increase_speed(amount):
 			1:
 				new_path_pos = speed_pos_1
 	if new_path_pos != Vector2.ZERO:
-		apath.global_position= new_path_pos		
+		path.global_position= new_path_pos		
 				
 
 
