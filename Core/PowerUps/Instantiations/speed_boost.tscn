@@ -14,7 +14,9 @@ amount = 10
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(5, 5)
 texture = ExtResource("2_8bjj1")
+flip_v = true
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 position = Vector2(-28, 25)
 shape = SubResource("CapsuleShape2D_8bjj1")
