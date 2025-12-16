@@ -8,16 +8,43 @@ var speed = 20
 signal take_dmg
 var jumping = false
 
+var speed_pos_0 = Vector2(-697.0, -286.0)
+var speed_pos_1= Vector2(-337.0, 73.0)
+var speed_pos_2= Vector2(322.0, 733.0)
+
+var speed_pos = 0
+
 const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
 
 var jump_height = 550
 
 func _ready() -> void:
+	path.global_position = speed_pos_0
 	health_manager.took_damage.connect(on_take_dmg)
 	hitbox.increase_speed.connect(on_increase_speed)
 
 func on_increase_speed(amount):
-	speed  +=amount
+	var new_path_pos = Vector2.ZERO
+	if amount > 0 and speed_pos != 2:
+		speed_pos += 1
+		match(speed_pos):
+			1:
+				new_path_pos = speed_pos_1
+			2:
+				new_path_pos = speed_pos_2
+	if amount < 0 and speed_pos != 0:
+		speed_pos -= 1
+		match(speed_pos):
+			0:
+				new_path_pos = speed_pos_0
+			1:
+				new_path_pos = speed_pos_1
+	if new_path_pos != Vector2.ZERO:
+		apath.global_position= new_path_pos		
+				
+
+
+
 
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
@@ -28,9 +55,10 @@ func _process(_delta: float) -> void:
 	if direction:
 		if direction.x != 0:
 			path_follow.progress += (speed * direction.x)
-		if direction.y != 0:
-
-			path.global_position = path.global_position - Vector2(direction.y,direction.y) * speed
+		#if direction.y != 0:
+			#
+			#path.global_position = path.global_position - Vector2(direction.y,direction.y) * speed
+			#print(path.global_position)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept") and !jumping:
