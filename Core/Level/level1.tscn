@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=43 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://bhq8wb02jih8y" path="res://assets/textures/tiles/tile_border_bottom_left.png" id="15_5fr0s"]
 [ext_resource type="Texture2D" uid="uid://ktet7t7c7dwa" path="res://assets/textures/tiles/tile_border_bottom_right.png" id="16_cdrmq"]
 [ext_resource type="Texture2D" uid="uid://dpcgfkbma4irp" path="res://assets/textures/tiles/tile_border_left.png" id="17_7xqgc"]
+[ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
+[ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
+[ext_resource type="Texture2D" uid="uid://cfk4533jtx3ob" path="res://assets/textures/ui/health_bar_progress.png" id="22_xo5lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_732fy"]
 texture = ExtResource("2_ro1wp")
@@ -188,12 +191,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_732fy"]
-bg_color = Color(0.6, 0.04776421, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_560uh"]
-bg_color = Color(0, 0.6, 0.06416388, 1)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0qhl"]
 shader = ExtResource("10_5n11m")
 shader_parameter/count = 300
@@ -251,15 +248,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HealthBar" type="ProgressBar" parent="UI/Control"]
+[node name="HealthBar" type="TextureProgressBar" parent="UI/Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 373.0
-offset_bottom = 27.0
-theme_override_styles/background = SubResource("StyleBoxFlat_732fy")
-theme_override_styles/fill = SubResource("StyleBoxFlat_560uh")
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 643.0
+offset_bottom = 119.0
+scale = Vector2(0.6, 0.6)
 value = 100.0
-show_percentage = false
+texture_under = ExtResource("20_42rlp")
+texture_over = ExtResource("21_rnlp0")
+texture_progress = ExtResource("22_xo5lp")
 
 [node name="ColorRect" type="ColorRect" parent="UI/Control"]
 material = SubResource("ShaderMaterial_k0qhl")
