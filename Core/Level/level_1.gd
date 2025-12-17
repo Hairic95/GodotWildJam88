@@ -13,6 +13,10 @@ signal update_y(y)
 
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
+	
+	$Avalache/Anim.play("Idle")
+	$Avalache/Sprite1.play("idle")
+	$Avalache/Sprite2.play("idle")
 
 func on_game_over():
 	pause = true
