@@ -6,7 +6,7 @@ extends Node2D
 #@export_tool_button("reset") var reset_tile = reset_tiles
 var speed = 0.01
 var player_position
-
+@export var debug: bool = false
 var starting_tile_position : Vector2i= Vector2i.ZERO
 
 signal update_y(y)
@@ -19,7 +19,8 @@ func _ready() -> void:
 	$Avalache/Sprite2.play("idle")
 
 func on_game_over():
-	pause = true
+	if !debug:
+		pause = true
 
 func reset_tiles():
 	tile_map_layer.position = Vector2.ZERO

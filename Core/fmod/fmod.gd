@@ -12,7 +12,7 @@ func _ready() -> void:
 		fmod_event.release()
 
 		FmodServer.play_one_shot_using_guid("{2516882b-bba2-4d09-b663-26cd9f19cfa8}")
-	#print("param ",fmom_music_emitter_2d.get_parameter("Speed"))
+
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("1"):

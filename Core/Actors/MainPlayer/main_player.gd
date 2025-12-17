@@ -18,6 +18,7 @@ var speed_pos_0 = 0
 var speed_pos_1= 0.5
 var speed_pos_2= 1.0
 
+var current_speed = speed_pos_0
 var speed_pos = 0
 
 const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
@@ -54,7 +55,8 @@ func on_increase_speed(amount):
 				new_path_pos = speed_pos_1
 	
 	if new_path_pos:
-		var tween = Tween.new()
+		var tween = get_tree().create_tween()
+		current_speed = new_path_pos
 		tween.tween_property(y_path_follow,"progress_ratio",new_path_pos,0.5)
 
 func on_take_dmg(amount):
@@ -64,27 +66,39 @@ func on_take_dmg(amount):
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right",  "ui_down", "ui_up")
 	if direction:
+		
 		if crunk:
 			direction.x = direction.x * -1
+			
 		if direction.x != 0:
-			print("speed ", speed)
 			path_follow.progress += (speed * direction.x)
+			print("direction x")
 			if direction.x > 0:
 				if sledge:
 					sledge.change_frame(2)
 			elif direction.x < 0:
 				if sledge:
 					sledge.change_frame(0)
+	
 		else:
 			if sledge:
 				sledge.change_frame(1)
+		
+		if direction.y != 0:
+			print("progress ratio ", y_path_follow.progress_ratio)
+			print("current speed ", current_speed)
+			if direction.y >0:
+				y_path_follow.progress -= (direction.y * speed)
+			elif direction.y < 0:
+				y_path_follow.progress -= (direction.y * speed)
+			
 	else:
 		if sledge:
 			sledge.change_frame(1)
 		#if direction.y != 0:
 			#
 			#path.global_position = path.global_position - Vector2(direction.y,direction.y) * speed
-			#print(path.global_position)
+		
 	if Input.is_action_pressed("dash") and (GameState.dash > 0):
 		dashing(delta)
 	else:

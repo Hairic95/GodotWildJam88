@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=66 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bu2vfb4tutdjm" path="res://assets/textures/tiles/tile_border_right.png" id="4_m5qiu"]
 [ext_resource type="Texture2D" uid="uid://cgsmkgjgo5cav" path="res://assets/textures/tiles/tile_border_top.png" id="5_hx8i2"]
 [ext_resource type="Texture2D" uid="uid://bvewvpm4mwf76" path="res://assets/textures/tiles/tile_border_top_left.png" id="6_2tldg"]
-[ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/Fence.tscn" id="6_ro1wp"]
+[ext_resource type="PackedScene" uid="uid://c6s7vwy3xsgwb" path="res://Core/Obstacles/Instantiations/Fence.tscn" id="6_ro1wp"]
 [ext_resource type="PackedScene" uid="uid://hj8a032o00v8" path="res://Core/Actors/MainPlayer/MainPlayer.tscn" id="6_ropvc"]
 [ext_resource type="Texture2D" uid="uid://j6tx0x3nni1q" path="res://assets/textures/tiles/tile_border_top_right.png" id="7_42rlp"]
 [ext_resource type="PackedScene" uid="uid://covatu2xq60u8" path="res://Core/PowerUps/Instantiations/speed_boost.tscn" id="7_560uh"]
@@ -25,14 +25,13 @@
 [ext_resource type="PackedScene" uid="uid://c7oxng7vsv3l0" path="res://Core/Obstacles/ObstaclePatterns/left_rock.tscn" id="16_nbb1c"]
 [ext_resource type="Texture2D" uid="uid://dpcgfkbma4irp" path="res://assets/textures/tiles/tile_border_left.png" id="17_7xqgc"]
 [ext_resource type="PackedScene" uid="uid://bsj12o6ix4ccw" path="res://Core/PowerUps/Instantiations/shield.tscn" id="18_nbb1c"]
-[ext_resource type="Script" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
+[ext_resource type="Script" uid="uid://c8jux7wwmbrkg" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
 [ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
 [ext_resource type="PackedScene" uid="uid://c1c54jm4rkrtq" path="res://Core/PowerUps/Instantiations/alcohol.tscn" id="19_gvukp"]
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
 [ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://cfk4533jtx3ob" path="res://assets/textures/ui/health_bar_progress.png" id="22_xo5lp"]
 [ext_resource type="PackedScene" uid="uid://dt0vn8rdyltr" path="res://Core/Actors/SnowBall/snow_ball.tscn" id="25_xo5lp"]
-[ext_resource type="Script" uid="uid://b4vbhp6j7jhw6" path="res://Core/fmod/fmod.gd" id="32_kufak"]
 [ext_resource type="Texture2D" uid="uid://crqipajjyd1ja" path="res://assets/textures/avalache.png" id="32_kufak"]
 [ext_resource type="Texture2D" uid="uid://dcbbvoaw2vmss" path="res://assets/textures/avalache_face.png" id="33_gvukp"]
 
@@ -313,6 +312,7 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cpp6p")
+debug = true
 metadata/_edit_vertical_guides_ = [-59218.0]
 
 [node name="GroundTiles" type="TileMapLayer" parent="."]
@@ -442,7 +442,6 @@ visible = false
 position = Vector2(-3054, -1038)
 
 [node name="Fmod" type="Node" parent="."]
-script = ExtResource("32_kufak")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="Fmod"]
 bank_paths = ["res://banks/Desktop/Music.bank", "res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank", "res://banks/Desktop/SFX.bank"]
@@ -452,7 +451,9 @@ event_name = "event:/Music/MainTrack"
 event_guid = "{2516882b-bba2-4d09-b663-26cd9f19cfa8}"
 
 [node name="FmodListener2D" type="FmodListener2D" parent="Fmod"]
+
 [node name="Avalache" type="Node2D" parent="."]
+position = Vector2(-2728, 571)
 
 [node name="Sprite1" type="AnimatedSprite2D" parent="Avalache"]
 position = Vector2(-2570, -1688)
