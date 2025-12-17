@@ -21,6 +21,7 @@ const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
 var jump_height = 550
 
 func _ready() -> void:
+	path.global_position=  Vector2(1470, -858)
 	path.global_position = speed_pos_0
 	health_manager.took_damage.connect(on_take_dmg)
 	hitbox.increase_speed.connect(on_increase_speed)
@@ -42,7 +43,7 @@ func on_increase_speed(amount):
 			1:
 				new_path_pos = speed_pos_1
 	if new_path_pos != Vector2.ZERO:
-		path.global_position= new_path_pos
+		path.global_position= new_path_pos + Vector2(1470, -858)
 		
 
 

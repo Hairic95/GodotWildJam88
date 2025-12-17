@@ -28,6 +28,7 @@ GameState="*res://Core/Level/GameState.gd"
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+window/canvas_textures/default_texture_filter=3
 
 [editor]
 
