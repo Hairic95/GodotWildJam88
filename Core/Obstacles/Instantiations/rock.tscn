@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://beeji5haocmbo"]
+[gd_scene load_steps=4 format=3 uid="uid://do22ins8yavc2"]
 
-[ext_resource type="PackedScene" uid="uid://3754y7wssik0" path="res://Core/Obstacles/obstacle.tscn" id="1_rygwk"]
-[ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="2_gbkmm"]
+[ext_resource type="PackedScene" uid="uid://3754y7wssik0" path="res://Core/Obstacles/obstacle.tscn" id="1_ee0f7"]
+[ext_resource type="Texture2D" uid="uid://dstdu8701nytv" path="res://assets/textures/actual_rock.png" id="2_ee0f7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbkmm"]
 radius = 49.10975
 height = 272.04367
 
-[node name="Rock" instance=ExtResource("1_rygwk")]
+[node name="Rock" instance=ExtResource("1_ee0f7")]
 damage = 20
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_gbkmm")
+position = Vector2(-6.000001, -83.00001)
+scale = Vector2(1.9243698, 1.9243698)
+texture = ExtResource("2_ee0f7")
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(3, 45)

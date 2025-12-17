@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bhqrgjskrjt50" path="res://assets/textures/tiles/tile_inner_2.png" id="9_7xpu0"]
 [ext_resource type="Texture2D" uid="uid://b7o5ejcuk2ye1" path="res://assets/textures/tiles/tile_outer_0.png" id="10_1758o"]
 [ext_resource type="Texture2D" uid="uid://m03ht014cy2o" path="res://assets/textures/tile_test_3.png" id="11_7y7yq"]
-[ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/rock.tscn" id="12_3u5jm"]
+[ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/Fence.tscn" id="12_3u5jm"]
 [ext_resource type="PackedScene" uid="uid://covatu2xq60u8" path="res://Core/PowerUps/Instantiations/speed_boost.tscn" id="13_1myo1"]
 [ext_resource type="Texture2D" uid="uid://coyji11rw2r8d" path="res://assets/textures/tiles/tile_border_bottom.png" id="14_1aga1"]
 [ext_resource type="Texture2D" uid="uid://bhq8wb02jih8y" path="res://assets/textures/tiles/tile_border_bottom_left.png" id="15_ct5nk"]
@@ -195,5 +195,6 @@ pattern_2 = SubResource("TileMapPattern_cdrmq")
 [node name="ObstacleTemplate" instance=ExtResource("1_rio5l")]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." index="1"]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AADa/yUABAAAAAAAAQDb/yQABAAAAAAAAQDc/yMABAAAAAAAAQDd/yIABAAAAAAAAQDe/yEABAAAAAAAAQDf/yAABAAAAAAAAQDg/x8ABAAAAAAAAQDh/x4ABAAAAAAAAQDi/x0ABAAAAAAAAQAnANj/BAAAAAAAAQAmANn/BAAAAAAAAQAlANr/BAAAAAAAAQAkANv/BAAAAAAAAQAjANz/BAAAAAAAAQAiAN3/BAAAAAAAAQAhAN7/BAAAAAAAAQAgAN//BAAAAAAAAQAfAOD/BAAAAAAAAQAeAOH/BAAAAAAAAQAdAOL/BAAAAAAAAQAcAOP/BAAAAAAAAQAbAOT/BAAAAAAAAQAaAOX/BAAAAAAAAQAZAOb/BAAAAAAAAQAYAOf/BAAAAAAAAQAXAOj/BAAAAAAAAQAWAOn/BAAAAAAAAQAVAOr/BAAAAAAAAQAUAOv/BAAAAAAAAQATAOz/BAAAAAAAAQASAO3/BAAAAAAAAQARAO7/BAAAAAAAAQAQAO//BAAAAAAAAQAPAPD/BAAAAAAAAQAOAPH/BAAAAAAAAQANAPL/BAAAAAAAAQAMAPP/BAAAAAAAAQALAPT/BAAAAAAAAQAKAPX/BAAAAAAAAQAJAPb/BAAAAAAAAQAIAPf/BAAAAAAAAQAHAPj/BAAAAAAAAQAGAPn/BAAAAAAAAQAFAPr/BAAAAAAAAQAEAPv/BAAAAAAAAQDx/w4ABAAAAAAAAQDy/w0ABAAAAAAAAQDz/wwABAAAAAAAAQD0/wsABAAAAAAAAQD1/woABAAAAAAAAQD2/wkABAAAAAAAAQDw/w8ABAAAAAAAAQDv/xAABAAAAAAAAQDu/xEABAAAAAAAAQDt/xIABAAAAAAAAQDs/xMABAAAAAAAAQDr/xQABAAAAAAAAQDq/xUABAAAAAAAAQDp/xYABAAAAAAAAQDo/xcABAAAAAAAAQDn/xgABAAAAAAAAQDm/xkABAAAAAAAAQDl/xoABAAAAAAAAQDk/xsABAAAAAAAAQDj/xwABAAAAAAAAQA=")
 tile_set = SubResource("TileSet_511tc")
