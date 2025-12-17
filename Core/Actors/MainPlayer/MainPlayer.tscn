@@ -94,3 +94,7 @@ script = ExtResource("4_tbjs4")
 
 [node name="CollisionShape2D" parent="Hitbox" instance=ExtResource("5_xswx7")]
 shape = SubResource("CapsuleShape2D_xswx7")
+
+[node name="IframeTimer" type="Timer" parent="Hitbox"]
+wait_time = 0.15
+one_shot = true

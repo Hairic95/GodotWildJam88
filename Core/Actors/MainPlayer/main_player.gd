@@ -47,8 +47,6 @@ func on_increase_speed(amount):
 		
 
 
-
-
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
 	print("took %s dmg"%[amount])
