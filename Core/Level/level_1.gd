@@ -24,13 +24,24 @@ func _process(delta: float) -> void:
 	if !pause:
 		var map_pos = starting_tile_position - Vector2i(0,1)
 		update_y.emit(map_pos.y)
+	
 		starting_tile_position = map_pos 
 
 		var converted = tile_map_layer.map_to_local(map_pos)/2
-		print(converted)
+		if map_pos.y%20 == 0:
+			place_obstacle(map_pos)
+			print(converted)
 
 		#tile_map_layer.positiodn = converted
 		obstacle_tiles.position = converted
-		print("converted ", converted)
+		#print("converted ", converted)
 		
 		#print(tile_map_layer.position)
+		
+func place_obstacle(map_pos):
+	print("map ", map_pos)
+	var obstacle_pos = map_pos + Vector2i(0,map_pos.y)
+	obstacle_pos = Vector2i(obstacle_pos.x, abs(obstacle_pos.y))
+	print("obstace pos ", obstacle_pos)
+	obstacle_tiles.set_cell(obstacle_pos, 4,Vector2.ZERO,2)
+	

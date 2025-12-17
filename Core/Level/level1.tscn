@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=50 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://1cxy5347hvkw" path="res://assets/textures/tiles/tile_inner_1.png" id="8_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://bhqrgjskrjt50" path="res://assets/textures/tiles/tile_inner_2.png" id="9_xo5lp"]
 [ext_resource type="Shader" uid="uid://dwwq05am4cpj6" path="res://VFX/snow_shader.gdshader" id="10_5n11m"]
+[ext_resource type="PackedScene" uid="uid://dw51f4iqjswad" path="res://Core/Obstacles/ObstaclePatterns/rock_1.tscn" id="13_5fr0s"]
 [ext_resource type="Texture2D" uid="uid://coyji11rw2r8d" path="res://assets/textures/tiles/tile_border_bottom.png" id="14_riabc"]
 [ext_resource type="Texture2D" uid="uid://bhq8wb02jih8y" path="res://assets/textures/tiles/tile_border_bottom_left.png" id="15_5fr0s"]
 [ext_resource type="Texture2D" uid="uid://ktet7t7c7dwa" path="res://assets/textures/tiles/tile_border_bottom_right.png" id="16_cdrmq"]
@@ -128,6 +129,7 @@ texture_region_size = Vector2i(285, 119)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_732fy"]
 resource_name = "Obstacles"
 scenes/1/scene = ExtResource("6_ro1wp")
+scenes/2/scene = ExtResource("13_5fr0s")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5n11m"]
 resource_name = "PowerUps"
@@ -226,11 +228,15 @@ tile_set = SubResource("TileSet_ropvc")
 script = ExtResource("18_riabc")
 
 [node name="ObstacleTiles" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADl/yIBBAAAAAAAAQDq/0sBBAAAAAAAAQDv/3ABBAAAAAAAAQD4/8MBBAAAAAAAAQABAIIBBAAAAAAAAQAAAIIBBAAAAAAAAQDj/8EBBAAAAAAAAQDm/wgCBAAAAAAAAQANAO0BBAAAAAAAAQDu/z8CBAAAAAAAAQD8/3UCBAAAAAAAAQD8/3QCBAAAAAAAAQDm/5ECBAAAAAAAAQASACICBAAAAAAAAQDo/zEABAAAAAAAAQD6/xwABAAAAAAAAQAGAB4ABAAAAAAAAQAUAAkABAAAAAAAAQDo/90ABAAAAAAAAQDo/20BBAAAAAAAAQDz/78ABAAAAAAAAQD5/9AABAAAAAAAAQDa/6wABAAAAAAAAQDb/6sABAAAAAAAAQDc/6oABAAAAAAAAQDd/6kABAAAAAAAAQDe/2EABAAAAAAAAQDe/6gABAAAAAAAAQDf/6cABAAAAAAAAQDg/6YABAAAAAAAAQDh/6UABAAAAAAAAQDi/6QABAAAAAAAAQDj/6MABAAAAAAAAQDk/6IABAAAAAAAAQDl/6EABAAAAAAAAQDm/6AABAAAAAAAAQDn/58ABAAAAAAAAQDo/54ABAAAAAAAAQDp/50ABAAAAAAAAQDq/5wABAAAAAAAAQDr/5sABAAAAAAAAQDs/5oABAAAAAAAAQDt/2IABAAAAAAAAQDt/5kABAAAAAAAAQDu/5gABAAAAAAAAQDv/5cABAAAAAAAAQDw/5YABAAAAAAAAQDx/5UABAAAAAAAAQDy/5QABAAAAAAAAQDz/5MABAAAAAAAAQD0/5IABAAAAAAAAQD1/5EABAAAAAAAAQD2/5AABAAAAAAAAQD3/48ABAAAAAAAAQD4/44ABAAAAAAAAQAKAHwABAAAAAAAAQALAHsABAAAAAAAAQAMAHoABAAAAAAAAQAMAJMABAAAAAAAAQANAHkABAAAAAAAAQAOAHgABAAAAAAAAQAPAHcABAAAAAAAAQAQAHYABAAAAAAAAQARAHUABAAAAAAAAQASAHQABAAAAAAAAQATAHMABAAAAAAAAQAUAHIABAAAAAAAAQAVAHEABAAAAAAAAQAWAHAABAAAAAAAAQAXAG8ABAAAAAAAAQAYAG4ABAAAAAAAAQAZAG0ABAAAAAAAAQAaAGwABAAAAAAAAQAbAGsABAAAAAAAAQAcAGoABAAAAAAAAQAdAGkABAAAAAAAAQAeAGgABAAAAAAAAQAfAGcABAAAAAAAAQAgAGYABAAAAAAAAQAhAGUABAAAAAAAAQAiAGQABAAAAAAAAQAjAGMABAAAAAAAAQAkAGIABAAAAAAAAQAlAGEABAAAAAAAAQAmAGAABAAAAAAAAQD4/14ABAAAAAAAAQAKAFgABAAAAAAAAQAPADkABAAAAAAAAQALAC4ABAAAAAAAAQDe/40ABAAAAAAAAQAfADUABAAAAAAAAQAZABgABAAAAAAAAQA=")
 tile_set = SubResource("TileSet_ropvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.16, 0.16)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+visible = false
+enabled = false
+zoom = Vector2(0.025, 0.025)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-498.0011, -216.29399)
@@ -301,6 +307,7 @@ offset_left = -153.5
 offset_right = 153.5
 offset_bottom = 78.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.17059648, 0.48376793, 1, 1)
 theme_override_font_sizes/font_size = 57
 text = "300"
 horizontal_alignment = 1
@@ -308,21 +315,3 @@ horizontal_alignment = 1
 [node name="SnowBall" parent="." instance=ExtResource("25_xo5lp")]
 visible = false
 position = Vector2(-3054, -1038)
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(17747, 8033)
-
-[node name="Rock" parent="Node2D" instance=ExtResource("6_ro1wp")]
-position = Vector2(-1182, 883)
-
-[node name="Rock2" parent="Node2D" instance=ExtResource("6_ro1wp")]
-position = Vector2(2482, 710)
-
-[node name="Rock3" parent="Node2D" instance=ExtResource("6_ro1wp")]
-position = Vector2(3491, -1134)
-
-[node name="Rock4" parent="Node2D" instance=ExtResource("6_ro1wp")]
-position = Vector2(5004, -740)
-
-[node name="Rock5" parent="Node2D" instance=ExtResource("6_ro1wp")]
-position = Vector2(-1647, 2286)
