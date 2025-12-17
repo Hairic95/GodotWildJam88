@@ -64,8 +64,10 @@ func _process(_delta: float) -> void:
 				if sledge:
 					sledge.change_frame(0)
 		else:
+			if sledge:
 				sledge.change_frame(1)
 	else:
+		if sledge:
 			sledge.change_frame(1)
 		#if direction.y != 0:
 			#
