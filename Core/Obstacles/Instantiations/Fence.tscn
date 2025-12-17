@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://beeji5haocmbo"]
+[gd_scene load_steps=4 format=3 uid="uid://c6s7vwy3xsgwb"]
 
 [ext_resource type="PackedScene" uid="uid://3754y7wssik0" path="res://Core/Obstacles/obstacle.tscn" id="1_rygwk"]
 [ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="2_gbkmm"]
