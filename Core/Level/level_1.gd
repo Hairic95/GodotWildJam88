@@ -4,7 +4,7 @@ extends Node2D
 
 @export var pause : bool = false
 #@export_tool_button("reset") var reset_tile = reset_tiles
-var speed = 0.5
+var speed = 0.01
 var player_position
 
 var starting_tile_position : Vector2i= Vector2i.ZERO
@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 		update_y.emit(map_pos.y)
 		starting_tile_position = map_pos 
 
-		var converted = tile_map_layer.map_to_local(map_pos)
+		var converted = tile_map_layer.map_to_local(map_pos)/2
+		print(converted)
 
 		#tile_map_layer.positiodn = converted
 		obstacle_tiles.position = converted
