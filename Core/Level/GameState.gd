@@ -6,6 +6,12 @@ var dash = 100
 
 signal on_dash_changed(dash)
 
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+
+
 func start_dashing(delta):
 	
 	dash -= delta * 50
