@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var sledge: Node2D
+
 @export var path : Path2D
 @export var path_follow : PathFollow2D
 var speed = 20
@@ -40,8 +42,8 @@ func on_increase_speed(amount):
 			1:
 				new_path_pos = speed_pos_1
 	if new_path_pos != Vector2.ZERO:
-		path.global_position= new_path_pos		
-				
+		path.global_position= new_path_pos
+		
 
 
 
@@ -55,6 +57,14 @@ func _process(_delta: float) -> void:
 	if direction:
 		if direction.x != 0:
 			path_follow.progress += (speed * direction.x)
+			if direction.x > 0:
+				if sledge:
+					sledge.change_frame(2)
+			elif direction.x < 0:
+				if sledge:
+					sledge.change_frame(0)
+		else:
+				sledge.change_frame(1)
 		#if direction.y != 0:
 			#
 			#path.global_position = path.global_position - Vector2(direction.y,direction.y) * speed
