@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://br0q8e2rbrnh4" path="res://assets/textures/snowball/snow_ball_lil_face.png" id="1_od4ss"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_exi8i"]
+rings = 64
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vif84"]
 albedo_texture = ExtResource("1_od4ss")

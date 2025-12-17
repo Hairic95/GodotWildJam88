@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj4mfqf2by6t8"]
+[gd_scene load_steps=11 format=3 uid="uid://dj4mfqf2by6t8"]
 
-[ext_resource type="PackedScene" uid="uid://bhn18e8hl55j2" path="res://Core/Actors/SnowBall/snowball_finished.tscn" id="1_peyss"]
-[ext_resource type="Script" uid="uid://1npcs8s5oqyr" path="res://Core/Actors/SnowBall/snow_momentum.gd" id="2_l5kwt"]
+[ext_resource type="PackedScene" uid="uid://7t3rlb82d3jp" path="res://Core/Actors/SnowBall/snowball.glb" id="1_0agp7"]
+[ext_resource type="Script" uid="uid://dfkjki3owa6yr" path="res://Core/Actors/SnowBall/snowball.gd" id="2_ujwsq"]
 [ext_resource type="Shader" uid="uid://d1agr7lkae2yi" path="res://VFX/3d_Pixelation.gdshader" id="3_ujwsq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0agp7"]
@@ -12,11 +12,31 @@ shader = ExtResource("3_ujwsq")
 lightmap_size_hint = Vector2i(102, 102)
 size = Vector2(20, 20)
 
+[sub_resource type="Animation" id="Animation_6tnki"]
+resource_name = "Idle"
+length = 4.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sobhq"]
+_data = {
+&"Idle": SubResource("Animation_6tnki")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5kwt"]
+transparency = 1
+albedo_color = Color(0.65999997, 0.8186667, 1, 0.3882353)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujwsq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ujwsq"]
+radius = 1.0
+height = 2.0
+rings = 64
+
 [node name="SnowballScene" type="Node3D"]
 
-[node name="snowball" parent="." instance=ExtResource("1_peyss")]
-transform = Transform3D(1, 0, 0, 0, 0.438741, 0.8989634, 0, -0.8989634, 0.438741, 0, 0, 0)
-script = ExtResource("2_l5kwt")
+[node name="snowball2" parent="." instance=ExtResource("1_0agp7")]
+transform = Transform3D(0.89440894, 0.44020003, -0.0795844, -0.03739631, 0.25091675, 0.96746814, 0.4456914, -0.8623281, 0.24088322, 0, 0, 0)
+script = ExtResource("2_ujwsq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.21225166, -0.30140483, 0.92957217, -0.06709379, 0.9534963, 0.2938423, -0.97490907, 0, -0.22260356, 5.876772, -0.45562506, -3.8520596)
@@ -29,3 +49,14 @@ transform = Transform3D(0.010122678, 0, 0.99994874, 0, 1, 0, -0.99994874, 0, 0.0
 visible = false
 material_override = SubResource("ShaderMaterial_0agp7")
 mesh = SubResource("QuadMesh_6tnki")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sobhq")
+}
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_l5kwt")
+material_overlay = SubResource("ShaderMaterial_ujwsq")
+mesh = SubResource("SphereMesh_ujwsq")
