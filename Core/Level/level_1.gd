@@ -31,5 +31,6 @@ func _process(delta: float) -> void:
 
 		#tile_map_layer.positiodn = converted
 		obstacle_tiles.position = converted
+		print("converted ", converted)
 		
 		#print(tile_map_layer.position)
