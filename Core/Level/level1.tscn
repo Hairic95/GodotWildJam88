@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bu2vfb4tutdjm" path="res://assets/textures/tiles/tile_border_right.png" id="4_m5qiu"]
 [ext_resource type="Texture2D" uid="uid://cgsmkgjgo5cav" path="res://assets/textures/tiles/tile_border_top.png" id="5_hx8i2"]
 [ext_resource type="Texture2D" uid="uid://bvewvpm4mwf76" path="res://assets/textures/tiles/tile_border_top_left.png" id="6_2tldg"]
-[ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/rock.tscn" id="6_ro1wp"]
+[ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/Fence.tscn" id="6_ro1wp"]
 [ext_resource type="PackedScene" uid="uid://hj8a032o00v8" path="res://Core/Actors/MainPlayer/MainPlayer.tscn" id="6_ropvc"]
 [ext_resource type="Texture2D" uid="uid://j6tx0x3nni1q" path="res://assets/textures/tiles/tile_border_top_right.png" id="7_42rlp"]
 [ext_resource type="PackedScene" uid="uid://covatu2xq60u8" path="res://Core/PowerUps/Instantiations/speed_boost.tscn" id="7_560uh"]
@@ -186,7 +186,7 @@ texture_region_size = Vector2i(285, 119)
 [sub_resource type="TileSet" id="TileSet_ropvc"]
 tile_shape = 1
 tile_layout = 2
-tile_size = Vector2i(285, 119)
+tile_size = Vector2i(274, 119)
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "Inner Snow"

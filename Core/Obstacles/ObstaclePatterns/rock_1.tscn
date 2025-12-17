@@ -1,24 +1,24 @@
 [gd_scene load_steps=3 format=4 uid="uid://dw51f4iqjswad"]
 
 [ext_resource type="PackedScene" uid="uid://cqa5by57v6t1l" path="res://Core/Obstacles/obstacle_template.tscn" id="1_g1cmg"]
-[ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/rock.tscn" id="2_rrce3"]
+[ext_resource type="PackedScene" uid="uid://do22ins8yavc2" path="res://Core/Obstacles/Instantiations/Rock.tscn" id="2_vx35b"]
 
 [node name="Rock1" instance=ExtResource("1_g1cmg")]
 
 [node name="TileMapLayer" parent="." index="0"]
 tile_map_data = PackedByteArray("AADa/yUAAQAAAAAAAADb/yQAAQAAAAAAAADc/yMAAQAAAAAAAADd/yIAAQAAAAAAAADe/yEAAQAAAAAAAADf/yAAAQAAAAAAAADg/x8AAQAAAAAAAADh/x4AAQAAAAAAAADi/x0AAQAAAAAAAADj/xwAAQAAAAAAAADk/xsAAQAAAAAAAADl/xoAAQAAAAAAAADm/xkAAQAAAAAAAADn/xgAAQAAAAAAAADo/xcAAQAAAAAAAADp/xYAAQAAAAAAAADq/xUAAQAAAAAAAADr/xQAAQAAAAAAAADs/xMAAQAAAAAAAADt/xIAAQAAAAAAAADu/xEAAQAAAAAAAADv/xAAAQAAAAAAAADw/w8AAQAAAAAAAADx/w4AAQAAAAAAAADy/w0AAQAAAAAAAADz/wwAAQAAAAAAAAD0/wsAAQAAAAAAAAD1/woAAQAAAAAAAAD2/wkAAQAAAAAAAAD3/wgAAQAAAAAAAAD4/wcAAQAAAAAAAAAKAPX/AQAAAAAAAAALAPT/AQAAAAAAAAAMAPP/AQAAAAAAAAANAPL/AQAAAAAAAAAOAPH/AQAAAAAAAAAPAPD/AQAAAAAAAAAQAO//AQAAAAAAAAARAO7/AQAAAAAAAAASAO3/AQAAAAAAAAATAOz/AQAAAAAAAAAUAOv/AQAAAAAAAAAVAOr/AQAAAAAAAAAWAOn/AQAAAAAAAAAXAOj/AQAAAAAAAAAYAOf/AQAAAAAAAAAZAOb/AQAAAAAAAAAaAOX/AQAAAAAAAAAbAOT/AQAAAAAAAAAcAOP/AQAAAAAAAAAdAOL/AQAAAAAAAAAeAOH/AQAAAAAAAAAfAOD/AQAAAAAAAAAgAN//AQAAAAAAAAAhAN7/AQAAAAAAAAAiAN3/AQAAAAAAAAAjANz/AQAAAAAAAAAkANv/AQAAAAAAAAAlANr/AQAAAAAAAAAmANn/AQAAAAAAAAD5/wYAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wQAAQAAAAAAAAD8/wMAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wAAAQAAAAAAAAAAAP//AQAAAAAAAAABAP7/AQAAAAAAAAACAP3/AQAAAAAAAAADAPz/AQAAAAAAAAAEAPv/AQAAAAAAAAAFAPr/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPj/AQAAAAAAAAAIAPf/AQAAAAAAAAAJAPb/AQAAAAAAAAAnANj/AQAAAAAAAAA=")
 
-[node name="Rock2" parent="TileMapLayer" index="0" instance=ExtResource("2_rrce3")]
+[node name="Rock7" parent="TileMapLayer" index="0" instance=ExtResource("2_vx35b")]
+position = Vector2(5596, -1476)
+
+[node name="Rock" parent="TileMapLayer" index="1" instance=ExtResource("2_vx35b")]
 position = Vector2(-3357, 2169)
 
-[node name="Rock3" parent="TileMapLayer" index="1" instance=ExtResource("2_rrce3")]
+[node name="Rock8" parent="TileMapLayer" index="2" instance=ExtResource("2_vx35b")]
 position = Vector2(-2319, 12)
 
-[node name="Rock4" parent="TileMapLayer" index="2" instance=ExtResource("2_rrce3")]
+[node name="Rock9" parent="TileMapLayer" index="3" instance=ExtResource("2_vx35b")]
 position = Vector2(1996, 162)
 
-[node name="Rock5" parent="TileMapLayer" index="3" instance=ExtResource("2_rrce3")]
+[node name="Rock10" parent="TileMapLayer" index="4" instance=ExtResource("2_vx35b")]
 position = Vector2(2446, -1718)
-
-[node name="Rock6" parent="TileMapLayer" index="4" instance=ExtResource("2_rrce3")]
-position = Vector2(5596, -1476)
