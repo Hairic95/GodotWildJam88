@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bhq8wb02jih8y" path="res://assets/textures/tiles/tile_border_bottom_left.png" id="15_5fr0s"]
 [ext_resource type="Texture2D" uid="uid://ktet7t7c7dwa" path="res://assets/textures/tiles/tile_border_bottom_right.png" id="16_cdrmq"]
 [ext_resource type="Texture2D" uid="uid://dpcgfkbma4irp" path="res://assets/textures/tiles/tile_border_left.png" id="17_7xqgc"]
-[ext_resource type="Script" uid="uid://c8jux7wwmbrkg" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
+[ext_resource type="Script" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
 [ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
 [ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
@@ -232,26 +232,19 @@ zoom = Vector2(0.115, 0.115)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-527.5754, -116.47416)
-scale = Vector2(1.721717, 0.8608434)
 curve = SubResource("Curve2D_ropvc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-1249, 823)
-rotation = -0.7042661
 rotates = false
 loop = false
 
 [node name="Dog" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("6_ropvc")]
 position = Vector2(13.272224, -19.209785)
-rotation = 0.38571778
-skew = 0.5270894
 path = NodePath("../..")
 path_follow = NodePath("..")
 
 [node name="Sledge" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("dog") instance=ExtResource("18_rnlp0")]
-position = Vector2(240.56787, -614.1623)
-rotation = 0.70426613
-scale = Vector2(0.5808155, 1.1616514)
+position = Vector2(-327.42462, -305.52582)
 dog = NodePath("../Dog")
 
 [node name="UI" type="CanvasLayer" parent="."]

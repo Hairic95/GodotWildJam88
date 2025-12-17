@@ -19,7 +19,7 @@ offset_bottom = 40.0
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(1600, 900)
 render_target_update_mode = 4
 
 [node name="Node2D" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_vasa2")]
@@ -27,6 +27,7 @@ render_target_update_mode = 4
 [node name="3dViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
+size = Vector2i(1900, 900)
 render_target_update_mode = 4
 
 [node name="Node3D" parent="SubViewportContainer/3dViewport" instance=ExtResource("2_h7iqs")]
