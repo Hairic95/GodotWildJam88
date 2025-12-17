@@ -31,13 +31,3 @@ size = Vector2i(1900, 900)
 render_target_update_mode = 4
 
 [node name="Node3D" parent="SubViewportContainer/3dViewport" instance=ExtResource("2_h7iqs")]
-
-[node name="Fmod" type="Node" parent="."]
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="Fmod"]
-bank_paths = ["res://banks/Desktop/Master.bank", "res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Music.bank", "res://banks/Desktop/SFX.bank"]
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Fmod"]
-event_guid = "{00000000-0000-0000-0000-000000000000}"
-
-[node name="FmodListener2D" type="FmodListener2D" parent="Fmod"]

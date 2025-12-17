@@ -6,6 +6,7 @@ var invicibilty_frame = false
 
 signal increase_speed(amount : int)
 signal activate_shield()
+signal get_crunk
 
 var shield_on = false
 
@@ -33,9 +34,11 @@ func on_area_entered(area):
 		match(area.power_type):
 			PowerUps.PowerUpTypes.Speed:
 				increase_speed.emit(area.amount)
-				area.queue_free()
 			PowerUps.PowerUpTypes.Shield:
 				%ShieldSprite.show()
 				shield_on = true
-				
+			PowerUps.PowerUpTypes.Alcohol:
+				get_crunk.emit()
+	area.queue_free()
+
 				

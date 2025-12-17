@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @export var path : Path2D
 @export var path_follow : PathFollow2D
+
+@export var y_path_follow : PathFollow2D
 var initial_speed = 20
 var speed = initial_speed
 var dash_speed = 80
@@ -12,9 +14,9 @@ var dash_speed = 80
 signal take_dmg
 var jumping = false
 
-var speed_pos_0 = Vector2(-697.0, -286.0)
-var speed_pos_1= Vector2(-337.0, 73.0)
-var speed_pos_2= Vector2(322.0, 733.0)
+var speed_pos_0 = 0
+var speed_pos_1= 0.5
+var speed_pos_2= 1.0
 
 var speed_pos = 0
 
@@ -22,15 +24,20 @@ const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
 
 var jump_height = 550
 
+var crunk = false
 
 func _ready() -> void:
-	path.global_position=  Vector2(1470, -858)
-	path.global_position = speed_pos_0
+	#path.global_position=  Vector2(1470, -858)
+	#path.global_position = speed_pos_0
 	health_manager.took_damage.connect(on_take_dmg)
 	hitbox.increase_speed.connect(on_increase_speed)
+	hitbox.get_crunk.connect(on_get_crunk)
+
+func on_get_crunk():
+	crunk = true
 
 func on_increase_speed(amount):
-	var new_path_pos = Vector2.ZERO
+	var new_path_pos = null
 	if amount > 0 and speed_pos != 2:
 		speed_pos += 1
 		match(speed_pos):
@@ -45,8 +52,10 @@ func on_increase_speed(amount):
 				new_path_pos = speed_pos_0
 			1:
 				new_path_pos = speed_pos_1
-	if new_path_pos != Vector2.ZERO:
-		path.global_position= new_path_pos + Vector2(1470, -858)
+	
+	if new_path_pos:
+		var tween = Tween.new()
+		tween.tween_property(y_path_follow,"progress_ratio",new_path_pos,0.5)
 
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
@@ -55,6 +64,8 @@ func on_take_dmg(amount):
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right",  "ui_down", "ui_up")
 	if direction:
+		if crunk:
+			direction.x = direction.x * -1
 		if direction.x != 0:
 			print("speed ", speed)
 			path_follow.progress += (speed * direction.x)

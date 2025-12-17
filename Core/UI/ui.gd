@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var main_player: CharacterBody2D = $"../Path2D/PathFollow2D/Dog"
+@onready var main_player: CharacterBody2D =$"../YPath2D2/YPathFollow2D/Path2D/PathFollow2D/Dog"
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var score_label: Label = $Control/ScoreLabel
 @onready var node_2d: Node2D = $".."
