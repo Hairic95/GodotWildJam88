@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=54 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ktet7t7c7dwa" path="res://assets/textures/tiles/tile_border_bottom_right.png" id="16_cdrmq"]
 [ext_resource type="PackedScene" uid="uid://c7oxng7vsv3l0" path="res://Core/Obstacles/ObstaclePatterns/left_rock.tscn" id="16_nbb1c"]
 [ext_resource type="Texture2D" uid="uid://dpcgfkbma4irp" path="res://assets/textures/tiles/tile_border_left.png" id="17_7xqgc"]
+[ext_resource type="PackedScene" uid="uid://bsj12o6ix4ccw" path="res://Core/PowerUps/Instantiations/shield.tscn" id="18_nbb1c"]
 [ext_resource type="Script" uid="uid://c8jux7wwmbrkg" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
 [ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
@@ -140,6 +141,7 @@ scenes/5/scene = ExtResource("16_nbb1c")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5n11m"]
 resource_name = "PowerUps"
 scenes/1/scene = ExtResource("7_560uh")
+scenes/2/scene = ExtResource("18_nbb1c")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6e6n1"]
 texture = ExtResource("14_riabc")
@@ -284,6 +286,23 @@ anchor_right = 1.0
 offset_left = -402.0
 offset_right = 225.00024
 offset_bottom = 103.0
+grow_horizontal = 0
+scale = Vector2(0.6, 0.6)
+value = 100.0
+texture_under = ExtResource("20_42rlp")
+texture_over = ExtResource("21_rnlp0")
+texture_progress = ExtResource("22_xo5lp")
+
+[node name="DashBar" type="TextureProgressBar" parent="UI/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -402.0
+offset_top = 79.22
+offset_right = 225.00024
+offset_bottom = 182.22006
 grow_horizontal = 0
 scale = Vector2(0.6, 0.6)
 value = 100.0

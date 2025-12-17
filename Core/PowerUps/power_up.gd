@@ -1,6 +1,6 @@
 extends Area2D
 class_name PowerUps
 
-enum PowerUpTypes {None, Speed}
+enum PowerUpTypes {None, Speed, Shield}
 @export var power_type : PowerUpTypes
 @export var amount : int

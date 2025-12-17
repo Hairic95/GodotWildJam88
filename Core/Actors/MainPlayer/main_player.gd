@@ -4,7 +4,9 @@ extends CharacterBody2D
 
 @export var path : Path2D
 @export var path_follow : PathFollow2D
-var speed = 20
+var initial_speed = 20
+var speed = initial_speed
+var dash_speed = 80
 @onready var health_manager: HealthManager = $HealthManager
 @onready var hitbox: Area2D = $Hitbox
 signal take_dmg
@@ -19,6 +21,7 @@ var speed_pos = 0
 const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
 
 var jump_height = 550
+
 
 func _ready() -> void:
 	path.global_position=  Vector2(1470, -858)
@@ -44,17 +47,17 @@ func on_increase_speed(amount):
 				new_path_pos = speed_pos_1
 	if new_path_pos != Vector2.ZERO:
 		path.global_position= new_path_pos + Vector2(1470, -858)
-		
 
 
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
 	print("took %s dmg"%[amount])
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right",  "ui_down", "ui_up")
 	if direction:
 		if direction.x != 0:
+			print("speed ", speed)
 			path_follow.progress += (speed * direction.x)
 			if direction.x > 0:
 				if sledge:
@@ -72,10 +75,20 @@ func _process(_delta: float) -> void:
 			#
 			#path.global_position = path.global_position - Vector2(direction.y,direction.y) * speed
 			#print(path.global_position)
-
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept") and !jumping:
-		jump()
+	if Input.is_action_pressed("dash") and (GameState.dash > 0):
+		dashing(delta)
+	else:
+		reduce_dash(delta)
+	 
+func reduce_dash(_delta):
+	if GameState.dash < 100:
+		speed = initial_speed
+		GameState.dash_cooldown(_delta)
+	
+func dashing(_delta):
+	if GameState.dash > 0:
+		speed = dash_speed
+		GameState.start_dashing(_delta)
 	
 func jump():
 	delete_collision()
@@ -89,7 +102,6 @@ func jump():
 	await tween2.tween_property(self, "position", Vector2(0,0), 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE).finished
 	replace_collision()
 	jumping = false
-	
 
 func replace_collision():
 	var col = PLAYER_COLLISION_SHAPE.instantiate()

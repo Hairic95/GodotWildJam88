@@ -35,7 +35,7 @@ rings = 64
 [node name="SnowballScene" type="Node3D"]
 
 [node name="snowball2" parent="." instance=ExtResource("1_0agp7")]
-transform = Transform3D(0.53664154, 0.26407674, -0.047743157, 0.02326458, -0.15212066, -0.5799009, -0.26733705, 0.5168148, -0.14629623, 0, 0, 0)
+transform = Transform3D(0.53664154, 0.26407674, -0.047743157, -0.247576, 0.44600436, -0.3158402, -0.103520915, 0.30218947, 0.50787044, 0, 0, 0)
 script = ExtResource("2_ujwsq")
 
 [node name="Camera3D" type="Camera3D" parent="."]

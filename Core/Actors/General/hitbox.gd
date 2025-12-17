@@ -1,15 +1,14 @@
 extends Area2D
 
 @onready var health_manager: HealthManager = $"../HealthManager"
-
-signal increase_speed(amount : int)
-
 @onready var iframe_timer: Timer = $IframeTimer
 var invicibilty_frame = false
 
+signal increase_speed(amount : int)
+signal activate_shield()
+
 func _ready() -> void:
 	area_entered.connect(on_area_entered)
-	body_entered.connect(on_body_entered)
 	health_manager.took_damage.connect(on_take_dmg)
 	iframe_timer.timeout.connect(disable_i_frame)
 	
@@ -20,10 +19,7 @@ func on_take_dmg(amount):
 func disable_i_frame():
 	invicibilty_frame = false
 
-func on_body_entered(_body):
-	print("bam")
 func on_area_entered(area):
-	
 	if area is Obstacle:
 		if !invicibilty_frame:
 			health_manager.hurt(area.damage)
@@ -32,3 +28,6 @@ func on_area_entered(area):
 			PowerUps.PowerUpTypes.Speed:
 				increase_speed.emit(area.amount)
 				area.queue_free()
+			PowerUps.PowerUpTypes.Shield:
+				pass
+				
