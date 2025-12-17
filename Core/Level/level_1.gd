@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 
 		var converted = tile_map_layer.map_to_local(map_pos)
 
-		tile_map_layer.position = converted
+		#tile_map_layer.positiodn = converted
 		obstacle_tiles.position = converted
 		
 		#print(tile_map_layer.position)
