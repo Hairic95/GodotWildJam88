@@ -65,6 +65,8 @@ func _process(_delta: float) -> void:
 					sledge.change_frame(0)
 		else:
 				sledge.change_frame(1)
+	else:
+			sledge.change_frame(1)
 		#if direction.y != 0:
 			#
 			#path.global_position = path.global_position - Vector2(direction.y,direction.y) * speed
