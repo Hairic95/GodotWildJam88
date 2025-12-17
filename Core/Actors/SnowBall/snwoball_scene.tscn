@@ -35,11 +35,11 @@ rings = 64
 [node name="SnowballScene" type="Node3D"]
 
 [node name="snowball2" parent="." instance=ExtResource("1_0agp7")]
-transform = Transform3D(0.89440894, 0.44020003, -0.0795844, -0.03739631, 0.25091675, 0.96746814, 0.4456914, -0.8623281, 0.24088322, 0, 0, 0)
+transform = Transform3D(0.89440894, 0.44020003, -0.0795844, 0.44095078, -0.897663, -0.00787247, -0.07487914, -0.028052002, -0.9969871, 0, 0, 0)
 script = ExtResource("2_ujwsq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.21225166, -0.30140483, 0.92957217, -0.06709379, 0.9534963, 0.2938423, -0.97490907, 0, -0.22260356, 5.876772, -0.45562506, -3.8520596)
+transform = Transform3D(-0.21225166, -0.30140483, 0.92957217, -0.06709379, 0.9534963, 0.2938423, -0.97490907, 0, -0.22260356, 5.876772, -0.84756327, -7.9428415)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.57633245, 0, 0.8172154, 0, 1, 0, -0.8172154, 0, -0.57633245, 4.155074, 4.05625, -9.158677)
