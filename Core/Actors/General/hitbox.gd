@@ -13,7 +13,6 @@ func _ready() -> void:
 	health_manager.took_damage.connect(on_take_dmg)
 	iframe_timer.timeout.connect(disable_i_frame)
 	
-
 func on_take_dmg(amount):
 	invicibilty_frame = true
 	iframe_timer.start()

@@ -31,12 +31,22 @@ func _process(delta: float) -> void:
 		if map_pos.y%30 == 0:
 			place_obstacle(map_pos)
 			print(converted)
+		if map_pos.y%80 == 0:
+			place_powerup(map_pos)
 
 		#tile_map_layer.positiodn = converted
 		obstacle_tiles.position = converted
 		#print("converted ", converted)
 		
 		#print(tile_map_layer.position)
+
+func place_powerup(map_pos):
+	var random_x = randi_range(-30,30)
+	var power_ups = [1]
+	var power_up_pos = map_pos + Vector2i(random_x,map_pos.y)
+	power_up_pos = Vector2i(power_up_pos.x, abs(power_up_pos.y))
+
+	obstacle_tiles.set_cell(power_up_pos, 5,Vector2.ZERO,power_ups.pick_random())
 		
 func place_obstacle(map_pos):
 	print("map ", map_pos)
