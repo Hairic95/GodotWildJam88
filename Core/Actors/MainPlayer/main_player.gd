@@ -48,7 +48,6 @@ func on_increase_speed(amount):
 	if new_path_pos != Vector2.ZERO:
 		path.global_position= new_path_pos + Vector2(1470, -858)
 
-
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
 	print("took %s dmg"%[amount])

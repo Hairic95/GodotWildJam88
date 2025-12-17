@@ -6,6 +6,7 @@
 radius = 127.03543
 
 [node name="Shield" instance=ExtResource("1_2gvh6")]
+power_type = 2
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_2gvh6")
