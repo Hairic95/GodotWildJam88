@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		starting_tile_position = map_pos 
 
 		var converted = tile_map_layer.map_to_local(map_pos)/2
-		if map_pos.y%20 == 0:
+		if map_pos.y%30 == 0:
 			place_obstacle(map_pos)
 			print(converted)
 
@@ -40,8 +40,9 @@ func _process(delta: float) -> void:
 		
 func place_obstacle(map_pos):
 	print("map ", map_pos)
+	var obstacles = [2,3,4,5]
 	var obstacle_pos = map_pos + Vector2i(0,map_pos.y)
 	obstacle_pos = Vector2i(obstacle_pos.x, abs(obstacle_pos.y))
 	print("obstace pos ", obstacle_pos)
-	obstacle_tiles.set_cell(obstacle_pos, 4,Vector2.ZERO,2)
+	obstacle_tiles.set_cell(obstacle_pos, 4,Vector2.ZERO,obstacles.pick_random())
 	
