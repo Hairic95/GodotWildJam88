@@ -35,6 +35,7 @@ func on_set_game_state(state: GameState.States):
 
 
 func on_game_over():
+	#FmodServer.set_global_parameter_by_name("Stage",2)
 	if !debug:
 		pause = true
 

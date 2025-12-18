@@ -49,6 +49,7 @@ func on_increase_speed(amount):
 	var new_path_pos = null
 	if amount > 0 and speed_pos != 2:
 		speed_pos += 1
+		FmodServer.set_global_parameter_by_name("Speed",1.0)
 		match(speed_pos):
 			1:
 				new_path_pos = speed_pos_1
@@ -69,12 +70,15 @@ func on_increase_speed(amount):
 
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
+	FmodServer.play_one_shot("event:/SFX/Hit_wood")
 	print("took %s dmg"%[amount])
 
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right",  "ui_down", "ui_up")
+	var what_frame = $Sprite2D.frame
+	if what_frame == 1:
+		FmodServer.set_global_parameter_by_name("Turn",0)
 	if direction:
-		
 		if crunk:
 			direction.x = direction.x * -1
 			
@@ -84,13 +88,16 @@ func _process(delta: float) -> void:
 			if direction.x > 0:
 				if sledge:
 					sledge.change_frame(2)
+					FmodServer.set_global_parameter_by_name("Turn",1)
 			elif direction.x < 0:
 				if sledge:
 					sledge.change_frame(0)
+					FmodServer.set_global_parameter_by_name("Turn",1)
 	
 		else:
 			if sledge:
 				sledge.change_frame(1)
+				FmodServer.set_global_parameter_by_name("Turn",0)
 		
 		if direction.y != 0:
 			print("progress ratio ", y_path_follow.progress_ratio)
