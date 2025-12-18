@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=3 format=3 uid="uid://cnga3t5galdyp"]
+
+[ext_resource type="Script" uid="uid://boyl7cdgk7wuw" path="res://Core/status_effects/StatusEffect.gd" id="1_1owne"]
+[ext_resource type="Texture2D" uid="uid://dio56ixliwifl" path="res://assets/textures/drunk_status.png" id="2_3ype7"]
+
+[resource]
+script = ExtResource("1_1owne")
+status_name = "Drunkenness"
+status_texture = ExtResource("2_3ype7")
+color = Color(0.87568563, 0.9109375, 0.31641066, 1)
+metadata/_custom_type_script = "uid://boyl7cdgk7wuw"

@@ -1,23 +1,28 @@
 extends Node2D
-@onready var tile_map_layer: TileMapLayer = $GroundTiles
-@onready var obstacle_tiles: TileMapLayer = $ObstacleTiles
 
 @export var pause : bool = false
-#@export_tool_button("reset") var reset_tile = reset_tiles
-var speed = 0.01
-var player_position
 @export var debug: bool = false
-var starting_tile_position : Vector2i= Vector2i.ZERO
+@export var obstacle_loot_table : LootTable
+
+@onready var tile_map_layer: TileMapLayer = $GroundTiles
+@onready var obstacle_tiles: TileMapLayer = $ObstacleTiles
 @onready var ui: CanvasLayer = $UI
 @onready var camera_2d: Camera2D = $Camera2D
-@export var obstacle_loot_table : LootTable
+@onready var sprite_1: AnimatedSprite2D = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Sprite1
+@onready var sprite_2: AnimatedSprite2D = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Sprite2
+@onready var anim: AnimationPlayer = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Anim
+
+var speed = 0.01
+var player_position
+var starting_tile_position : Vector2i= Vector2i.ZERO
+
 signal update_y(y)
 
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
-	$Avalache/Anim.play("Idle")
-	$Avalache/Sprite1.play("idle")
-	$Avalache/Sprite2.play("idle")
+	anim.play("Idle")
+	sprite_1.play("idle")
+	sprite_2.play("idle")
 	GameState.set_game_state.connect(on_set_game_state)
 	on_set_game_state(GameState.starting_state)
 
@@ -49,7 +54,7 @@ func _process(delta: float) -> void:
 	
 		starting_tile_position = map_pos 
 
-		var converted = tile_map_layer.map_to_local(map_pos)/2
+		var converted = tile_map_layer.map_to_local(map_pos)/2.4
 		if map_pos.y%30 == 0:
 			place_obstacle(map_pos)
 		if map_pos.y%80 == 0:

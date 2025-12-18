@@ -12,6 +12,7 @@ var dash_speed = 80
 @onready var health_manager: HealthManager = $HealthManager
 @onready var hitbox: Area2D = $Hitbox
 signal take_dmg
+signal set_status_effect(status:StatusEffect)
 var jumping = false
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
@@ -27,6 +28,7 @@ const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
 var jump_height = 550
 
 var crunk = false
+const DRUNKENNESS = preload("uid://cnga3t5galdyp")
 
 func _ready() -> void:
 	#path.global_position=  Vector2(1470, -858)
@@ -35,6 +37,7 @@ func _ready() -> void:
 	health_manager.took_damage.connect(hit_flash)
 	hitbox.increase_speed.connect(on_increase_speed)
 	hitbox.get_crunk.connect(on_get_crunk)
+	GameState.stauts_complete.connect(on_status_effect_end)
 
 func hit_flash(dmg):
 	var tween : Tween = get_tree().create_tween()
@@ -42,8 +45,14 @@ func hit_flash(dmg):
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(sprite_2d, "material:shader_parameter/active",false, 0.3)
 
+func on_status_effect_end(status: StatusEffect):
+	match(status):
+		DRUNKENNESS:
+			crunk = false
+
 func on_get_crunk():
 	crunk = true
+	set_status_effect.emit(DRUNKENNESS)
 
 func on_increase_speed(amount):
 	var new_path_pos = null

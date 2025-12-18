@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://yj1c6bxdbf7f"]
+
+[ext_resource type="Texture2D" uid="uid://dio56ixliwifl" path="res://assets/textures/drunk_status.png" id="1_7n22w"]
+[ext_resource type="Script" uid="uid://dsyi3xwdi14kx" path="res://Core/status_effects/status_effect.gd" id="1_b64ki"]
+
+[node name="statusEffect" type="ColorRect"]
+custom_minimum_size = Vector2(80, 50)
+offset_right = 80.0
+offset_bottom = 50.0
+color = Color(1, 0.9718403, 0.3940884, 1)
+script = ExtResource("1_b64ki")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 46.0
+texture = ExtResource("1_7n22w")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -53.0
+offset_top = -32.0
+offset_right = 72.0
+offset_bottom = -9.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.17000444, 0.870099, 0.89411765, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "Drunkenness"
+
+[node name="durationTimer" type="Timer" parent="."]
+
+[node name="DurationLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 53.0
+offset_right = 78.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "3.3"
+horizontal_alignment = 1

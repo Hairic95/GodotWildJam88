@@ -11,6 +11,8 @@ enum States {MainMenu, Game}
 var starting_state = States.MainMenu
 
 signal set_game_state(state: States)
+signal stauts_complete(status:StatusEffect)
+var player_speed = 100
 
 
 func _process(_delta: float) -> void:
