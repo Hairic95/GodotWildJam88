@@ -114,3 +114,7 @@ unique_name_in_owner = true
 visible = false
 scale = Vector2(4.93, 4.93)
 texture = ExtResource("6_3bxq0")
+
+[node name="LeashPosition" type="Marker2D" parent="."]
+position = Vector2(127, 6)
+gizmo_extents = 130.8
