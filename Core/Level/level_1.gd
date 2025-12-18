@@ -10,7 +10,7 @@ var player_position
 var starting_tile_position : Vector2i= Vector2i.ZERO
 @onready var ui: CanvasLayer = $UI
 @onready var camera_2d: Camera2D = $Camera2D
-
+@export var obstacle_loot_table : LootTable
 signal update_y(y)
 
 func _ready() -> void:
@@ -71,12 +71,12 @@ func place_powerup(map_pos):
 	obstacle_tiles.set_cell(power_up_pos, 5,Vector2.ZERO,power_ups.pick_random())
 		
 func place_obstacle(map_pos):
-	const OBSTACLE_PATTERN_LOOT_TABLE : LootTable = preload("uid://2xx0sbw5i066")
-	#var obstacles_arr : Array[LootObject] = OBSTACLE_PATTERN_LOOT_TABLE.item_results
-	#if obstacles_arr.size() > 1:
-		#var proper_obstacle = obstacles_arr
-		#var obstacle_pos = map_pos + Vector2i(0,map_pos.y)
-		#obstacle_pos = Vector2i(obstacle_pos.x, abs(obstacle_pos.y))
-		#obstacle_tiles.set_cell(obstacle_pos, 4,Vector2.ZERO,proper_obstacle)
-	#else:
-		#push_error("obstacle arr empty loot object")
+
+	var obstacles_arr = obstacle_loot_table.item_results
+	if obstacles_arr.size() > 0:
+		var proper_obstacle :Item = obstacles_arr[0]
+		var obstacle_pos = map_pos + Vector2i(0,map_pos.y)
+		obstacle_pos = Vector2i(obstacle_pos.x, abs(obstacle_pos.y))
+		obstacle_tiles.set_cell(obstacle_pos, 4,Vector2.ZERO,proper_obstacle.alternative_tile_id)
+	else:
+		push_error("obstacle arr empty loot object")

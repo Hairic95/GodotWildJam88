@@ -12,6 +12,7 @@ var starting_state = States.MainMenu
 
 signal set_game_state(state: States)
 
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
@@ -39,6 +40,5 @@ func dash_cooldown(_delta):
 	dash += _delta * 40
 	on_dash_changed.emit(dash)
 
-func return_proper_obstacle(obs_arr, amount):
-	pass
+
 	

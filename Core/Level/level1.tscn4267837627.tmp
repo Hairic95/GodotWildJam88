@@ -1,9 +1,8 @@
-[gd_scene load_steps=70 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=69 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
 [ext_resource type="Texture2D" uid="uid://b7o5ejcuk2ye1" path="res://assets/textures/tiles/tile_outer_0.png" id="2_480ue"]
-[ext_resource type="Resource" uid="uid://2xx0sbw5i066" path="res://Core/ItemsAndLoot/LootTable/ObstaclePatternLootTable/ObstaclePatternLootTable.tres" id="2_fangi"]
 [ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="2_ro1wp"]
 [ext_resource type="Texture2D" uid="uid://m03ht014cy2o" path="res://assets/textures/tile_test_3.png" id="4_fqbln"]
 [ext_resource type="Texture2D" uid="uid://bu2vfb4tutdjm" path="res://assets/textures/tiles/tile_border_right.png" id="4_m5qiu"]
@@ -317,7 +316,6 @@ _data = {
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cpp6p")
 debug = true
-obstacle_loot_table = ExtResource("2_fangi")
 metadata/_edit_vertical_guides_ = [-59218.0]
 
 [node name="GroundTiles" type="TileMapLayer" parent="."]
@@ -331,7 +329,7 @@ tile_map_data = PackedByteArray("AADv/zsABQAAAAAAAgDp/3cABQAAAAAAAgAEAF0ABQAAAAA
 tile_set = SubResource("TileSet_ropvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.08, 0.08)
+zoom = Vector2(0.025, 0.025)
 
 [node name="YPath2D2" type="Path2D" parent="."]
 position = Vector2(1881, -622)

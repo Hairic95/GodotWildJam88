@@ -6,4 +6,5 @@
 script = ExtResource("1_fa8od")
 item_name = "LeftFenceHole"
 item_type = 2
+alternative_tile_id = 5
 metadata/_custom_type_script = "uid://dhew86rj3wjtq"

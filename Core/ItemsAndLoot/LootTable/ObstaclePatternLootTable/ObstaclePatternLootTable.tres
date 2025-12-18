@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=4 format=3 uid="uid://2xx0sbw5i066"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=7 format=3 uid="uid://2xx0sbw5i066"]
 
 [ext_resource type="Script" uid="uid://c5ro3gr3ihoa0" path="res://Core/ItemsAndLoot/LootTable/LootObject.gd" id="1_koerq"]
 [ext_resource type="Resource" uid="uid://c15lxrcq0ihjq" path="res://Core/ItemsAndLoot/Items/ItemInstantiations/obstacle_patterns/left_fence_hole.tres" id="2_0n833"]
 [ext_resource type="Script" uid="uid://dfjhjahglsj8h" path="res://Core/ItemsAndLoot/LootTable/LootTable.gd" id="2_kum00"]
+[ext_resource type="Resource" uid="uid://cgdqtfgug0bvg" path="res://Core/ItemsAndLoot/Items/ItemInstantiations/obstacle_patterns/right_fence_hole.tres" id="3_yuv3l"]
+[ext_resource type="Resource" uid="uid://c4ice1hjt7nnw" path="res://Core/ItemsAndLoot/Items/ItemInstantiations/obstacle_patterns/middle_fence_hole.tres" id="4_ndmup"]
+[ext_resource type="Resource" uid="uid://bktph0kn7oke3" path="res://Core/ItemsAndLoot/Items/ItemInstantiations/obstacle_patterns/rocks_1.tres" id="5_sfo52"]
 
 [resource]
 script = ExtResource("2_kum00")
 item_drop_count = 1
-item_list = Array[ExtResource("1_koerq")]([ExtResource("2_0n833")])
+item_list = Array[ExtResource("1_koerq")]([ExtResource("2_0n833"), ExtResource("3_yuv3l"), ExtResource("4_ndmup"), ExtResource("5_sfo52")])
 metadata/_custom_type_script = "uid://dfjhjahglsj8h"
