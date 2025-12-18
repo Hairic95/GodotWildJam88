@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
-GameState="*res://Core/Level/GameState.gd"
+GameState="*res://Core/GameState.gd"
 
 [display]
 

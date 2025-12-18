@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://belnw8ps4njwb"]
+
+[ext_resource type="PackedScene" uid="uid://dj4mfqf2by6t8" path="res://Core/Actors/SnowBall/snwoball_scene.tscn" id="1_fnf5d"]
+
+[node name="3dViewport" type="SubViewport"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1900, 900)
+render_target_update_mode = 4
+
+[node name="Node3D" parent="." instance=ExtResource("1_fnf5d")]
+visible = false

@@ -6,12 +6,14 @@ var fmod_event : FmodEvent
 @export var play_music: bool
 
 func _ready() -> void:
+	if 11:
+		fmod_event =FmodServer.create_event_instance_with_guid("{2516882b-bba2-4d09-b663-26cd9f19cfa8}")
+		fmod_event.start()
+		fmod_event.release()
 	fmod_event =FmodServer.create_event_instance("event:/SFX/Ride")
-	
-	fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
+	#fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
 	fmod_event.start()
 	fmod_event.release()
-
 
 
 

@@ -329,6 +329,11 @@ tile_set = SubResource("TileSet_ropvc")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.105, 0.105)
 
+[node name="Camera2D2" type="Camera2D" parent="."]
+visible = false
+enabled = false
+zoom = Vector2(0.025, 0.025)
+
 [node name="YPath2D2" type="Path2D" parent="."]
 position = Vector2(1881, -622)
 curve = SubResource("Curve2D_nbb1c")
@@ -439,7 +444,6 @@ position = Vector2(-3054, -1038)
 
 [node name="Fmod" type="Node" parent="."]
 script = ExtResource("33_e8dos")
-play_music = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="Fmod"]
 bank_paths = ["res://banks/Desktop/Music.bank", "res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank", "res://banks/Desktop/SFX.bank"]
@@ -447,23 +451,11 @@ bank_paths = ["res://banks/Desktop/Music.bank", "res://banks/Desktop/Master.stri
 [node name="FmomMusicEmitter2D" type="FmodEventEmitter2D" parent="Fmod"]
 event_name = "event:/Music/MainTrack"
 event_guid = "{2516882b-bba2-4d09-b663-26cd9f19cfa8}"
-autoplay = true
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Fmod"]
-event_name = "event:/SFX/Ride"
-event_guid = "{65cf3117-05ce-4431-8854-8e4a26feec68}"
-autoplay = true
 
 [node name="FmodListener2D" type="FmodListener2D" parent="Fmod"]
 
 [node name="Avalache" type="Node2D" parent="."]
 position = Vector2(-2728, 571)
-
-[node name="ColorRect" type="ColorRect" parent="Avalache"]
-offset_left = -5451.0
-offset_top = -6215.0
-offset_right = 473.0
-offset_bottom = -3464.0
 
 [node name="Sprite1" type="AnimatedSprite2D" parent="Avalache"]
 position = Vector2(-2570, -1688)

@@ -14,6 +14,10 @@ func _ready() -> void:
 	#main_player.dash.connect(on_player_dash)
 	node_2d.update_y.connect(set_label_y)
 	GameState.on_dash_changed.connect(on_dash_updated)
+	
+
+
+
 
 func on_dash_updated(dash):
 	dash_bar.value = dash
