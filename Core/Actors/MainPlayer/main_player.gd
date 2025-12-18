@@ -152,6 +152,5 @@ func delete_collision():
 			child.queue_free()
 	
 
-	
-		
-	
+func get_leash_point():
+	return $LeashPosition.global_position
