@@ -13,6 +13,7 @@ var dash_speed = 80
 @onready var hitbox: Area2D = $Hitbox
 signal take_dmg
 var jumping = false
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 var speed_pos_0 = 0
 var speed_pos_1= 0.5
@@ -31,8 +32,15 @@ func _ready() -> void:
 	#path.global_position=  Vector2(1470, -858)
 	#path.global_position = speed_pos_0
 	health_manager.took_damage.connect(on_take_dmg)
+	health_manager.took_damage.connect(hit_flash)
 	hitbox.increase_speed.connect(on_increase_speed)
 	hitbox.get_crunk.connect(on_get_crunk)
+
+func hit_flash(dmg):
+	var tween : Tween = get_tree().create_tween()
+	await tween.tween_property(sprite_2d, "material:shader_parameter/active",true, 0.3).set_ease(Tween.EASE_IN_OUT).finished
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(sprite_2d, "material:shader_parameter/active",false, 0.3)
 
 func on_get_crunk():
 	crunk = true

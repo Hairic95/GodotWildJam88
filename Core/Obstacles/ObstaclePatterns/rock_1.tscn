@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://dw51f4iqjswad"]
 
 [ext_resource type="PackedScene" uid="uid://cqa5by57v6t1l" path="res://Core/Obstacles/obstacle_template.tscn" id="1_g1cmg"]
-[ext_resource type="PackedScene" uid="uid://do22ins8yavc2" path="res://Core/Obstacles/Instantiations/Rock.tscn" id="2_vx35b"]
+[ext_resource type="PackedScene" uid="uid://do22ins8yavc2" path="res://Core/Obstacles/Instantiations/rock.tscn" id="2_vx35b"]
 
 [node name="Rock1" instance=ExtResource("1_g1cmg")]
 

@@ -1,11 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://hj8a032o00v8"]
+[gd_scene load_steps=19 format=3 uid="uid://hj8a032o00v8"]
 
 [ext_resource type="Script" uid="uid://cqm0m6k1lx6ji" path="res://Core/Actors/MainPlayer/main_player.gd" id="1_fnqva"]
+[ext_resource type="Shader" uid="uid://1d5st4ofdu8w" path="res://VFX/hit_flash_shader.gdshader" id="2_vmln1"]
 [ext_resource type="Texture2D" uid="uid://kdeosq14vhv4" path="res://assets/textures/dog test anim low res.png" id="2_xswx7"]
 [ext_resource type="Script" uid="uid://cghgey8wh0h31" path="res://Core/Actors/General/health_manager.gd" id="3_df6y1"]
 [ext_resource type="Script" uid="uid://d3peys55q8tes" path="res://Core/Actors/General/hitbox.gd" id="4_tbjs4"]
 [ext_resource type="PackedScene" uid="uid://lhbpgu1bpmcw" path="res://Core/Actors/MainPlayer/playerCollisionShape.tscn" id="5_xswx7"]
 [ext_resource type="Texture2D" uid="uid://dx26qd3egsesg" path="res://assets/textures/Shield/shield.png" id="6_3bxq0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_26ywm"]
+resource_local_to_scene = true
+shader = ExtResource("2_vmln1")
+shader_parameter/active = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bxq0"]
 atlas = ExtResource("2_xswx7")
@@ -77,6 +83,7 @@ script = ExtResource("1_fnqva")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_26ywm")
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_2idbo")
 autoplay = "default"
