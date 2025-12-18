@@ -22,3 +22,7 @@ func start_dashing(delta):
 func dash_cooldown(_delta):
 	dash += _delta * 40
 	on_dash_changed.emit(dash)
+
+func return_proper_obstacle(obs_arr, amount):
+	pass
+	

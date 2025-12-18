@@ -31,3 +31,4 @@ size = Vector2i(1900, 900)
 render_target_update_mode = 4
 
 [node name="Node3D" parent="SubViewportContainer/3dViewport" instance=ExtResource("2_h7iqs")]
+visible = false

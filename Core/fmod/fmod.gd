@@ -6,7 +6,7 @@ var fmod_event : FmodEvent
 @export var play_music: bool
 
 func _ready() -> void:
-	if play_music:
+	if 11:
 		fmod_event =FmodServer.create_event_instance_with_guid("{2516882b-bba2-4d09-b663-26cd9f19cfa8}")
 		fmod_event.start()
 		fmod_event.release()

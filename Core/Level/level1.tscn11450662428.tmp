@@ -444,7 +444,6 @@ position = Vector2(-3054, -1038)
 
 [node name="Fmod" type="Node" parent="."]
 script = ExtResource("33_e8dos")
-play_music = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="Fmod"]
 bank_paths = ["res://banks/Desktop/Music.bank", "res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank", "res://banks/Desktop/SFX.bank"]
