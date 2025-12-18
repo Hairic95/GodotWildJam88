@@ -449,6 +449,15 @@ bank_paths = ["res://banks/Desktop/Music.bank", "res://banks/Desktop/Master.stri
 [node name="FmomMusicEmitter2D" type="FmodEventEmitter2D" parent="Fmod"]
 event_name = "event:/Music/MainTrack"
 event_guid = "{2516882b-bba2-4d09-b663-26cd9f19cfa8}"
+autoplay = true
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Fmod"]
+event_name = "event:/SFX/Ride"
+event_guid = "{65cf3117-05ce-4431-8854-8e4a26feec68}"
+autoplay = true
+fmod_parameters/Turn/id = -4534786795945276499
+fmod_parameters/Turn = 0.0
+fmod_parameters/Turn/variant_type = 3
 
 [node name="FmodListener2D" type="FmodListener2D" parent="Fmod"]
 

@@ -18,6 +18,7 @@ func _ready() -> void:
 	$Avalache/Sprite2.play("idle")
 
 func on_game_over():
+	#FmodServer.set_global_parameter_by_name("Stage",2)
 	if !debug:
 		pause = true
 
