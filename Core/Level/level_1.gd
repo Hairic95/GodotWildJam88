@@ -8,6 +8,8 @@ var speed = 0.01
 var player_position
 @export var debug: bool = false
 var starting_tile_position : Vector2i= Vector2i.ZERO
+@onready var ui: CanvasLayer = $UI
+@onready var camera_2d: Camera2D = $Camera2D
 
 signal update_y(y)
 
@@ -16,6 +18,21 @@ func _ready() -> void:
 	$Avalache/Anim.play("Idle")
 	$Avalache/Sprite1.play("idle")
 	$Avalache/Sprite2.play("idle")
+	GameState.set_game_state.connect(on_set_game_state)
+	on_set_game_state(GameState.starting_state)
+
+func on_set_game_state(state: GameState.States):
+	match(state):
+		GameState.States.MainMenu:
+			pause = true
+			ui.hide()
+			camera_2d.enabled = false
+			
+		GameState.States.Game:
+			pause = false
+			ui.show()
+			camera_2d.enabled = true
+
 
 func on_game_over():
 	if !debug:

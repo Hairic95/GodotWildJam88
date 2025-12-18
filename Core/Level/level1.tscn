@@ -329,11 +329,6 @@ tile_set = SubResource("TileSet_ropvc")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.105, 0.105)
 
-[node name="Camera2D2" type="Camera2D" parent="."]
-visible = false
-enabled = false
-zoom = Vector2(0.025, 0.025)
-
 [node name="YPath2D2" type="Path2D" parent="."]
 position = Vector2(1881, -622)
 curve = SubResource("Curve2D_nbb1c")
