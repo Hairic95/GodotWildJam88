@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c15lxrcq0ihjq"]
+
+[ext_resource type="Script" uid="uid://dhew86rj3wjtq" path="res://Core/ItemsAndLoot/Items/items.gd" id="1_fa8od"]
+
+[resource]
+script = ExtResource("1_fa8od")
+item_name = "LeftFenceHole"
+item_type = 2
+metadata/_custom_type_script = "uid://dhew86rj3wjtq"

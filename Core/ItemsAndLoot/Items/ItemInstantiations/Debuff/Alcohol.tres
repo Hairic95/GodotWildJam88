@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cobfmd0sccu6w"]
+
+[ext_resource type="Script" uid="uid://dhew86rj3wjtq" path="res://Core/ItemsAndLoot/Items/items.gd" id="1_3wpw5"]
+
+[resource]
+script = ExtResource("1_3wpw5")
+item_name = "Alcohol"
+item_type = 1
+metadata/_custom_type_script = "uid://dhew86rj3wjtq"

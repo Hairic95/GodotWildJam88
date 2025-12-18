@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cevmyaa6kmclm"]
+
+[ext_resource type="Script" uid="uid://dhew86rj3wjtq" path="res://Core/ItemsAndLoot/Items/items.gd" id="1_n4sqo"]
+
+[resource]
+script = ExtResource("1_n4sqo")
+item_name = "Speed Boost"
+metadata/_custom_type_script = "uid://dhew86rj3wjtq"

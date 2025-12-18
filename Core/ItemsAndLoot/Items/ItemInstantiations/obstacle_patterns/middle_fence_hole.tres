@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c4ice1hjt7nnw"]
+
+[ext_resource type="Script" uid="uid://dhew86rj3wjtq" path="res://Core/ItemsAndLoot/Items/items.gd" id="1_bwlej"]
+
+[resource]
+script = ExtResource("1_bwlej")
+item_name = "MiddleFenceHole"
+item_type = 2
+metadata/_custom_type_script = "uid://dhew86rj3wjtq"
