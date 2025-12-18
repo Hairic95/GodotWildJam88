@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c7oxng7vsv3l0" path="res://Core/Obstacles/ObstaclePatterns/left_rock.tscn" id="16_nbb1c"]
 [ext_resource type="Texture2D" uid="uid://dpcgfkbma4irp" path="res://assets/textures/tiles/tile_border_left.png" id="17_7xqgc"]
 [ext_resource type="PackedScene" uid="uid://bsj12o6ix4ccw" path="res://Core/PowerUps/Instantiations/shield.tscn" id="18_nbb1c"]
-[ext_resource type="Script" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
+[ext_resource type="Script" uid="uid://c8jux7wwmbrkg" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
 [ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
 [ext_resource type="PackedScene" uid="uid://c1c54jm4rkrtq" path="res://Core/PowerUps/Instantiations/alcohol.tscn" id="19_gvukp"]
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
@@ -453,9 +453,6 @@ autoplay = true
 event_name = "event:/SFX/Ride"
 event_guid = "{65cf3117-05ce-4431-8854-8e4a26feec68}"
 autoplay = true
-fmod_parameters/Turn/id = -4534786795945276499
-fmod_parameters/Turn = 0.0
-fmod_parameters/Turn/variant_type = 3
 
 [node name="FmodListener2D" type="FmodListener2D" parent="Fmod"]
 

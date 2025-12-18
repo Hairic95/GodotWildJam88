@@ -11,11 +11,9 @@ func _ready() -> void:
 		fmod_event.start()
 		fmod_event.release()
 	fmod_event =FmodServer.create_event_instance("event:/SFX/Ride")
-	
-	fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
+	#fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
 	fmod_event.start()
 	fmod_event.release()
-
 
 
 
