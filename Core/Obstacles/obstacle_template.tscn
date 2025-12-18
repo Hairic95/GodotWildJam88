@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=4 uid="uid://cqa5by57v6t1l"]
+[gd_scene load_steps=38 format=4 uid="uid://cqa5by57v6t1l"]
 
 [ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="1_cxie0"]
+[ext_resource type="Script" uid="uid://2u1d50sj2ryj" path="res://Core/Obstacles/obstacle_template.gd" id="1_yvj1n"]
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="2_yvj1n"]
 [ext_resource type="Texture2D" uid="uid://bu2vfb4tutdjm" path="res://assets/textures/tiles/tile_border_right.png" id="3_7lp8a"]
 [ext_resource type="Texture2D" uid="uid://cgsmkgjgo5cav" path="res://assets/textures/tiles/tile_border_top.png" id="4_r31v3"]
@@ -10,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bhqrgjskrjt50" path="res://assets/textures/tiles/tile_inner_2.png" id="8_y1t76"]
 [ext_resource type="Texture2D" uid="uid://b7o5ejcuk2ye1" path="res://assets/textures/tiles/tile_outer_0.png" id="9_0y318"]
 [ext_resource type="Texture2D" uid="uid://m03ht014cy2o" path="res://assets/textures/tile_test_3.png" id="10_s2vii"]
-[ext_resource type="PackedScene" uid="uid://beeji5haocmbo" path="res://Core/Obstacles/Instantiations/rock.tscn" id="11_xtoo1"]
+[ext_resource type="PackedScene" uid="uid://do22ins8yavc2" path="res://Core/Obstacles/Instantiations/rock.tscn" id="11_xtoo1"]
 [ext_resource type="PackedScene" uid="uid://covatu2xq60u8" path="res://Core/PowerUps/Instantiations/speed_boost.tscn" id="12_21je5"]
 [ext_resource type="Texture2D" uid="uid://coyji11rw2r8d" path="res://assets/textures/tiles/tile_border_bottom.png" id="13_j8aaq"]
 [ext_resource type="Texture2D" uid="uid://bhq8wb02jih8y" path="res://assets/textures/tiles/tile_border_bottom_left.png" id="14_34xjd"]
@@ -192,8 +193,13 @@ pattern_1 = SubResource("TileMapPattern_5fr0s")
 pattern_2 = SubResource("TileMapPattern_cdrmq")
 
 [node name="ObstacleTemplate" type="Node2D"]
+script = ExtResource("1_yvj1n")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 self_modulate = Color(1, 1, 1, 0.050980393)
 tile_map_data = PackedByteArray("AADa/yUAAQAAAAAAAADb/yQAAQAAAAAAAADc/yMAAQAAAAAAAADd/yIAAQAAAAAAAADe/9r/BAAAAAAAAQDe/yEAAQAAAAAAAADf/yAAAQAAAAAAAADg/x8AAQAAAAAAAADh/x4AAQAAAAAAAADi/x0AAQAAAAAAAADj/xwAAQAAAAAAAADk/xsAAQAAAAAAAADl/xoAAQAAAAAAAADm/xkAAQAAAAAAAADn/xgAAQAAAAAAAADo/xcAAQAAAAAAAADp/xYAAQAAAAAAAADq/xUAAQAAAAAAAADr/xQAAQAAAAAAAADs/xMAAQAAAAAAAADt/xIAAQAAAAAAAADu/xEAAQAAAAAAAADv/xAAAQAAAAAAAADw/w8AAQAAAAAAAADx/w4AAQAAAAAAAADy/w0AAQAAAAAAAADz/wwAAQAAAAAAAAD0/wsAAQAAAAAAAAD1/woAAQAAAAAAAAD2/wkAAQAAAAAAAAD3/wgAAQAAAAAAAAD4/wcAAQAAAAAAAAAKAPX/AQAAAAAAAAALAPT/AQAAAAAAAAAMAPP/AQAAAAAAAAANAPL/AQAAAAAAAAAOAPH/AQAAAAAAAAAPAPD/AQAAAAAAAAAQAO//AQAAAAAAAAARAO7/AQAAAAAAAAASAO3/AQAAAAAAAAATAOz/AQAAAAAAAAAUAOv/AQAAAAAAAAAVAOr/AQAAAAAAAAAWAOn/AQAAAAAAAAAXAOj/AQAAAAAAAAAYAOf/AQAAAAAAAAAZAOb/AQAAAAAAAAAaAOX/AQAAAAAAAAAbAOT/AQAAAAAAAAAcAOP/AQAAAAAAAAAdAOL/AQAAAAAAAAAeAOH/AQAAAAAAAAAfAOD/AQAAAAAAAAAgAN//AQAAAAAAAAAhAN7/AQAAAAAAAAAiAN3/AQAAAAAAAAAjANz/AQAAAAAAAAAkANv/AQAAAAAAAAAlANr/AQAAAAAAAAAmANn/AQAAAAAAAAD5/wYAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wQAAQAAAAAAAAD8/wMAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wAAAQAAAAAAAAAAAP//AQAAAAAAAAABAP7/AQAAAAAAAAACAP3/AQAAAAAAAAADAPz/AQAAAAAAAAAEAPv/AQAAAAAAAAAFAPr/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPj/AQAAAAAAAAAIAPf/AQAAAAAAAAAJAPb/AQAAAAAAAAAnANj/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_6vixf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

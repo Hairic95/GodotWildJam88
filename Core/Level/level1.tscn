@@ -329,7 +329,7 @@ tile_map_data = PackedByteArray("AADv/zsABQAAAAAAAgDp/3cABQAAAAAAAgAEAF0ABQAAAAA
 tile_set = SubResource("TileSet_ropvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.105, 0.105)
+zoom = Vector2(0.1, 0.1)
 
 [node name="YPath2D2" type="Path2D" parent="."]
 position = Vector2(60, -1124)
@@ -509,3 +509,6 @@ event_guid = "{65cf3117-05ce-4431-8854-8e4a26feec68}"
 autoplay = true
 
 [node name="FmodListener2D" type="FmodListener2D" parent="Fmod"]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+unique_name_in_owner = true

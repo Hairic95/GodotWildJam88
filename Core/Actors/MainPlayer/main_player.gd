@@ -72,10 +72,10 @@ func on_increase_speed(amount):
 			1:
 				new_path_pos = speed_pos_1
 	
-	if new_path_pos:
-		var tween = get_tree().create_tween()
-		current_speed = new_path_pos
-		tween.tween_property(y_path_follow,"progress_ratio",new_path_pos,0.5)
+	#if new_path_pos:
+		#var tween = get_tree().create_tween()
+		#current_speed = new_path_pos
+		#tween.tween_property(y_path_follow,"progress_ratio",new_path_pos,0.5)
 
 func on_take_dmg(amount):
 	take_dmg.emit(amount)
@@ -93,7 +93,6 @@ func _process(delta: float) -> void:
 			
 		if direction.x != 0:
 			path_follow.progress += (speed * direction.x)
-			print("direction x")
 			if direction.x > 0:
 				if sledge:
 					sledge.change_frame(2)
