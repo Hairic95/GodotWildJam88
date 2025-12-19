@@ -28,8 +28,6 @@ func on_change_speed():
 		_:
 			FmodServer.set_global_parameter_by_name("Speed",1.0)
 
-
-
 func change_speed():
 	#fmom_music_emitter_2d.set_parameter("Speed")
 	pass

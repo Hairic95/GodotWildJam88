@@ -1,4 +1,5 @@
 extends Area2D
+class_name DogHitbox
 
 @onready var health_manager: HealthManager = $"../HealthManager"
 @onready var iframe_timer: Timer = $IframeTimer
@@ -61,6 +62,7 @@ func on_area_entered(area):
 			PowerUps.PowerUpTypes.Alcohol:
 				FmodServer.play_one_shot("event:/SFX/Alcohol")
 				get_crunk.emit()
-	area.queue_free()
+	if area is PowerUps or area is Obstacle:
+		area.queue_free()
 
 				

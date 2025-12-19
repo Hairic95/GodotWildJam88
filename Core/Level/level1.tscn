@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=73 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
 [ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://cfk4533jtx3ob" path="res://assets/textures/ui/health_bar_progress.png" id="22_xo5lp"]
+[ext_resource type="Script" uid="uid://bv337vdxcf46d" path="res://Core/Level/frost_area.gd" id="28_23ecx"]
 [ext_resource type="Script" uid="uid://dcqqye1n5yksl" path="res://Core/Level/avalanche.gd" id="28_fangi"]
 [ext_resource type="Texture2D" uid="uid://crqipajjyd1ja" path="res://assets/textures/avalache.png" id="32_kufak"]
 [ext_resource type="Texture2D" uid="uid://3d5asd4gn7po" path="res://assets/textures/ui/health_bar_progress2.png" id="33_6e6n1"]
@@ -231,6 +232,10 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23ecx"]
+radius = 211.80493
+height = 1201.4277
+
 [sub_resource type="Curve2D" id="Curve2D_uqlyo"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -5598.874, 1061.7046, 0, 0, 0, 0, 5124.8657, 5545.6973)
@@ -359,6 +364,15 @@ position = Vector2(-4134.7163, 1709.8401)
 rotates = false
 loop = false
 
+[node name="FrostArea" type="Area2D" parent="YPath2D2/YPathFollow2D/Path2D/PathFollow2D" groups=["FrostArea"]]
+position = Vector2(255, -125.984375)
+script = ExtResource("28_23ecx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YPath2D2/YPathFollow2D/Path2D/PathFollow2D/FrostArea"]
+position = Vector2(75.45264, 173.70471)
+rotation = -1.1431906
+shape = SubResource("CapsuleShape2D_23ecx")
+
 [node name="Dog" parent="YPath2D2/YPathFollow2D/Path2D/PathFollow2D" node_paths=PackedStringArray("sledge", "path", "path_follow", "y_path_follow") instance=ExtResource("6_ropvc")]
 position = Vector2(617.8877, 111.39014)
 sledge = NodePath("../Sledge")
@@ -442,6 +456,11 @@ texture = ExtResource("33_gvukp")
 libraries = {
 &"": SubResource("AnimationLibrary_e8dos")
 }
+
+[node name="AvalancheArea2D" type="Area2D" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache/AvalancheArea2D"]
+polygon = PackedVector2Array(-19059.102, -4836.123, -2638.1006, -11414.123, 6604.8994, -5037.123, -11010.101, 2485.8772)
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("8_732fy")

@@ -80,7 +80,7 @@ func _process(delta: float) -> void:
 				FmodServer.set_global_parameter_by_name("Turn",0)
 		
 		if direction.y != 0:
-			print("progress ratio ", y_path_follow.progress_ratio)
+			
 
 			if direction.y >0:
 				y_path_follow.progress -= (direction.y * speed)
