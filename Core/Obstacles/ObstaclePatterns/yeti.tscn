@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0dh7f52keb2i"]
+
+[ext_resource type="PackedScene" uid="uid://cqa5by57v6t1l" path="res://Core/Obstacles/obstacle_template.tscn" id="1_51lu1"]
+[ext_resource type="Texture2D" uid="uid://dm8kgj0qewlwn" path="res://assets/textures/yeti.png" id="2_17jh8"]
+[ext_resource type="Script" uid="uid://bexbmgry81cqb" path="res://Core/Obstacles/ObstaclePatterns/yeti_path.gd" id="2_udne0"]
+
+[sub_resource type="Curve2D" id="Curve2D_udne0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11628, 325, 0, 0, 0, 0, 12879, -716)
+}
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ghpd"]
+atlas = ExtResource("2_17jh8")
+region = Rect2(0, 0, 220, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylo5b"]
+atlas = ExtResource("2_17jh8")
+region = Rect2(220, 0, 220, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf0am"]
+atlas = ExtResource("2_17jh8")
+region = Rect2(440, 0, 220, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g3w8"]
+atlas = ExtResource("2_17jh8")
+region = Rect2(660, 0, 220, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vohn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ghpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylo5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf0am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g3w8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_17jh8"]
+radius = 119.2724
+
+[node name="Yeti" instance=ExtResource("1_51lu1")]
+
+[node name="Path2D" type="Path2D" parent="." index="2"]
+curve = SubResource("Curve2D_udne0")
+script = ExtResource("2_udne0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(12879.002, -716.00006)
+rotation = -0.04245214
+scale = Vector2(0.99999994, 0.99999994)
+progress = 24529.105
+
+[node name="Yeti" type="AnimatedSprite2D" parent="Path2D/PathFollow2D" index="0"]
+position = Vector2(6.857422, 18.708496)
+scale = Vector2(-5, 5)
+sprite_frames = SubResource("SpriteFrames_5vohn")
+autoplay = "default"
+frame_progress = 0.017242108
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Yeti" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Yeti/Area2D" index="0"]
+position = Vector2(-18.2148, 1.9283726)
+shape = SubResource("CircleShape2D_17jh8")

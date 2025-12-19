@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=74 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c7oxng7vsv3l0" path="res://Core/Obstacles/ObstaclePatterns/left_rock.tscn" id="16_nbb1c"]
 [ext_resource type="Texture2D" uid="uid://dpcgfkbma4irp" path="res://assets/textures/tiles/tile_border_left.png" id="17_7xqgc"]
 [ext_resource type="PackedScene" uid="uid://bsj12o6ix4ccw" path="res://Core/PowerUps/Instantiations/shield.tscn" id="18_nbb1c"]
+[ext_resource type="PackedScene" uid="uid://c0dh7f52keb2i" path="res://Core/Obstacles/ObstaclePatterns/yeti.tscn" id="18_ncalw"]
 [ext_resource type="Script" uid="uid://c8jux7wwmbrkg" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
 [ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
 [ext_resource type="PackedScene" uid="uid://c1c54jm4rkrtq" path="res://Core/PowerUps/Instantiations/alcohol.tscn" id="19_gvukp"]
@@ -145,6 +146,7 @@ scenes/2/scene = ExtResource("13_5fr0s")
 scenes/3/scene = ExtResource("14_cdrmq")
 scenes/4/scene = ExtResource("15_t1s1v")
 scenes/5/scene = ExtResource("16_nbb1c")
+scenes/7/scene = ExtResource("18_ncalw")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5n11m"]
 resource_name = "PowerUps"
@@ -336,9 +338,6 @@ tile_set = SubResource("TileSet_ropvc")
 script = ExtResource("18_riabc")
 
 [node name="ObstacleTiles" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_ropvc")
-
-[node name="ObstacleTiles2" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_ropvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
