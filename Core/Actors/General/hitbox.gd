@@ -26,7 +26,16 @@ func on_area_entered(area):
 	if area is Obstacle:
 		
 		if !invicibilty_frame and !shield_on:
-			health_manager.hurt(area.damage)
+			var obstacle : Obstacle = area
+			health_manager.hurt(obstacle.damage)
+			#determines what sound to use
+			match(obstacle.material_type):
+				obstacle.Materials.Wood:
+					FmodServer.play_one_shot("event:/SFX/Hit_wood")
+				obstacle.Materials.Stone:
+					FmodServer.play_one_shot("event:/SFX/Hit_wood")
+				obstacle.Materials.Metal:
+					FmodServer.play_one_shot("event:/SFX/Hit_wood")
 		if shield_on:
 			shield_on = false
 			%ShieldSprite.hide()

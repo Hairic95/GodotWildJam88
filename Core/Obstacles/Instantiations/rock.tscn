@@ -9,6 +9,7 @@ height = 272.04367
 
 [node name="Rock" instance=ExtResource("1_ee0f7")]
 damage = 20
+material_type = 1
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-6.000001, -83.00001)

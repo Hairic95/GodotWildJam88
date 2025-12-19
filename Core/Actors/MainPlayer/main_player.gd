@@ -56,7 +56,7 @@ func on_increase_speed(amount):
 func on_take_dmg(amount):
 	GameState.change_speed(-1)
 	take_dmg.emit(amount)
-	FmodServer.play_one_shot("event:/SFX/Hit_wood")
+	
 	print("took %s dmg"%[amount])
 
 func _process(delta: float) -> void:
