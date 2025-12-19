@@ -614,6 +614,44 @@ text = "avalache speed:"
 layout_mode = 2
 text = "1"
 
+[node name="GameOverPanel" type="Panel" parent="UI/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.25
+offset_top = -132.25
+offset_right = 259.25
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.25
+offset_top = 34.25
+offset_right = -68.25
+offset_bottom = -46.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Control/GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="ReplayButton" type="Button" parent="UI/Control/GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "Replay"
+
 [node name="Fmod" type="Node" parent="."]
 script = ExtResource("33_e8dos")
 play_music = true
@@ -622,6 +660,11 @@ play_music = true
 bank_paths = ["res://banks/Desktop/Music.bank", "res://banks/Desktop/Master.strings.bank", "res://banks/Desktop/Master.bank", "res://banks/Desktop/SFX.bank"]
 
 [node name="FmomMusicEmitter2D" type="FmodEventEmitter2D" parent="Fmod"]
+event_name = "event:/Music/MainTrack"
+event_guid = "{2516882b-bba2-4d09-b663-26cd9f19cfa8}"
+autoplay = true
+
+[node name="FmomMusicEmitter2D2" type="FmodEventEmitter2D" parent="Fmod"]
 event_name = "event:/Music/MainTrack"
 event_guid = "{2516882b-bba2-4d09-b663-26cd9f19cfa8}"
 autoplay = true

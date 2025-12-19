@@ -23,7 +23,7 @@ func on_play_button_pressed():
 func set_state():
 	match(GameState.starting_state):
 		GameState.States.MainMenu:
-			FmodServer.set_global_parameter_by_name("Stage",0.0)
+			#FmodServer.set_global_parameter_by_name("Stage",0.0)
 			main_menu.show()
 			level.hide()
 		GameState.States.Game:

@@ -55,7 +55,7 @@ func on_take_dmg(amount):
 	GameState.change_speed(-1)
 	take_dmg.emit(amount)
 	
-	print("took %s dmg"%[amount])
+	
 
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right",  "ui_down", "ui_up")
@@ -89,7 +89,6 @@ func _process(delta: float) -> void:
 				y_path_follow.progress -= (direction.y * speed)
 			elif direction.y < 0:
 				y_path_follow.progress -= (direction.y * speed)
-			
 	else:
 		if sledge:
 			sledge.change_frame(1)
@@ -107,6 +106,7 @@ func _process(delta: float) -> void:
 	$ShieldSprite.rotation_degrees += 100 * delta
 	for child in $ShieldSprite.get_children():
 		child.rotation_degrees -= 100 * delta
+		
 func reduce_dash(_delta):
 	if GameState.dash < 100:
 		speed = initial_speed
@@ -118,7 +118,7 @@ func dashing(_delta):
 		GameState.start_dashing(_delta)
 	
 func jump():
-	print("dog pos before ", position)
+
 	delete_collision()
 	jumping = true
 	
@@ -139,7 +139,7 @@ func jump():
 	await tween2.tween_property(self, "position", initial_pos, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE).finished
 	replace_collision()
 	jumping = false
-	print("dog pos afterd  d  ", position)
+
 
 func replace_collision():
 	var col = PLAYER_COLLISION_SHAPE.instantiate()

@@ -9,6 +9,7 @@ var score = 0
 const status_effect_node = preload("uid://yj1c6bxdbf7f")
 @onready var status_h_box_container: HBoxContainer = %StatusHBoxContainer
 @onready var avalanche_path_2d_3: Path2D = $"../AvalanchePath2D3"
+@onready var replay_button: Button = $Control/GameOverPanel/VBoxContainer/ReplayButton
 
 func _ready() -> void:
 	main_player.take_dmg.connect(on_player_take_dmg)
@@ -18,9 +19,15 @@ func _ready() -> void:
 	GameState.change_speed_amount.connect(on_change_player_speed)
 	on_change_player_speed()
 	avalanche_path_2d_3.change_frost.connect(on_change_frost)
+	GameState.gameOver.connect(on_game_over)
+	replay_button.pressed.connect(on_replay_button_pressed)
 	
+func on_game_over():
+	%GameOverPanel.show()
 	
-	
+func on_replay_button_pressed():
+	get_tree().reload_current_scene()
+
 func on_change_frost(frost_level):
 	%FrostBar.value = frost_level
 
