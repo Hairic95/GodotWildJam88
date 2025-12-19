@@ -9,10 +9,12 @@ signal on_dash_changed(dash)
 enum States {MainMenu, Game}
 
 var starting_state = States.MainMenu
+var player_speed = 1
 
 signal set_game_state(state: States)
 signal stauts_complete(status:StatusEffect)
-var player_speed = 100
+signal change_speed_amount
+
 
 
 func _process(_delta: float) -> void:
@@ -22,6 +24,11 @@ func _process(_delta: float) -> void:
 func change_state_to(state : States):
 	starting_state = state
 	set_state()
+	
+func change_speed(amount):
+	var new_speed = clampi(player_speed + amount, 1, 4)
+	player_speed = new_speed
+	change_speed_amount.emit()
 	
 
 func set_state():

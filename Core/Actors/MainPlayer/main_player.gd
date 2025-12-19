@@ -16,13 +16,6 @@ signal set_status_effect(status:StatusEffect)
 var jumping = false
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
-var speed_pos_0 = 0
-var speed_pos_1= 0.5
-var speed_pos_2= 1.0
-
-var current_speed = speed_pos_0
-var speed_pos = 0
-
 const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
 
 var jump_height = 550
@@ -57,28 +50,11 @@ func on_get_crunk():
 
 func on_increase_speed(amount):
 	FmodServer.play_one_shot("event:/SFX/Upgrade")
-	var new_path_pos = null
-	if amount > 0 and speed_pos != 2:
-		speed_pos += 1
-		match(speed_pos):
-			1:
-				new_path_pos = speed_pos_1
-			2:
-				new_path_pos = speed_pos_2
-	if amount < 0 and speed_pos != 0:
-		speed_pos -= 1
-		match(speed_pos):
-			0:
-				new_path_pos = speed_pos_0
-			1:
-				new_path_pos = speed_pos_1
-	
-	#if new_path_pos:
-		#var tween = get_tree().create_tween()
-		#current_speed = new_path_pos
-		#tween.tween_property(y_path_follow,"progress_ratio",new_path_pos,0.5)
+	GameState.change_speed(1)
+
 
 func on_take_dmg(amount):
+	GameState.change_speed(-1)
 	take_dmg.emit(amount)
 	FmodServer.play_one_shot("event:/SFX/Hit_wood")
 	print("took %s dmg"%[amount])
@@ -110,7 +86,7 @@ func _process(delta: float) -> void:
 		
 		if direction.y != 0:
 			print("progress ratio ", y_path_follow.progress_ratio)
-			print("current speed ", current_speed)
+
 			if direction.y >0:
 				y_path_follow.progress -= (direction.y * speed)
 			elif direction.y < 0:

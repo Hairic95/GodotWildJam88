@@ -12,11 +12,18 @@ extends Node2D
 @onready var sprite_2: AnimatedSprite2D = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Sprite2
 @onready var anim: AnimationPlayer = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Anim
 
-var speed = 0.01
 var player_position
 var starting_tile_position : Vector2i= Vector2i.ZERO
 
 signal update_y(y)
+
+var speed_dictionary = {
+	1: 2.4,
+	2: 2.3,
+	3: 2.2,
+	4: 2.1
+}
+var speed_inc_val = speed_dictionary[GameState.player_speed]
 
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
@@ -25,6 +32,12 @@ func _ready() -> void:
 	sprite_2.play("idle")
 	GameState.set_game_state.connect(on_set_game_state)
 	on_set_game_state(GameState.starting_state)
+	GameState.change_speed_amount.connect(on_change_speed)
+
+func on_change_speed():
+	var tween = get_tree().create_tween()
+	var new_val = speed_dictionary[GameState.player_speed]
+	tween.tween_property(self, "speed_inc_val",new_val, 0.5)
 
 func on_set_game_state(state: GameState.States):
 	match(state):
@@ -75,16 +88,15 @@ func _process(delta: float) -> void:
 	
 		starting_tile_position = map_pos 
 
-		var converted = tile_map_layer.map_to_local(map_pos)/2.4
+		var converted = tile_map_layer.map_to_local(map_pos)/speed_inc_val
 		if map_pos.y%110 == 0:
-			place_obstacle(map_pos/2.4)
+			place_obstacle(map_pos/speed_inc_val)
 		if map_pos.y%80 == 0:
-			place_powerup(map_pos/2.4)
+			place_powerup(map_pos/speed_inc_val)
 
-		#tile_map_layer.positiodn = converted
+
 		obstacle_tiles.global_position = converted
-		#print("converted ", converted)
-		#print(tile_map_layer.position)
+
 
 func place_powerup(map_pos):
 	var center_marker = obstacle_tiles.local_to_map(%Marker2D.global_position) - Vector2i(map_pos)

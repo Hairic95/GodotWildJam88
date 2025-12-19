@@ -17,6 +17,7 @@ func _ready() -> void:
 	main_player.set_status_effect.connect(on_set_status_effect)
 	node_2d.update_y.connect(set_label_y)
 	GameState.on_dash_changed.connect(on_dash_updated)
+	GameState.change_speed_amount.connect(on_change_player_speed)
 
 func on_set_status_effect(_status_effect : StatusEffect):
 	#check if this isn't a duplicate status_effect
@@ -28,6 +29,9 @@ func on_set_status_effect(_status_effect : StatusEffect):
 	var status_effect = status_effect_node.instantiate()
 	%StatusHBoxContainer.add_child(status_effect)
 	status_effect.setup(_status_effect)
+
+func on_change_player_speed():
+	%player_speed_label.text = str(GameState.player_speed)
 
 func on_dash_updated(dash):
 	dash_bar.value = dash
