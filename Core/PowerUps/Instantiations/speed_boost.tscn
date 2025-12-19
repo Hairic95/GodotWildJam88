@@ -4,17 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://cp4ucbu2pohvp" path="res://assets/textures/monster_energy.png" id="2_8bjj1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8bjj1"]
-radius = 218.0
-height = 436.0
+radius = 405.0
+height = 818.0
 
 [node name="SpeedBoost" instance=ExtResource("1_g0nf1")]
 power_type = 1
 amount = 10
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture = ExtResource("2_8bjj1")
-flip_v = true
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-25, -28)
