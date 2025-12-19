@@ -62,6 +62,8 @@ func on_area_entered(area):
 			PowerUps.PowerUpTypes.Alcohol:
 				FmodServer.play_one_shot("event:/SFX/Alcohol")
 				get_crunk.emit()
+			PowerUps.PowerUpTypes.WarmClothes:
+				GameState.decrease_frost.emit(area.amount)
 	if area is PowerUps or area is Obstacle:
 		area.queue_free()
 

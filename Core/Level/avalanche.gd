@@ -12,6 +12,10 @@ func _ready() -> void:
 	GameState.change_speed_amount.connect(on_change_speed)
 	avalanche_area_2d.area_entered.connect(on_area_entered)
 	avalanche_area_2d.area_exited.connect(on_area_exit)
+	GameState.decrease_frost.connect(on_decrease_frost)
+
+func on_decrease_frost(amount):
+	frost_meter -= amount
 
 func on_area_entered(area):
 	if area is FrostArea and !dog_in:
