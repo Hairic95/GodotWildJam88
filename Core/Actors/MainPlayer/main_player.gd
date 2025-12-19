@@ -42,12 +42,10 @@ func on_status_effect_end(status: StatusEffect):
 			crunk = false
 
 func on_get_crunk():
-	FmodServer.play_one_shot("event:/SFX/Alcohol")
 	crunk = true
 	set_status_effect.emit(DRUNKENNESS)
 
 func on_increase_speed(amount):
-	FmodServer.play_one_shot("event:/SFX/Upgrade")
 	GameState.change_speed(1)
 
 func on_take_dmg(amount):
