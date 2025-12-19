@@ -37,6 +37,7 @@ func on_area_entered(area):
 				obstacle.Materials.Metal:
 					FmodServer.play_one_shot("event:/SFX/Hit_wood")
 		if shield_on:
+			health_manager.hurt(0)
 			shield_on = false
 			%ShieldSprite.hide()
 	if area is PowerUps:

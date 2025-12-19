@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=71 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
 [ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://cfk4533jtx3ob" path="res://assets/textures/ui/health_bar_progress.png" id="22_xo5lp"]
+[ext_resource type="Script" uid="uid://dcqqye1n5yksl" path="res://Core/Level/avalanche.gd" id="28_fangi"]
 [ext_resource type="Texture2D" uid="uid://crqipajjyd1ja" path="res://assets/textures/avalache.png" id="32_kufak"]
 [ext_resource type="Texture2D" uid="uid://3d5asd4gn7po" path="res://assets/textures/ui/health_bar_progress2.png" id="33_6e6n1"]
 [ext_resource type="Script" uid="uid://b4vbhp6j7jhw6" path="res://Core/fmod/fmod.gd" id="33_e8dos"]
@@ -342,9 +343,9 @@ position = Vector2(29.7606, -1193.4991)
 curve = SubResource("Curve2D_nbb1c")
 
 [node name="YPathFollow2D" type="PathFollow2D" parent="YPath2D2"]
-position = Vector2(2811.79, 4578.039)
+position = Vector2(-4844.4526, 1375.1066)
 rotation = 0.39699036
-progress = 12381.807
+progress = 4082.6016
 rotates = false
 loop = false
 
@@ -372,6 +373,7 @@ dog = NodePath("../Dog")
 [node name="AvalanchePath2D3" type="Path2D" parent="."]
 position = Vector2(-6237.0254, -3151.582)
 curve = SubResource("Curve2D_uqlyo")
+script = ExtResource("28_fangi")
 
 [node name="AvalanchePathFollow2D" type="PathFollow2D" parent="AvalanchePath2D3"]
 position = Vector2(-5598.874, 1061.7046)

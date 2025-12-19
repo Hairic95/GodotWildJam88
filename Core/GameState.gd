@@ -26,7 +26,7 @@ func change_state_to(state : States):
 	set_state()
 	
 func change_speed(amount):
-	var new_speed = clampi(player_speed + amount, 1, 4)
+	var new_speed = clampi(player_speed + amount, -4, 4)
 	player_speed = new_speed
 	change_speed_amount.emit()
 	

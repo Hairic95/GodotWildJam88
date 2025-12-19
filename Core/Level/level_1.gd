@@ -18,6 +18,11 @@ var starting_tile_position : Vector2i= Vector2i.ZERO
 signal update_y(y)
 
 var speed_dictionary = {
+	-4: 2.65,
+	-3: 2.6,
+	-2: 2.55,
+	-1: 2.5,
+	0: 2.45,
 	1: 2.4,
 	2: 2.3,
 	3: 2.2,
