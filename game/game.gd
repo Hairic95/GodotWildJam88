@@ -27,3 +27,9 @@ func set_state():
 		GameState.States.Game:
 			level.show()
 			main_menu.hide()
+			var fmod_event = FmodEvent
+			FmodServer.set_global_parameter_by_name("Stage",1)
+			fmod_event =FmodServer.create_event_instance("event:/SFX/Ride")
+			#fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
+			fmod_event.start()
+			fmod_event.release()

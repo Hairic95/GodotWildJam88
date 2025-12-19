@@ -26,11 +26,13 @@ func on_game_over():
 	%GameOverPanel.show()
 	
 func on_replay_button_pressed():
+	FmodServer.play_one_shot("event:/UI/Button")
 	get_tree().reload_current_scene()
 
 func on_change_frost(frost_level):
 	if %FrostBar.value >= 100:
 		GameState.gameOver.emit()
+		FmodServer.play_one_shot("event:/SFX/Freeze")
 		return
 	%FrostBar.value = frost_level
 

@@ -99,10 +99,13 @@ func _process(delta: float) -> void:
 			#path.global_position = path.global_position - Vector2(direction.y,direction.y) * speed
 		
 	if Input.is_action_pressed("dash") and (GameState.dash > 0):
+		FmodServer.set_global_parameter_by_name("Turn",1)
 		dashing(delta)
 	else:
 		reduce_dash(delta)
 	if Input.is_action_just_pressed("jump") and !jumping:
+		FmodServer.set_global_parameter_by_name("Turn",1)
+		FmodServer.play_one_shot("event:/SFX/Jump")
 		jump()
 	 
 	$ShieldSprite.rotation_degrees += 100 * delta
