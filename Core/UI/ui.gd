@@ -8,6 +8,7 @@ extends CanvasLayer
 var score = 0
 const status_effect_node = preload("uid://yj1c6bxdbf7f")
 @onready var status_h_box_container: HBoxContainer = %StatusHBoxContainer
+@onready var avalanche_path_2d_3: Path2D = $"../AvalanchePath2D3"
 
 func _ready() -> void:
 	main_player.take_dmg.connect(on_player_take_dmg)
@@ -16,6 +17,12 @@ func _ready() -> void:
 	GameState.on_dash_changed.connect(on_dash_updated)
 	GameState.change_speed_amount.connect(on_change_player_speed)
 	on_change_player_speed()
+	avalanche_path_2d_3.change_frost.connect(on_change_frost)
+	
+	
+	
+func on_change_frost(frost_level):
+	%FrostBar.value = frost_level
 
 func on_set_status_effect(_status_effect : StatusEffect):
 	#check if this isn't a duplicate status_effect

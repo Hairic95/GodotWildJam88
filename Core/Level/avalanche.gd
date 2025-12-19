@@ -5,6 +5,9 @@ extends Node2D
 
 var frost_meter = 0
 var dog_in = false
+
+signal change_frost
+
 func _ready() -> void:
 	GameState.change_speed_amount.connect(on_change_speed)
 	avalanche_area_2d.area_entered.connect(on_area_entered)
@@ -12,17 +15,17 @@ func _ready() -> void:
 
 func on_area_entered(area):
 	if area is FrostArea and !dog_in:
-		print("in")
 		dog_in = true
 
 func on_area_exit(area):
 	if area is FrostArea and dog_in:
-		print("out")
 		dog_in = false
 
 func _process(delta: float) -> void:
 	if dog_in:
 		frost_meter += delta * 8
+		change_frost.emit(frost_meter)
+		
 		print("frost meter ", frost_meter)
 func on_change_speed():
 	var new_progress_ratio 
