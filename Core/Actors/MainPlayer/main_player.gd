@@ -99,6 +99,9 @@ func _process(delta: float) -> void:
 	else:
 		reduce_dash(delta)
 	 
+	$ShieldSprite.rotation_degrees += 100 * delta
+	for child in $ShieldSprite.get_children():
+		child.rotation_degrees -= 100 * delta
 func reduce_dash(_delta):
 	if GameState.dash < 100:
 		speed = initial_speed
