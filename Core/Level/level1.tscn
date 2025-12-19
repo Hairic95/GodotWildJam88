@@ -274,8 +274,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_gvukp"]
 resource_name = "Idle"
-length = 2.0
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -283,10 +282,10 @@ tracks/0/path = NodePath("AvalacheFace:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.49),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-2415, -2292), Vector2(-2415, -2302), Vector2(-2415, -2283.2456)]
+"values": [Vector2(-338.1006, -2984.1228), Vector2(-338.101, -3037.203)]
 }
 
 [sub_resource type="Animation" id="Animation_bwgrr"]
@@ -301,7 +300,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-2415, -2292)]
+"values": [Vector2(-338.1006, -2984.1228)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e8dos"]
@@ -343,9 +342,9 @@ position = Vector2(29.7606, -1193.4991)
 curve = SubResource("Curve2D_nbb1c")
 
 [node name="YPathFollow2D" type="PathFollow2D" parent="YPath2D2"]
-position = Vector2(-4251.073, 1623.3423)
+position = Vector2(2811.79, 4578.039)
 rotation = 0.39699036
-progress = 4725.8125
+progress = 12381.807
 rotates = false
 loop = false
 
@@ -385,13 +384,37 @@ position = Vector2(5288.4883, -1008.17145)
 rotation = -0.39699036
 
 [node name="ColorRect" type="ColorRect" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
-offset_left = -5451.0
+offset_left = -15223.84
 offset_top = -6215.0
 offset_right = 473.0
-offset_bottom = -3464.0
+offset_bottom = -2888.1155
+
+[node name="ColorRect3" type="ColorRect" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
+offset_left = -15324.84
+offset_top = -9506.115
+offset_right = 6085.0
+offset_bottom = -6179.2305
+
+[node name="ColorRect2" type="ColorRect" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
+offset_left = -15223.84
+offset_top = -3837.1155
+offset_right = -5204.84
+offset_bottom = -595.1155
+
+[node name="ColorRect4" type="ColorRect" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
+offset_left = -15223.84
+offset_top = -3837.1155
+offset_right = -10239.84
+offset_bottom = 1485.8845
 
 [node name="Sprite1" type="AnimatedSprite2D" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
 position = Vector2(-2570, -1688)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_uqlyo")
+animation = &"idle"
+
+[node name="Sprite3" type="AnimatedSprite2D" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
+position = Vector2(-8276.84, 855.8845)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_uqlyo")
 animation = &"idle"
@@ -402,8 +425,14 @@ scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_uqlyo")
 animation = &"idle"
 
+[node name="Sprite4" type="AnimatedSprite2D" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
+position = Vector2(8781.16, -6704.115)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_uqlyo")
+animation = &"idle"
+
 [node name="AvalacheFace" type="Sprite2D" parent="AvalanchePath2D3/AvalanchePathFollow2D/Avalache"]
-position = Vector2(-2415, -2292)
+position = Vector2(-338.1006, -2984.1228)
 scale = Vector2(8, 8)
 texture = ExtResource("33_gvukp")
 
