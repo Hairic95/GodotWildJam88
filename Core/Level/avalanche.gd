@@ -15,10 +15,31 @@ func _ready() -> void:
 
 func on_area_entered(area):
 	if area is FrostArea and !dog_in:
+		super_snowy()
 		dog_in = true
+
+func super_snowy():
+	var tween = get_tree().create_tween()
+	tween.tween_property(%SnowShader,"material:shader_parameter/count", 2000, 2.0)
+	
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 15.0, 2.0)
+	%SnowShader.material.set_shader_parameter("slant", 0.041)
+
+	
+
+func less_snowy():
+	var tween = get_tree().create_tween()
+	tween.tween_property(%SnowShader,"material:shader_parameter/count", 300, 2.0)
+	
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 5.0, 2.0)
+	
+	%SnowShader.material.set_shader_parameter("slant", 0.062)
 
 func on_area_exit(area):
 	if area is FrostArea and dog_in:
+		less_snowy()
 		dog_in = false
 
 func _process(delta: float) -> void:

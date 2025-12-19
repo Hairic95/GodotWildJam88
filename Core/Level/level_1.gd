@@ -42,7 +42,7 @@ func _ready() -> void:
 func on_change_speed():
 	var tween = get_tree().create_tween()
 	var new_val = speed_dictionary[GameState.player_speed]
-	tween.tween_property(self, "speed_inc_val",new_val, 0.5)
+	tween.tween_property(self, "speed_inc_val",new_val, 2.0)
 
 func on_set_game_state(state: GameState.States):
 	match(state):
@@ -96,7 +96,7 @@ func _process(delta: float) -> void:
 		var converted = tile_map_layer.map_to_local(map_pos)/speed_inc_val
 		if map_pos.y%110 == 0:
 			place_obstacle(map_pos/speed_inc_val)
-		if map_pos.y%80 == 0:
+		if map_pos.y%500 == 0:
 			place_powerup(map_pos/speed_inc_val)
 
 
