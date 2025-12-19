@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_yr6fq")
-item_name = "RocksFenceHole"
+item_name = "Forest"
 item_type = 2
-alternative_tile_id = 2
+alternative_tile_id = 8
 metadata/_custom_type_script = "uid://dhew86rj3wjtq"

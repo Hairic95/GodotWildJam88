@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyvqp112xt05k" path="res://assets/textures/tree_1.png" id="2_qi1wu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upn0l"]
-size = Vector2(299, 423)
+size = Vector2(299, 207.50003)
 
 [node name="SnowTree" instance=ExtResource("1_qb3ht")]
 scale = Vector2(5, 5)
@@ -16,5 +16,6 @@ texture = ExtResource("2_qi1wu")
 offset = Vector2(-5.52, -204.205)
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(1.5999994, -206.19998)
+position = Vector2(1.5999992, -98.449974)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_upn0l")

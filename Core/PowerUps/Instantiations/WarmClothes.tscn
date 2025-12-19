@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnvym4vmvydye"]
+
+[ext_resource type="PackedScene" uid="uid://daprkc5pnpyu5" path="res://Core/PowerUps/power_up.tscn" id="1_2b6ma"]
+[ext_resource type="Texture2D" uid="uid://blhumbjqm0cmr" path="res://assets/textures/warmup_gear.png" id="2_ms8gd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbpk5"]
+radius = 85.02353
+
+[node name="WarmClothes" instance=ExtResource("1_2b6ma")]
+scale = Vector2(4, 4)
+power_type = 4
+amount = 20
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ms8gd")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_vbpk5")

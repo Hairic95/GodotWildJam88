@@ -81,7 +81,6 @@ height = 387.88406
 
 [node name="Dog" type="CharacterBody2D"]
 script = ExtResource("1_fnqva")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_26ywm")

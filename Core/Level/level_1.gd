@@ -3,6 +3,7 @@ extends Node2D
 @export var pause : bool = false
 @export var debug: bool = false
 @export var obstacle_loot_table : LootTable
+@export var power_up_loot_table : LootTable
 
 @onready var tile_map_layer: TileMapLayer = $GroundTiles
 @onready var obstacle_tiles: TileMapLayer = $ObstacleTiles
@@ -106,13 +107,15 @@ func _process(delta: float) -> void:
 func place_powerup(map_pos):
 	var center_marker = obstacle_tiles.local_to_map(%Marker2D.global_position) - Vector2i(map_pos)
 	
-	var random_x = randi_range(-30,30)
-	var power_ups = [1]
+	var power_up_arr = power_up_loot_table.item_results
 	
-	var power_up_pos = center_marker - Vector2i(random_x,-80)
-	power_up_pos = Vector2i(power_up_pos.x, abs(power_up_pos.y))
-
-	obstacle_tiles.set_cell(power_up_pos, 5,Vector2.ZERO,power_ups.pick_random())
+	
+	var random_x = randi_range(-30,30)
+	if power_up_arr.size() > 0:
+		var proper_power :Item = power_up_arr[0]
+		var power_up_pos = center_marker - Vector2i(random_x,-80)
+		power_up_pos = Vector2i(power_up_pos.x, abs(power_up_pos.y))
+		obstacle_tiles.set_cell(power_up_pos, 5,Vector2.ZERO,proper_power.alternative_tile_id)
 		
 func place_obstacle(map_pos):
 	

@@ -1,10 +1,11 @@
-[gd_scene load_steps=75 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=76 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
 [ext_resource type="Texture2D" uid="uid://b7o5ejcuk2ye1" path="res://assets/textures/tiles/tile_outer_0.png" id="2_480ue"]
 [ext_resource type="Resource" uid="uid://2xx0sbw5i066" path="res://Core/ItemsAndLoot/LootTable/ObstaclePatternLootTable/ObstaclePatternLootTable.tres" id="2_fangi"]
 [ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="2_ro1wp"]
+[ext_resource type="Resource" uid="uid://cn14own3ppdtq" path="res://Core/ItemsAndLoot/LootTable/BuffLootTable/BuffLootTable1.tres" id="3_60kn6"]
 [ext_resource type="Texture2D" uid="uid://m03ht014cy2o" path="res://assets/textures/tile_test_3.png" id="4_fqbln"]
 [ext_resource type="Texture2D" uid="uid://bu2vfb4tutdjm" path="res://assets/textures/tiles/tile_border_right.png" id="4_m5qiu"]
 [ext_resource type="Texture2D" uid="uid://cgsmkgjgo5cav" path="res://assets/textures/tiles/tile_border_top.png" id="5_hx8i2"]
@@ -30,10 +31,10 @@
 [ext_resource type="Script" uid="uid://c8jux7wwmbrkg" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
 [ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
 [ext_resource type="PackedScene" uid="uid://cguiwxt8uqtrb" path="res://Core/Obstacles/ObstaclePatterns/forest_pattern.tscn" id="19_ar7wu"]
-[ext_resource type="PackedScene" uid="uid://c1c54jm4rkrtq" path="res://Core/PowerUps/Instantiations/alcohol.tscn" id="19_gvukp"]
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
 [ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
 [ext_resource type="Texture2D" uid="uid://cfk4533jtx3ob" path="res://assets/textures/ui/health_bar_progress.png" id="22_xo5lp"]
+[ext_resource type="PackedScene" uid="uid://dnvym4vmvydye" path="res://Core/PowerUps/Instantiations/WarmClothes.tscn" id="23_3xlu8"]
 [ext_resource type="Script" uid="uid://bv337vdxcf46d" path="res://Core/Level/frost_area.gd" id="28_23ecx"]
 [ext_resource type="Script" uid="uid://dcqqye1n5yksl" path="res://Core/Level/avalanche.gd" id="28_fangi"]
 [ext_resource type="Texture2D" uid="uid://crqipajjyd1ja" path="res://assets/textures/avalache.png" id="32_kufak"]
@@ -154,7 +155,8 @@ scenes/8/scene = ExtResource("19_ar7wu")
 resource_name = "PowerUps"
 scenes/1/scene = ExtResource("7_560uh")
 scenes/2/scene = ExtResource("18_nbb1c")
-scenes/3/scene = ExtResource("19_gvukp")
+scenes/4/scene = ExtResource("23_3xlu8")
+scenes/5/scene = ExtResource("7_560uh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6e6n1"]
 texture = ExtResource("14_riabc")
@@ -322,15 +324,16 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0qhl"]
 shader = ExtResource("10_5n11m")
 shader_parameter/count = 300
-shader_parameter/slant = 0.06200000620488
+shader_parameter/slant = 0.18300001195237997
 shader_parameter/speed = 5.2430002490425
 shader_parameter/blur = 0.00450000021375
 shader_parameter/colour = Color(0.7609375, 0.7609375, 0.7609375, 1)
-shader_parameter/size = Vector2(0.04, 0.065)
+shader_parameter/size = Vector2(0.04, 0.05)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cpp6p")
 obstacle_loot_table = ExtResource("2_fangi")
+power_up_loot_table = ExtResource("3_60kn6")
 metadata/_edit_vertical_guides_ = [-59218.0]
 
 [node name="GroundTiles" type="TileMapLayer" parent="."]
@@ -535,6 +538,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -167.0
+offset_right = 358.0
+offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
 

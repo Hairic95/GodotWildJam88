@@ -21,6 +21,8 @@ var jump_height = 550
 var crunk = false
 const DRUNKENNESS = preload("uid://cnga3t5galdyp")
 
+var initial_pos 
+
 func _ready() -> void:
 	#path.global_position=  Vector2(1470, -858)
 	#path.global_position = speed_pos_0
@@ -29,6 +31,7 @@ func _ready() -> void:
 	hitbox.increase_speed.connect(on_increase_speed)
 	hitbox.get_crunk.connect(on_get_crunk)
 	GameState.stauts_complete.connect(on_status_effect_end)
+	initial_pos = position
 
 func hit_flash(dmg):
 	var tween : Tween = get_tree().create_tween()
@@ -98,6 +101,8 @@ func _process(delta: float) -> void:
 		dashing(delta)
 	else:
 		reduce_dash(delta)
+	if Input.is_action_just_pressed("jump") and !jumping:
+		jump()
 	 
 	$ShieldSprite.rotation_degrees += 100 * delta
 	for child in $ShieldSprite.get_children():
@@ -113,17 +118,28 @@ func dashing(_delta):
 		GameState.start_dashing(_delta)
 	
 func jump():
+	print("dog pos before ", position)
 	delete_collision()
 	jumping = true
+	
+	var tweensled = get_tree().create_tween()
+	
+	var sled_initial = sledge.position
+	var jump_height_pos = sled_initial + Vector2(0,-550)
+	
+	tweensled.tween_property(sledge, "position",jump_height_pos, 0.3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT)
+	 
 	var tween = get_tree().create_tween()
-
 	await tween.tween_property(self, "position", Vector2(jump_height,-jump_height), 0.3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT).finished
 	
-	var tween2 = get_tree().create_tween()
+	var tweensled2 = get_tree().create_tween()
+	tweensled2.tween_property(sledge, "position", sled_initial, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE)
 	
-	await tween2.tween_property(self, "position", Vector2(0,0), 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE).finished
+	var tween2 = get_tree().create_tween()
+	await tween2.tween_property(self, "position", initial_pos, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE).finished
 	replace_collision()
 	jumping = false
+	print("dog pos afterd  d  ", position)
 
 func replace_collision():
 	var col = PLAYER_COLLISION_SHAPE.instantiate()

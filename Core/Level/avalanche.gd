@@ -28,9 +28,7 @@ func super_snowy():
 	
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 15.0, 2.0)
-	%SnowShader.material.set_shader_parameter("slant", 0.041)
-
-	
+	%SnowShader.material.set_shader_parameter("slant", 0.183)
 
 func less_snowy():
 	var tween = get_tree().create_tween()
@@ -39,7 +37,7 @@ func less_snowy():
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 5.0, 2.0)
 	
-	%SnowShader.material.set_shader_parameter("slant", 0.062)
+	%SnowShader.material.set_shader_parameter("slant", 0.183)
 
 func on_area_exit(area):
 	if area is FrostArea and dog_in:

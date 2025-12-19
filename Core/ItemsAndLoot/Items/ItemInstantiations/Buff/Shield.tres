@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_mjqsa")
 item_name = "Shield"
+alternative_tile_id = 2
 metadata/_custom_type_script = "uid://dhew86rj3wjtq"

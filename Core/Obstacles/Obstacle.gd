@@ -7,7 +7,6 @@ class_name Obstacle
 enum Materials {Wood, Stone, Metal}
 @export var material_type : Materials
 
-
 func _ready() -> void:
 	if random_scale:
 		var random = randf_range(random_scale.x, random_scale.y)
