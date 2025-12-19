@@ -29,6 +29,9 @@ func on_replay_button_pressed():
 	get_tree().reload_current_scene()
 
 func on_change_frost(frost_level):
+	if %FrostBar.value >= 100:
+		GameState.gameOver.emit()
+		return
 	%FrostBar.value = frost_level
 
 func on_set_status_effect(_status_effect : StatusEffect):
@@ -70,7 +73,6 @@ func on_player_take_dmg(dmg):
 		GameState.gameOver.emit()
 
 func set_label_y(y):
-
 	score_label.text = str(int(abs(y)))
 
 	

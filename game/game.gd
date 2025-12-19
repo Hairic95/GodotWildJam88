@@ -1,8 +1,6 @@
 extends Node
 
 @onready var play_button: Button = $MainMenu/ColorRect/PlayButton
-
-
 @onready var level: Node2D = $Level
 @onready var main_menu: Control = $MainMenu
 
