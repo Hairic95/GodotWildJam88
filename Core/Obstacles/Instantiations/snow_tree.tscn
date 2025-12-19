@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://delemmklje244"]
+
+[ext_resource type="PackedScene" uid="uid://3754y7wssik0" path="res://Core/Obstacles/obstacle.tscn" id="1_qb3ht"]
+[ext_resource type="Texture2D" uid="uid://dyvqp112xt05k" path="res://assets/textures/tree_1.png" id="2_qi1wu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upn0l"]
+size = Vector2(299, 423)
+
+[node name="SnowTree" instance=ExtResource("1_qb3ht")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qi1wu")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-6.5, 2.5)
+shape = SubResource("RectangleShape2D_upn0l")
