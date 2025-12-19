@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=75 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://c0dh7f52keb2i" path="res://Core/Obstacles/ObstaclePatterns/yeti.tscn" id="18_ncalw"]
 [ext_resource type="Script" uid="uid://c8jux7wwmbrkg" path="res://Core/Level/ground_tiles_generator.gd" id="18_riabc"]
 [ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="18_rnlp0"]
+[ext_resource type="PackedScene" uid="uid://cguiwxt8uqtrb" path="res://Core/Obstacles/ObstaclePatterns/forest_pattern.tscn" id="19_ar7wu"]
 [ext_resource type="PackedScene" uid="uid://c1c54jm4rkrtq" path="res://Core/PowerUps/Instantiations/alcohol.tscn" id="19_gvukp"]
 [ext_resource type="Texture2D" uid="uid://u8ccwalwgclw" path="res://assets/textures/ui/health_bar_bg.png" id="20_42rlp"]
 [ext_resource type="Texture2D" uid="uid://c3hj6vcyibjqr" path="res://assets/textures/ui/health_bar_front.png" id="21_rnlp0"]
@@ -147,6 +148,7 @@ scenes/3/scene = ExtResource("14_cdrmq")
 scenes/4/scene = ExtResource("15_t1s1v")
 scenes/5/scene = ExtResource("16_nbb1c")
 scenes/7/scene = ExtResource("18_ncalw")
+scenes/8/scene = ExtResource("19_ar7wu")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5n11m"]
 resource_name = "PowerUps"
@@ -338,6 +340,7 @@ tile_set = SubResource("TileSet_ropvc")
 script = ExtResource("18_riabc")
 
 [node name="ObstacleTiles" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_ropvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -7,10 +7,14 @@
 size = Vector2(299, 423)
 
 [node name="SnowTree" instance=ExtResource("1_qb3ht")]
+scale = Vector2(5, 5)
+random_scale = Vector2(3.5, 5)
 
 [node name="Sprite2D" parent="." index="0"]
+y_sort_enabled = true
 texture = ExtResource("2_qi1wu")
+offset = Vector2(-5.52, -204.205)
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-6.5, 2.5)
+position = Vector2(1.5999994, -206.19998)
 shape = SubResource("RectangleShape2D_upn0l")
