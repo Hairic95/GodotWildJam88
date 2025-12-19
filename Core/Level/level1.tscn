@@ -521,7 +521,6 @@ offset_bottom = 11.000183
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.6, 0.6)
-value = 100.0
 texture_under = ExtResource("20_42rlp")
 texture_over = ExtResource("21_rnlp0")
 texture_progress = ExtResource("35_uqlyo")
