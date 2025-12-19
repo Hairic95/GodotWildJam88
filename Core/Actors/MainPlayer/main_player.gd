@@ -17,9 +17,7 @@ var jumping = false
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 const PLAYER_COLLISION_SHAPE = preload("uid://lhbpgu1bpmcw")
-
 var jump_height = 550
-
 var crunk = false
 const DRUNKENNESS = preload("uid://cnga3t5galdyp")
 
@@ -51,7 +49,6 @@ func on_get_crunk():
 func on_increase_speed(amount):
 	FmodServer.play_one_shot("event:/SFX/Upgrade")
 	GameState.change_speed(1)
-
 
 func on_take_dmg(amount):
 	GameState.change_speed(-1)
