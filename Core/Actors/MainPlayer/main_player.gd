@@ -51,14 +51,15 @@ func on_status_effect_end(status: StatusEffect):
 			crunk = false
 
 func on_get_crunk():
+	FmodServer.play_one_shot("event:/SFX/Alcohol")
 	crunk = true
 	set_status_effect.emit(DRUNKENNESS)
 
 func on_increase_speed(amount):
+	FmodServer.play_one_shot("event:/SFX/Upgrade")
 	var new_path_pos = null
 	if amount > 0 and speed_pos != 2:
 		speed_pos += 1
-		FmodServer.set_global_parameter_by_name("Speed",1.0)
 		match(speed_pos):
 			1:
 				new_path_pos = speed_pos_1

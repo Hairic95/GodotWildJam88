@@ -503,11 +503,6 @@ event_name = "event:/Music/MainTrack"
 event_guid = "{2516882b-bba2-4d09-b663-26cd9f19cfa8}"
 autoplay = true
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Fmod"]
-event_name = "event:/SFX/Ride"
-event_guid = "{65cf3117-05ce-4431-8854-8e4a26feec68}"
-autoplay = true
-
 [node name="FmodListener2D" type="FmodListener2D" parent="Fmod"]
 
 [node name="Marker2D" type="Marker2D" parent="."]

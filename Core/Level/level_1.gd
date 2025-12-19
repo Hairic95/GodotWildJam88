@@ -61,7 +61,7 @@ func _input(event: InputEvent) -> void:
 			
 				
 func on_game_over():
-	#FmodServer.set_global_parameter_by_name("Stage",2)
+	FmodServer.set_global_parameter_by_name("Stage",2)
 	if !debug:
 		pause = true
 

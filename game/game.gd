@@ -11,6 +11,12 @@ func _ready() -> void:
 	set_state()
 
 func on_play_button_pressed():
+	var fmod_event = FmodEvent
+	FmodServer.set_global_parameter_by_name("Stage",1)
+	fmod_event =FmodServer.create_event_instance("event:/SFX/Ride")
+	#fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
+	fmod_event.start()
+	fmod_event.release()
 	GameState.change_state_to(GameState.States.Game)
 	set_state()
 
