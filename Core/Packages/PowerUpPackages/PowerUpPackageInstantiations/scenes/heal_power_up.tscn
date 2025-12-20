@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://qoco88rr8v17"]
+
+[ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_t6kg0"]
+[ext_resource type="Resource" uid="uid://4nmak1mn5g8a" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/heal_power_up_res.tres" id="2_vr1gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6kg0"]
+size = Vector2(106.814835, 69.63009)
+
+[node name="HealPowerUp" instance=ExtResource("1_t6kg0")]
+scale = Vector2(5, 5)
+package_resource = ExtResource("2_vr1gh")
+
+[node name="PackageArea" parent="." index="3" groups=["PowerUp"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PackageArea" index="0"]
+position = Vector2(0.25305092, 1.0560994)
+rotation = 0.21816616
+shape = SubResource("RectangleShape2D_t6kg0")

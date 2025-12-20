@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b038xil7kovth"]
+
+[ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_dy26l"]
+[ext_resource type="Resource" uid="uid://bajefwshditvx" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/warm_power_up_res.tres" id="2_osggb"]
+[ext_resource type="Texture2D" uid="uid://blhumbjqm0cmr" path="res://assets/textures/warmup_gear.png" id="3_hm2fd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dr3tc"]
+radius = 76.15773
+
+[node name="WarmPowerUp" instance=ExtResource("1_dy26l")]
+scale = Vector2(5, 5)
+package_resource = ExtResource("2_osggb")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_hm2fd")
+
+[node name="PackageArea" parent="." index="3" groups=["PowerUp"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PackageArea" index="0"]
+shape = SubResource("CircleShape2D_dr3tc")

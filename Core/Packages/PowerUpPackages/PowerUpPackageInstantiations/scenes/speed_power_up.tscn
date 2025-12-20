@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3jbxtm7jia0"]
+
+[ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_lbbak"]
+[ext_resource type="Resource" uid="uid://7yne2j4c56pw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/speed_power_up_res.tres" id="2_n0ch4"]
+[ext_resource type="Texture2D" uid="uid://cp4ucbu2pohvp" path="res://assets/textures/monster_energy.png" id="3_57w05"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fyxrh"]
+radius = 33.152435
+height = 176.2283
+
+[node name="SpeedPowerUp" instance=ExtResource("1_lbbak")]
+scale = Vector2(5, 5)
+package_resource = ExtResource("2_n0ch4")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_57w05")
+
+[node name="PackageArea" parent="." index="3" groups=["PowerUp"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PackageArea" index="0"]
+rotation = 0.6963864
+shape = SubResource("CapsuleShape2D_fyxrh")
