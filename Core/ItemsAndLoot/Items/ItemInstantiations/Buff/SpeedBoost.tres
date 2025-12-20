@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_n4sqo")
 item_name = "Speed Boost"
+alternative_tile_id = 1
 metadata/_custom_type_script = "uid://dhew86rj3wjtq"

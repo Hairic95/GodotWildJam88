@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dstdu8701nytv" path="res://assets/textures/actual_rock.png" id="2_ee0f7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbkmm"]
-radius = 49.10975
-height = 272.04367
+radius = 173.2785
+height = 346.557
 
 [node name="Rock" instance=ExtResource("1_ee0f7")]
 damage = 20
+random_scale = Vector2(0.5, 2)
 material_type = 1
 
 [node name="Sprite2D" parent="." index="0"]
@@ -17,6 +18,6 @@ scale = Vector2(1.9243698, 1.9243698)
 texture = ExtResource("2_ee0f7")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(3, 45)
+position = Vector2(3, -45)
 rotation = 1.5358897
 shape = SubResource("CapsuleShape2D_gbkmm")

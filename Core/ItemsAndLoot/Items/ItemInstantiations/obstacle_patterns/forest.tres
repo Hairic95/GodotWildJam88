@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bl5k7hf8fqtnk"]
+
+[ext_resource type="Script" uid="uid://dhew86rj3wjtq" path="res://Core/ItemsAndLoot/Items/items.gd" id="1_yr6fq"]
+
+[resource]
+script = ExtResource("1_yr6fq")
+item_name = "Forest"
+item_type = 2
+alternative_tile_id = 8
+metadata/_custom_type_script = "uid://dhew86rj3wjtq"

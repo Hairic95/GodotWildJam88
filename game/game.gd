@@ -1,8 +1,6 @@
 extends Node
 
 @onready var play_button: Button = $MainMenu/ColorRect/PlayButton
-
-
 @onready var level: Node2D = $Level
 @onready var main_menu: Control = $MainMenu
 
@@ -23,9 +21,15 @@ func on_play_button_pressed():
 func set_state():
 	match(GameState.starting_state):
 		GameState.States.MainMenu:
-			FmodServer.set_global_parameter_by_name("Stage",0.0)
+			#FmodServer.set_global_parameter_by_name("Stage",0.0)
 			main_menu.show()
 			level.hide()
 		GameState.States.Game:
 			level.show()
 			main_menu.hide()
+			var fmod_event = FmodEvent
+			FmodServer.set_global_parameter_by_name("Stage",1)
+			fmod_event =FmodServer.create_event_instance("event:/SFX/Ride")
+			#fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
+			fmod_event.start()
+			fmod_event.release()

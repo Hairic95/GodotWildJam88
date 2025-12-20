@@ -3,6 +3,7 @@ extends Node2D
 @export var pause : bool = false
 @export var debug: bool = false
 @export var obstacle_loot_table : LootTable
+@export var power_up_loot_table : LootTable
 
 @onready var tile_map_layer: TileMapLayer = $GroundTiles
 @onready var obstacle_tiles: TileMapLayer = $ObstacleTiles
@@ -38,11 +39,24 @@ func _ready() -> void:
 	GameState.set_game_state.connect(on_set_game_state)
 	on_set_game_state(GameState.starting_state)
 	GameState.change_speed_amount.connect(on_change_speed)
+	%GameSpeedTimer.timeout.connect(on_timer_timeout)
+
+func on_timer_timeout():
+	print("increasing speed")
+	for key in speed_dictionary.keys():
+		speed_dictionary[key] = speed_dictionary[key] -0.05
+	
+	var new_val = speed_dictionary[GameState.player_speed]
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "speed_inc_val",speed_dictionary[GameState.player_speed], 2.0).set_ease(Tween.EASE_IN_OUT)
+	
+	
+	print(speed_dictionary)
 
 func on_change_speed():
 	var tween = get_tree().create_tween()
 	var new_val = speed_dictionary[GameState.player_speed]
-	tween.tween_property(self, "speed_inc_val",new_val, 2.0)
+	tween.tween_property(self, "speed_inc_val",new_val, 2.0).set_ease(Tween.EASE_IN_OUT)
 
 func on_set_game_state(state: GameState.States):
 	match(state):
@@ -52,6 +66,7 @@ func on_set_game_state(state: GameState.States):
 			camera_2d.enabled = false
 			
 		GameState.States.Game:
+			%GameSpeedTimer.start()
 			pause = false
 			ui.show()
 			camera_2d.enabled = true
@@ -94,9 +109,10 @@ func _process(delta: float) -> void:
 		starting_tile_position = map_pos 
 
 		var converted = tile_map_layer.map_to_local(map_pos)/speed_inc_val
+
 		if map_pos.y%110 == 0:
 			place_obstacle(map_pos/speed_inc_val)
-		if map_pos.y%500 == 0:
+		if map_pos.y%50 == 0:
 			place_powerup(map_pos/speed_inc_val)
 
 
@@ -106,13 +122,15 @@ func _process(delta: float) -> void:
 func place_powerup(map_pos):
 	var center_marker = obstacle_tiles.local_to_map(%Marker2D.global_position) - Vector2i(map_pos)
 	
-	var random_x = randi_range(-30,30)
-	var power_ups = [1]
+	var power_up_arr = power_up_loot_table.item_results
 	
-	var power_up_pos = center_marker - Vector2i(random_x,-80)
-	power_up_pos = Vector2i(power_up_pos.x, abs(power_up_pos.y))
-
-	obstacle_tiles.set_cell(power_up_pos, 5,Vector2.ZERO,power_ups.pick_random())
+	
+	var random_x = randi_range(-30,30)
+	if power_up_arr.size() > 0:
+		var proper_power :Item = power_up_arr[0]
+		var power_up_pos = center_marker - Vector2i(random_x,-100)
+		power_up_pos = Vector2i(power_up_pos.x, abs(power_up_pos.y))
+		obstacle_tiles.set_cell(power_up_pos, 5,Vector2.ZERO,proper_power.alternative_tile_id)
 		
 func place_obstacle(map_pos):
 	
@@ -121,7 +139,7 @@ func place_obstacle(map_pos):
 	var obstacles_arr = obstacle_loot_table.item_results
 	if obstacles_arr.size() > 0:
 		var proper_obstacle :Item = obstacles_arr[0]
-		var obstacle_pos = center_marker - Vector2i(0,-80)
+		var obstacle_pos = center_marker - Vector2i(0,-100)
 		obstacle_pos = Vector2i(obstacle_pos.x, abs(obstacle_pos.y))
 		obstacle_tiles.set_cell(obstacle_pos, 4,Vector2.ZERO,proper_obstacle.alternative_tile_id)
 	else:

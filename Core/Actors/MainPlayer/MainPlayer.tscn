@@ -81,7 +81,6 @@ height = 387.88406
 
 [node name="Dog" type="CharacterBody2D"]
 script = ExtResource("1_fnqva")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_26ywm")
@@ -89,9 +88,10 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_2idbo")
 autoplay = "default"
 frame_progress = 0.60864896
+offset = Vector2(0, -43.715)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-25.32713, 5.0450745)
+position = Vector2(115.999985, -11.999996)
 rotation = -1.6406095
 shape = SubResource("CapsuleShape2D_fnqva")
 
@@ -102,6 +102,8 @@ script = ExtResource("3_df6y1")
 script = ExtResource("4_tbjs4")
 
 [node name="CollisionShape2D" parent="Hitbox" instance=ExtResource("5_xswx7")]
+position = Vector2(26.000004, -110.000015)
+rotation = -1.1728612
 shape = SubResource("CapsuleShape2D_xswx7")
 
 [node name="IframeTimer" type="Timer" parent="Hitbox"]

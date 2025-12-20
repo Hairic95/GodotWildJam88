@@ -13,6 +13,7 @@ func _ready() -> void:
 	avalanche_area_2d.area_entered.connect(on_area_entered)
 	avalanche_area_2d.area_exited.connect(on_area_exit)
 	GameState.decrease_frost.connect(on_decrease_frost)
+	less_snowy()
 
 func on_decrease_frost(amount):
 	frost_meter -= amount
@@ -28,9 +29,7 @@ func super_snowy():
 	
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 15.0, 2.0)
-	%SnowShader.material.set_shader_parameter("slant", 0.041)
-
-	
+	%SnowShader.material.set_shader_parameter("slant", 0.183)
 
 func less_snowy():
 	var tween = get_tree().create_tween()
@@ -39,7 +38,7 @@ func less_snowy():
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 5.0, 2.0)
 	
-	%SnowShader.material.set_shader_parameter("slant", 0.062)
+	%SnowShader.material.set_shader_parameter("slant", 0.183)
 
 func on_area_exit(area):
 	if area is FrostArea and dog_in:
@@ -51,7 +50,6 @@ func _process(delta: float) -> void:
 		frost_meter += delta * 8
 		change_frost.emit(frost_meter)
 		
-		print("frost meter ", frost_meter)
 func on_change_speed():
 	var new_progress_ratio 
 	if GameState.player_speed < 0:

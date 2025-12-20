@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dex5cmouecpsm"]
+
+[ext_resource type="Script" uid="uid://dhew86rj3wjtq" path="res://Core/ItemsAndLoot/Items/items.gd" id="1_oq8cg"]
+
+[resource]
+script = ExtResource("1_oq8cg")
+item_name = "Yeti"
+item_type = 2
+alternative_tile_id = 7
+rarity = 1
+metadata/_custom_type_script = "uid://dhew86rj3wjtq"

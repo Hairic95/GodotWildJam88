@@ -1,0 +1,154 @@
+[gd_scene load_steps=20 format=3 uid="uid://hj8a032o00v8"]
+
+[ext_resource type="Script" uid="uid://cqm0m6k1lx6ji" path="res://Core/Actors/MainPlayer/main_player.gd" id="1_fnqva"]
+[ext_resource type="Shader" uid="uid://1d5st4ofdu8w" path="res://VFX/hit_flash_shader.gdshader" id="2_vmln1"]
+[ext_resource type="Texture2D" uid="uid://kdeosq14vhv4" path="res://assets/textures/dog test anim low res.png" id="2_xswx7"]
+[ext_resource type="Script" uid="uid://cghgey8wh0h31" path="res://Core/Actors/General/health_manager.gd" id="3_df6y1"]
+[ext_resource type="Script" uid="uid://d3peys55q8tes" path="res://Core/Actors/General/hitbox.gd" id="4_tbjs4"]
+[ext_resource type="PackedScene" uid="uid://lhbpgu1bpmcw" path="res://Core/Actors/MainPlayer/playerCollisionShape.tscn" id="5_xswx7"]
+[ext_resource type="Texture2D" uid="uid://dx26qd3egsesg" path="res://assets/textures/Shield/shield.png" id="6_3bxq0"]
+[ext_resource type="Texture2D" uid="uid://chulp65b4tqvg" path="res://assets/textures/Shield/shield_icon.png" id="8_26ywm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_26ywm"]
+resource_local_to_scene = true
+shader = ExtResource("2_vmln1")
+shader_parameter/active = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bxq0"]
+atlas = ExtResource("2_xswx7")
+region = Rect2(0, 0, 200, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmln1"]
+atlas = ExtResource("2_xswx7")
+region = Rect2(200, 0, 200, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26ywm"]
+atlas = ExtResource("2_xswx7")
+region = Rect2(400, 0, 200, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gevsh"]
+atlas = ExtResource("2_xswx7")
+region = Rect2(600, 0, 200, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2idbo"]
+atlas = ExtResource("2_xswx7")
+region = Rect2(800, 0, 200, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vs8p"]
+atlas = ExtResource("2_xswx7")
+region = Rect2(1000, 0, 200, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7uth"]
+atlas = ExtResource("2_xswx7")
+region = Rect2(1200, 0, 200, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2idbo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bxq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmln1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26ywm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gevsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2idbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vs8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7uth")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fnqva"]
+radius = 24.312906
+height = 154.9814
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xswx7"]
+radius = 103.403725
+height = 387.88406
+
+[node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_fnqva")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_26ywm")
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_2idbo")
+autoplay = "default"
+frame_progress = 0.60864896
+offset = Vector2(0, -43.715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(115.999985, -11.999996)
+rotation = -1.6406095
+shape = SubResource("CapsuleShape2D_fnqva")
+
+[node name="HealthManager" type="Node2D" parent="."]
+script = ExtResource("3_df6y1")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("4_tbjs4")
+
+[node name="CollisionShape2D" parent="Hitbox" instance=ExtResource("5_xswx7")]
+position = Vector2(26.000004, -110.000015)
+rotation = -1.1728612
+shape = SubResource("CapsuleShape2D_xswx7")
+
+[node name="IframeTimer" type="Timer" parent="Hitbox"]
+wait_time = 0.3
+one_shot = true
+
+[node name="DashTimer" type="Timer" parent="."]
+
+[node name="ShieldSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+scale = Vector2(4.93, 4.93)
+texture = ExtResource("6_3bxq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShieldSprite"]
+position = Vector2(0, -78.09331)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_26ywm")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ShieldSprite"]
+position = Vector2(0, 82.35295)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_26ywm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ShieldSprite"]
+position = Vector2(76.06491, -30.020279)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_26ywm")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ShieldSprite"]
+position = Vector2(-77.89047, -30.020279)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_26ywm")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ShieldSprite"]
+position = Vector2(76.06491, 43.58509)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_26ywm")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ShieldSprite"]
+position = Vector2(-77.89047, 43.58509)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_26ywm")
+
+[node name="LeashPosition" type="Marker2D" parent="."]
+position = Vector2(127, 6)
+gizmo_extents = 130.8

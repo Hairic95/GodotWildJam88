@@ -24,6 +24,7 @@ func hurt(damage_amount : int):
 		dead = true
 		died.emit()
 	health_updated.emit(cur_health, max_health)
+	print("health ", cur_health)
 
 func heal(heal_amnt: int):
 	if dead:
