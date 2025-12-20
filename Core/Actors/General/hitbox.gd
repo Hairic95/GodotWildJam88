@@ -36,34 +36,39 @@ func on_area_entered(area):
 			var obstacle : Obstacle = area
 			play_material_sound(obstacle)
 			health_manager.hurt(0)
-			#FmodServer.set_global_parameter_by_name("Shielded",0)
 			
 			shield_on = false
 			%ShieldSprite.hide()
+		FmodServer.play_one_shot("event:/SFX/Bumps")
 	if area is PowerUps:
 		match(area.power_type):
 			PowerUps.PowerUpTypes.Speed:
 				increase_speed.emit(area.amount)
-				FmodServer.play_one_shot("event:/SFX/Upgrade")
+				FmodServer.set_global_parameter_by_name("Pups",1)
+				#FmodServer.play_one_shot("event:/SFX/Upgrade")
 			PowerUps.PowerUpTypes.Shield:
 				%ShieldSprite.show()
-				FmodServer.play_one_shot("event:/SFX/Shield")
-				#FmodServer.set_global_parameter_by_name("Shielded",1)
 				shield_on = true
+				FmodServer.set_global_parameter_by_name("Pups",0)
+				#FmodServer.play_one_shot("event:/SFX/Shield")
 			PowerUps.PowerUpTypes.Alcohol:
-				FmodServer.play_one_shot("event:/SFX/Alcohol")
+				#FmodServer.play_one_shot("event:/SFX/Alcohol")
 				get_crunk.emit()
 			PowerUps.PowerUpTypes.WarmClothes:
-				FmodServer.play_one_shot("event:/SFX/Upgrade")
+				FmodServer.set_global_parameter_by_name("Pups",2)
+				#FmodServer.play_one_shot("event:/SFX/Upgrade")
 				GameState.decrease_frost.emit(area.amount)
+		FmodServer.play_one_shot("event:/SFX/Pups")
 	if area is PowerUps or area is Obstacle:
 		area.queue_free()
 
 func play_material_sound(obstacle):	
 	match(obstacle.material_type):
 		obstacle.Materials.Wood:
-			FmodServer.play_one_shot("event:/SFX/Hit_wood")
+			FmodServer.set_global_parameter_by_name("Bumps",0)
+			#FmodServer.play_one_shot("event:/SFX/Hit_wood")
 		obstacle.Materials.Stone:
-			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+			FmodServer.set_global_parameter_by_name("Bumps",1)
+			#FmodServer.play_one_shot("event:/SFX/Hit_stone")
 		obstacle.Materials.Metal:
 			FmodServer.play_one_shot("event:/SFX/Hit_stone")
