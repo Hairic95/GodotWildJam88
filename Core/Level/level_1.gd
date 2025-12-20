@@ -43,9 +43,8 @@ func _ready() -> void:
 	%GameSpeedTimer.timeout.connect(on_timer_timeout)
 
 func on_timer_timeout():
-	print("increasing speed")
 	for key in speed_dictionary.keys():
-		speed_dictionary[key] = speed_dictionary[key] -0.05
+		speed_dictionary[key] = speed_dictionary[key] -0.1
 	
 	var new_val = speed_dictionary[GameState.player_speed]
 	var tween = get_tree().create_tween()
@@ -113,14 +112,12 @@ func _process(delta: float) -> void:
 
 		if map_pos.y%110 == 0:
 			place_obstacle(map_pos/speed_inc_val)
-		if map_pos.y%50 == 0:
+		if map_pos.y%500 == 0:
 			place_powerup(map_pos/speed_inc_val)
-		if map_pos.y%100 == 0:
+		if map_pos.y%200 == 0:
 			place_trees(map_pos/speed_inc_val)
 
-
 		obstacle_tiles.global_position = converted
-
 
 func place_powerup(map_pos):
 	var center_marker = obstacle_tiles.local_to_map(%Marker2D.global_position) - Vector2i(map_pos)
@@ -152,7 +149,7 @@ func place_trees(map_pos):
 	var center_marker = obstacle_tiles.local_to_map(%Marker2D.global_position) - Vector2i(map_pos)
 	var folliage_arr = folliage_loot_table.item_results
 	
-	var x1 = -44
+	var x1 = -50
 	var x2 = 55
 	if folliage_arr.size() > 1:
 		var proper_folliage1 :Item = folliage_arr[0]

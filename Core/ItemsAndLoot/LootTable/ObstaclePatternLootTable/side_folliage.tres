@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=5 format=3 uid="uid://ba7nlfsoi4d4o"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=7 format=3 uid="uid://ba7nlfsoi4d4o"]
 
 [ext_resource type="Script" uid="uid://c5ro3gr3ihoa0" path="res://Core/ItemsAndLoot/LootTable/LootObject.gd" id="1_6khhw"]
 [ext_resource type="Script" uid="uid://dfjhjahglsj8h" path="res://Core/ItemsAndLoot/LootTable/LootTable.gd" id="2_btdyt"]
 [ext_resource type="Resource" uid="uid://u0umc2q26ijf" path="res://Core/Obstacles/folliage/res/folliage_1.tres" id="2_bxon4"]
 [ext_resource type="Resource" uid="uid://cdm43kd8bqn5u" path="res://Core/Obstacles/folliage/res/folliage_2.tres" id="3_wtqsx"]
+[ext_resource type="Resource" uid="uid://cogqxqampv73u" path="res://Core/Obstacles/folliage/res/folliage_3.tres" id="4_cokod"]
+[ext_resource type="Resource" uid="uid://uh07a67pvmyi" path="res://Core/Obstacles/folliage/res/folliage_4.tres" id="5_iciyg"]
 
 [resource]
 script = ExtResource("2_btdyt")
 item_drop_count = 2
-item_list = Array[ExtResource("1_6khhw")]([ExtResource("2_bxon4"), ExtResource("3_wtqsx")])
+item_list = Array[ExtResource("1_6khhw")]([ExtResource("2_bxon4"), ExtResource("3_wtqsx"), ExtResource("4_cokod"), ExtResource("5_iciyg")])
 metadata/_custom_type_script = "uid://dfjhjahglsj8h"
