@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://t4asulrv2tto"]
+[gd_scene load_steps=4 format=3 uid="uid://t4asulrv2tto"]
 
 [ext_resource type="Script" uid="uid://4a7pu7pq6lqf" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://d3ksey2fw1u7v" path="res://Core/Level/level1.tscn" id="1_vasa2"]
+[ext_resource type="Texture2D" uid="uid://c5mdtr1xanln7" path="res://assets/textures/main menu.png" id="2_h7iqs"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -20,27 +21,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+[node name="ColorRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="MainMenu/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -394.0
-offset_right = 394.0
-offset_bottom = 202.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.069557846, 0.93728065, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Avalanche Run"
-horizontal_alignment = 1
+texture = ExtResource("2_h7iqs")
 
 [node name="PlayButton" type="Button" parent="MainMenu/ColorRect"]
 layout_mode = 1
@@ -49,13 +37,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -209.5
-offset_top = -40.75
-offset_right = 209.5
-offset_bottom = 40.75
+offset_left = -693.0
+offset_top = 91.0
+offset_right = -274.0
+offset_bottom = 172.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "play"
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="MainMenu/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -693.0
+offset_top = 181.0
+offset_right = -274.0
+offset_bottom = 262.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
 
 [node name="Level" parent="." instance=ExtResource("1_vasa2")]
 visible = false
+
+[connection signal="pressed" from="MainMenu/ColorRect/QuitButton" to="." method="_on_quit_button_pressed"]

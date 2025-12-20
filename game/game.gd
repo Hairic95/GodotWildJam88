@@ -33,3 +33,7 @@ func set_state():
 			#fmod_event =FmodServer.create_event_instance("event:/Music/MainTrack")
 			fmod_event.start()
 			fmod_event.release()
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
