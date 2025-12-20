@@ -7,7 +7,9 @@
 radius = 106.004715
 
 [node name="rock2" instance=ExtResource("1_w3nkb")]
+damage = 20
 random_scale = Vector2(3, 4.4)
+material_type = 1
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_w3nkb")

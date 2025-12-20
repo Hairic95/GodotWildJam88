@@ -24,31 +24,20 @@ func disable_i_frame():
 	invicibilty_frame = false
 
 func on_area_entered(area):
-	print("area ",area.name)
 	if area is Obstacle:
 		
 		if !invicibilty_frame and !shield_on:
 			var obstacle : Obstacle = area
+			play_material_sound(obstacle)
 			health_manager.hurt(obstacle.damage)
 			#determines what sound to use
-			match(obstacle.material_type):
-				obstacle.Materials.Wood:
-					FmodServer.play_one_shot("event:/SFX/Hit_wood")
-				obstacle.Materials.Stone:
-					FmodServer.play_one_shot("event:/SFX/Hit_stone")
-				obstacle.Materials.Metal:
-					FmodServer.play_one_shot("event:/SFX/Hit_stone")
+
 		if shield_on:
-			health_manager.hurt(0)
-			FmodServer.set_global_parameter_by_name("Shielded",0)
 			var obstacle : Obstacle = area
-			match(obstacle.material_type):
-				obstacle.Materials.Wood:
-					FmodServer.play_one_shot("event:/SFX/Hit_wood")
-				obstacle.Materials.Stone:
-					FmodServer.play_one_shot("event:/SFX/Hit_stone")
-				obstacle.Materials.Metal:
-					FmodServer.play_one_shot("event:/SFX/Hit_stone")
+			play_material_sound(obstacle)
+			health_manager.hurt(0)
+			#FmodServer.set_global_parameter_by_name("Shielded",0)
+			
 			shield_on = false
 			%ShieldSprite.hide()
 	if area is PowerUps:
@@ -59,7 +48,7 @@ func on_area_entered(area):
 			PowerUps.PowerUpTypes.Shield:
 				%ShieldSprite.show()
 				FmodServer.play_one_shot("event:/SFX/Shield")
-				FmodServer.set_global_parameter_by_name("Shielded",1)
+				#FmodServer.set_global_parameter_by_name("Shielded",1)
 				shield_on = true
 			PowerUps.PowerUpTypes.Alcohol:
 				FmodServer.play_one_shot("event:/SFX/Alcohol")
@@ -70,4 +59,11 @@ func on_area_entered(area):
 	if area is PowerUps or area is Obstacle:
 		area.queue_free()
 
-				
+func play_material_sound(obstacle):	
+	match(obstacle.material_type):
+		obstacle.Materials.Wood:
+			FmodServer.play_one_shot("event:/SFX/Hit_wood")
+		obstacle.Materials.Stone:
+			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+		obstacle.Materials.Metal:
+			FmodServer.play_one_shot("event:/SFX/Hit_stone")

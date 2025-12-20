@@ -50,7 +50,6 @@ func _process(delta: float) -> void:
 		frost_meter += delta * 8
 		change_frost.emit(frost_meter)
 		
-		print("frost meter ", frost_meter)
 func on_change_speed():
 	var new_progress_ratio 
 	if GameState.player_speed < 0:

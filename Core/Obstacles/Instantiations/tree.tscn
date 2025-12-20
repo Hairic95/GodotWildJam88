@@ -9,6 +9,7 @@ size = Vector2(128.75, 93.5)
 [node name="Tree" instance=ExtResource("1_kknk0")]
 y_sort_enabled = true
 scale = Vector2(4, 4)
+damage = 10
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_ohih5")

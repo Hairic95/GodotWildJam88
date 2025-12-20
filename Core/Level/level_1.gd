@@ -112,7 +112,7 @@ func _process(delta: float) -> void:
 
 		if map_pos.y%110 == 0:
 			place_obstacle(map_pos/speed_inc_val)
-		if map_pos.y%500 == 0:
+		if map_pos.y%50 == 0:
 			place_powerup(map_pos/speed_inc_val)
 
 
