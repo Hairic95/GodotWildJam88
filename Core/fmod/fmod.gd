@@ -10,10 +10,10 @@ func _ready() -> void:
 		fmod_event =FmodServer.create_event_instance_with_guid("{2516882b-bba2-4d09-b663-26cd9f19cfa8}")
 		fmod_event.start()
 		fmod_event.release()
+		fmod_event.volume = 0.0
 	GameState.change_speed_amount.connect(on_change_speed)
 
 func on_change_speed():
-	
 	match(GameState.player_speed):
 		0:
 			FmodServer.set_global_parameter_by_name("Speed",1.0)

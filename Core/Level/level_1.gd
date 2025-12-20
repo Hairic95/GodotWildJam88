@@ -4,6 +4,7 @@ extends Node2D
 @export var debug: bool = false
 @export var obstacle_loot_table : LootTable
 @export var power_up_loot_table : LootTable
+@export var folliage_loot_table : LootTable
 
 @onready var tile_map_layer: TileMapLayer = $GroundTiles
 @onready var obstacle_tiles: TileMapLayer = $ObstacleTiles
@@ -114,6 +115,8 @@ func _process(delta: float) -> void:
 			place_obstacle(map_pos/speed_inc_val)
 		if map_pos.y%50 == 0:
 			place_powerup(map_pos/speed_inc_val)
+		if map_pos.y%100 == 0:
+			place_trees(map_pos/speed_inc_val)
 
 
 		obstacle_tiles.global_position = converted
@@ -123,7 +126,6 @@ func place_powerup(map_pos):
 	var center_marker = obstacle_tiles.local_to_map(%Marker2D.global_position) - Vector2i(map_pos)
 	
 	var power_up_arr = power_up_loot_table.item_results
-	
 	
 	var random_x = randi_range(-30,30)
 	if power_up_arr.size() > 0:
@@ -144,3 +146,26 @@ func place_obstacle(map_pos):
 		obstacle_tiles.set_cell(obstacle_pos, 4,Vector2.ZERO,proper_obstacle.alternative_tile_id)
 	else:
 		push_error("obstacle arr empty loot object")
+
+func place_trees(map_pos):
+	
+	var center_marker = obstacle_tiles.local_to_map(%Marker2D.global_position) - Vector2i(map_pos)
+	var folliage_arr = folliage_loot_table.item_results
+	
+	var x1 = -44
+	var x2 = 55
+	if folliage_arr.size() > 1:
+		var proper_folliage1 :Item = folliage_arr[0]
+		var proper_folliage2 :Item = folliage_arr[1]
+		
+		var folliage_pos = center_marker - Vector2i(x1,-200)
+		folliage_pos = Vector2i(folliage_pos.x, abs(folliage_pos.y))
+		
+		var folliage_pos_2 = center_marker - Vector2i(x2,-200)
+		folliage_pos_2 = Vector2i(folliage_pos_2.x, abs(folliage_pos_2.y))
+		
+		obstacle_tiles.set_cell(folliage_pos, 16,Vector2.ZERO,proper_folliage1.alternative_tile_id)
+		obstacle_tiles.set_cell(folliage_pos_2, 16,Vector2.ZERO,proper_folliage2.alternative_tile_id)
+	else:
+		push_error("obstacle arr empty loot object")
+	

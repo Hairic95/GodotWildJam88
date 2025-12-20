@@ -1,5 +1,6 @@
 extends Area2D
 class_name Obstacle
+const rock_texture_1 = preload("uid://dstdu8701nytv")
 
 var rock_texture_2 = preload("res://assets/textures/actual_rock_2.png")
 var rock_texture_3 = preload("res://assets/textures/actual_rock_3.png")
@@ -17,6 +18,8 @@ func _ready() -> void:
 				$Sprite2D.texture = rock_texture_2
 			2:
 				$Sprite2D.texture = rock_texture_3
+			0:
+				$Sprite2D.texture = rock_texture_1
 			
 	if random_scale:
 		var random = randf_range(random_scale.x, random_scale.y)

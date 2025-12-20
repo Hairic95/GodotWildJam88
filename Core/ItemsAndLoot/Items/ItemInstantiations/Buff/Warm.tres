@@ -6,4 +6,5 @@
 script = ExtResource("1_f411y")
 item_name = "WarmClothes"
 alternative_tile_id = 4
+rarity = 2
 metadata/_custom_type_script = "uid://dhew86rj3wjtq"
