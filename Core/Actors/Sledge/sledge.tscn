@@ -15,22 +15,23 @@ script = ExtResource("1_c1fxy")
 position = Vector2(-272.99997, -15)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_c1fxy")
-offset = Vector2(14.85714, 10.571428)
+offset = Vector2(60.987, -42.579)
 hframes = 3
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-337, 84)
+position = Vector2(-184, -94.5)
 shape = SubResource("CircleShape2D_rnlp0")
 
 [node name="Arms" type="Sprite2D" parent="."]
-position = Vector2(-275, -11)
+position = Vector2(-122.000015, -189.49998)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("3_4crxa")
 offset = Vector2(14.285721, 12.571428)
 
 [node name="Line2D" type="Line2D" parent="."]
-position = Vector2(-150, 71)
+z_index = 1
+position = Vector2(2.9999847, -107.499985)
 scale = Vector2(3.5, 3.5)
 points = PackedVector2Array(0, 0, 184.2857, 69.428566)
 width = 8.0

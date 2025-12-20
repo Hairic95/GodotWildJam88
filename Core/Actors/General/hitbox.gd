@@ -24,6 +24,7 @@ func disable_i_frame():
 	invicibilty_frame = false
 
 func on_area_entered(area):
+	print("area ",area.name)
 	if area is Obstacle:
 		
 		if !invicibilty_frame and !shield_on:
@@ -39,6 +40,7 @@ func on_area_entered(area):
 					FmodServer.play_one_shot("event:/SFX/Hit_stone")
 		if shield_on:
 			health_manager.hurt(0)
+			FmodServer.set_global_parameter_by_name("Shielded",0)
 			var obstacle : Obstacle = area
 			match(obstacle.material_type):
 				obstacle.Materials.Wood:
