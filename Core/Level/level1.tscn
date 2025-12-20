@@ -697,3 +697,4 @@ autoplay = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(7421, 2506)
