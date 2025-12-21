@@ -44,7 +44,6 @@ func on_hit_obstacle(obstacle_resource : Obstacle):
 		health_manager.hurt(obstacle_resource.damage)
 	if shield_on:
 		health_manager.hurt(0)
-		FmodServer.set_global_parameter_by_name("Shielded",0)
 		shield_on = false
 		%ShieldSprite.hide()
 	
@@ -55,7 +54,7 @@ func play_obstacle_hit_sound(obstacle_resource : Obstacle):
 		obstacle_resource.Materials.Stone:
 			FmodServer.set_global_parameter_by_name("Bumps",1)
 		obstacle_resource.Materials.Metal:
-			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+			FmodServer.set_global_parameter_by_name("Bumps",1)
 	FmodServer.play_one_shot("event:/SFX/Bumps")
 
 func delete_area(package_node):
