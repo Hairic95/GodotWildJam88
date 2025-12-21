@@ -45,6 +45,10 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 import/blender/enabled=false
 
+[global_group]
+
+PowerUp=""
+
 [input]
 
 ui_left={

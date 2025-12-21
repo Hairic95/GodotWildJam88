@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PowerUp" load_steps=2 format=3 uid="uid://bajefwshditvx"]
+
+[ext_resource type="Script" uid="uid://cv545e2frii50" path="res://Core/Packages/PowerUpPackages/PowerUpResource.gd" id="1_wcg1f"]
+
+[resource]
+script = ExtResource("1_wcg1f")
+power_up_types = 4
+amount = 25
+array_ind = 3
+rarity = 1
+metadata/_custom_type_script = "uid://cv545e2frii50"

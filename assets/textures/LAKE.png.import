@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yy6oll5h0nya"
-path="res://.godot/imported/rock.png-4414553b1441c7eab60f78bb4079c903.ctex"
+uid="uid://dy8y8wfruf8wg"
+path="res://.godot/imported/LAKE.png-d859c3f489f8d933b9cddbb4d5d4c500.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/rock.png"
-dest_files=["res://.godot/imported/rock.png-4414553b1441c7eab60f78bb4079c903.ctex"]
+source_file="res://assets/textures/LAKE.png"
+dest_files=["res://.godot/imported/LAKE.png-d859c3f489f8d933b9cddbb4d5d4c500.ctex"]
 
 [params]
 

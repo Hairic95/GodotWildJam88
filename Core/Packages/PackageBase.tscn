@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw87sxiqvtey2"]
+
+[ext_resource type="Script" uid="uid://c6w2otrba11p0" path="res://Core/Packages/package_base.gd" id="1_gsxc6"]
+[ext_resource type="PackedScene" uid="uid://daprkc5pnpyu5" path="res://Core/PowerUps/power_up.tscn" id="3_5y7ai"]
+[ext_resource type="Texture2D" uid="uid://bhvr8axan1epr" path="res://assets/textures/heal_item.png" id="3_m5hf2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlsrl"]
+radius = 1.0
+
+[node name="PackageBase" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_gsxc6")
+
+[node name="CollisionBodyShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xlsrl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_m5hf2")
+
+[node name="PackageArea" parent="." instance=ExtResource("3_5y7ai")]

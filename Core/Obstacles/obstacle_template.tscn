@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=4 uid="uid://cqa5by57v6t1l"]
 
-[ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="1_cxie0"]
+[ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/Fence.png" id="1_cxie0"]
 [ext_resource type="Script" uid="uid://2u1d50sj2ryj" path="res://Core/Obstacles/obstacle_template.gd" id="1_yvj1n"]
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="2_yvj1n"]
 [ext_resource type="Texture2D" uid="uid://bu2vfb4tutdjm" path="res://assets/textures/tiles/tile_border_right.png" id="3_7lp8a"]

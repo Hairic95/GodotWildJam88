@@ -24,43 +24,90 @@ func disable_i_frame():
 	invicibilty_frame = false
 
 func on_area_entered(area):
-	if area is Obstacle:
+	if area is PackageArea:
+		var package_node : PackageNode = area.owner
+		var package_resource : Package = package_node.package_resource
 		
-		if !invicibilty_frame and !shield_on:
-			var obstacle : Obstacle = area
-			play_material_sound(obstacle)
-			health_manager.hurt(obstacle.damage)
-			#determines what sound to use
+		match(package_resource.package_type):
+			Package.PackageTypes.Powerups:
+				var power_up_resource : PowerUp = package_resource
+				on_hit_power_up(power_up_resource)
+				call_deferred("delete_area", package_node)
+			Package.PackageTypes.Obstacles:
+				var obstacle_resource : Obstacle = package_resource
+				on_hit_obstacle(obstacle_resource)
 
-		if shield_on:
-			var obstacle : Obstacle = area
-			play_material_sound(obstacle)
-			health_manager.hurt(0)
-			
-			shield_on = false
-			%ShieldSprite.hide()
-		FmodServer.play_one_shot("event:/SFX/Bumps")
-	if area is PowerUps:
-		match(area.power_type):
-			PowerUps.PowerUpTypes.Speed:
-				increase_speed.emit(area.amount)
-				FmodServer.set_global_parameter_by_name("Pups",1)
-				#FmodServer.play_one_shot("event:/SFX/Upgrade")
-			PowerUps.PowerUpTypes.Shield:
-				%ShieldSprite.show()
-				shield_on = true
-				FmodServer.set_global_parameter_by_name("Pups",0)
-				#FmodServer.play_one_shot("event:/SFX/Shield")
-			PowerUps.PowerUpTypes.Alcohol:
-				#FmodServer.play_one_shot("event:/SFX/Alcohol")
-				get_crunk.emit()
-			PowerUps.PowerUpTypes.WarmClothes:
-				FmodServer.set_global_parameter_by_name("Pups",2)
-				#FmodServer.play_one_shot("event:/SFX/Upgrade")
-				GameState.decrease_frost.emit(area.amount)
-		FmodServer.play_one_shot("event:/SFX/Pups")
-	if area is PowerUps or area is Obstacle:
-		area.queue_free()
+func on_hit_obstacle(obstacle_resource : Obstacle):
+	play_obstacle_hit_sound(obstacle_resource)
+	if !invicibilty_frame and !shield_on:
+		health_manager.hurt(obstacle_resource.damage)
+	if shield_on:
+		health_manager.hurt(0)
+		FmodServer.set_global_parameter_by_name("Shielded",0)
+		shield_on = false
+		%ShieldSprite.hide()
+	
+func play_obstacle_hit_sound(obstacle_resource : Obstacle):
+	match(obstacle_resource.material_type):
+		obstacle_resource.Materials.Wood:
+			FmodServer.play_one_shot("event:/SFX/Hit_wood")
+		obstacle_resource.Materials.Stone:
+			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+		obstacle_resource.Materials.Metal:
+			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+
+func delete_area(package_node):
+	package_node.queue_free()
+	
+func on_hit_power_up(power_up_resource : PowerUp):
+	match(power_up_resource.power_up_types):
+		PowerUp.PowerUpTypes.Speed:
+			increase_speed.emit(power_up_resource.amount)
+			FmodServer.play_one_shot("event:/SFX/Upgrade")
+		PowerUp.PowerUpTypes.Shield:
+			%ShieldSprite.show()
+			FmodServer.play_one_shot("event:/SFX/Shield")
+			shield_on = true
+			#FmodServer.set_global_parameter_by_name("Shielded",1)
+		PowerUp.PowerUpTypes.WarmClothes:
+			FmodServer.play_one_shot("event:/SFX/Upgrade")
+			GameState.decrease_frost.emit(power_up_resource.amount)
+		PowerUp.PowerUpTypes.FirstAid:
+			FmodServer.play_one_shot("event:/SFX/Upgrade")
+			health_manager.heal(power_up_resource.amount)
+		PowerUp.PowerUpTypes.Alcohol:
+			FmodServer.play_one_shot("event:/SFX/Alcohol")
+			get_crunk.emit()
+	
+	
+
+
+		
+		
+		
+	#PowerUps.PowerUpTypes.Alcohol:
+		#FmodServer.play_one_shot("event:/SFX/Alcohol")
+		#get_crunk.emit()
+		
+
+	
+	#if area is Obstacle:
+		#
+		#if !invicibilty_frame and !shield_on:
+			#var obstacle : Obstacle = area
+			#play_material_sound(obstacle)
+			#health_manager.hurt(obstacle.damage)
+			##determines what sound to use
+#
+		#if shield_on:
+			#var obstacle : Obstacle = area
+			#play_material_sound(obstacle)
+			#health_manager.hurt(0)
+			##FmodServer.set_global_parameter_by_name("Shielded",0)
+			#
+			#shield_on = false
+			#%ShieldSprite.hide()
+
 
 func play_material_sound(obstacle):	
 	match(obstacle.material_type):

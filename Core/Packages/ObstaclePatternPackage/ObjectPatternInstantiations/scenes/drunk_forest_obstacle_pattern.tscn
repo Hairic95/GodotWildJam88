@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx0brrstrxfd"]
+
+[ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_gho2l"]
+[ext_resource type="Resource" uid="uid://tjcunlc3cd2b" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/drunk_forest_obstacle_pattern.tres" id="2_dgsbd"]
+[ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="3_ov0wd"]
+[ext_resource type="PackedScene" uid="uid://b3q0qfiim1xij" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/fence_obstacle.tscn" id="4_pb2cs"]
+[ext_resource type="PackedScene" uid="uid://c4kjvua2wp2q4" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/rock_obstacle.tscn" id="5_pb2cs"]
+[ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="6_dgsbd"]
+
+[node name="DrunkForestObstaclePattern" instance=ExtResource("1_gho2l")]
+package_resource = ExtResource("2_dgsbd")
+
+[node name="Tree" parent="ObstacleNodes" index="0" instance=ExtResource("3_ov0wd")]
+position = Vector2(8736.999, 1473.9999)
+
+[node name="Tree2" parent="ObstacleNodes" index="1" instance=ExtResource("3_ov0wd")]
+position = Vector2(-936.9999, 2180)
+
+[node name="Tree3" parent="ObstacleNodes" index="2" instance=ExtResource("3_ov0wd")]
+position = Vector2(11316.999, 3731)
+
+[node name="Tree5" parent="ObstacleNodes" index="3" instance=ExtResource("3_ov0wd")]
+position = Vector2(15491, 3196)
+
+[node name="Tree4" parent="ObstacleNodes" index="4" instance=ExtResource("3_ov0wd")]
+position = Vector2(2887.0002, 2180.0007)
+
+[node name="Fence11" parent="ObstacleNodes" index="5" instance=ExtResource("4_pb2cs")]
+position = Vector2(1003, 3941)
+
+[node name="Fence12" parent="ObstacleNodes" index="6" instance=ExtResource("4_pb2cs")]
+position = Vector2(1439, 3763)
+
+[node name="Fence21" parent="ObstacleNodes" index="7" instance=ExtResource("4_pb2cs")]
+position = Vector2(1879.0001, 3585.0002)
+
+[node name="Fence22" parent="ObstacleNodes" index="8" instance=ExtResource("4_pb2cs")]
+position = Vector2(2326.0002, 3405.0002)
+
+[node name="Fence23" parent="ObstacleNodes" index="9" instance=ExtResource("4_pb2cs")]
+position = Vector2(2761, 3234)
+
+[node name="Fence24" parent="ObstacleNodes" index="10" instance=ExtResource("4_pb2cs")]
+position = Vector2(3206, 3053.0002)
+
+[node name="RockObstacle" parent="ObstacleNodes" index="11" instance=ExtResource("5_pb2cs")]
+position = Vector2(12194.999, 1722.9999)
+
+[node name="RockObstacle2" parent="ObstacleNodes" index="12" instance=ExtResource("5_pb2cs")]
+position = Vector2(14710, 4579)
+
+[node name="RockObstacle3" parent="ObstacleNodes" index="13" instance=ExtResource("5_pb2cs")]
+position = Vector2(-3225.9995, 1335.0005)
+
+[node name="Alcohol" parent="ObstacleNodes" index="14" instance=ExtResource("6_dgsbd")]
+position = Vector2(1355.0007, 2519.0002)
+
+[node name="Alcohol2" parent="ObstacleNodes" index="15" instance=ExtResource("6_dgsbd")]
+position = Vector2(5504.999, 2291)
+
+[node name="Alcohol3" parent="ObstacleNodes" index="16" instance=ExtResource("6_dgsbd")]
+position = Vector2(7409.0005, 1847.0002)
+
+[node name="Alcohol4" parent="ObstacleNodes" index="17" instance=ExtResource("6_dgsbd")]
+position = Vector2(10379, 1289)
+
+[node name="Alcohol5" parent="ObstacleNodes" index="18" instance=ExtResource("6_dgsbd")]
+position = Vector2(3399.0005, 4487)
+
+[node name="Alcohol6" parent="ObstacleNodes" index="19" instance=ExtResource("6_dgsbd")]
+position = Vector2(6039, 4385.0005)
+
+[node name="Alcohol7" parent="ObstacleNodes" index="20" instance=ExtResource("6_dgsbd")]
+position = Vector2(9181, 3997.0005)

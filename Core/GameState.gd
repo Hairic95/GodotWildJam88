@@ -9,12 +9,16 @@ signal on_dash_changed(dash)
 enum States {MainMenu, Game}
 
 var starting_state = States.MainMenu
-var player_speed = 1
+var player_speed = 0
+
+var speed = 4000
+var tile_size : Vector2 = Vector2(-274,-119)
 
 signal set_game_state(state: States)
 signal stauts_complete(status:StatusEffect)
 signal change_speed_amount
 signal decrease_frost(amount)
+
 
 
 func _process(_delta: float) -> void:

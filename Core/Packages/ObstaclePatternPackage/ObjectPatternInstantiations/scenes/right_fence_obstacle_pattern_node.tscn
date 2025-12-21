@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://pevi364ibsvw"]
+
+[ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_uo3vk"]
+[ext_resource type="Resource" uid="uid://cp3xtt3varv8n" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/right_fence_obstacle_pattern_node.tres" id="2_uo3vk"]
+[ext_resource type="PackedScene" uid="uid://b3q0qfiim1xij" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/fence_obstacle.tscn" id="3_p4qjr"]
+
+[node name="RightFenceObstaclePatternNode" instance=ExtResource("1_uo3vk")]
+package_resource = ExtResource("2_uo3vk")
+
+[node name="Fence" parent="ObstacleNodes" index="0" instance=ExtResource("3_p4qjr")]
+position = Vector2(1032, 4046)
+
+[node name="Fence2" parent="ObstacleNodes" index="1" instance=ExtResource("3_p4qjr")]
+position = Vector2(1472.0001, 3873)
+
+[node name="Fence3" parent="ObstacleNodes" index="2" instance=ExtResource("3_p4qjr")]
+position = Vector2(1912, 3704.0002)
+
+[node name="Fence4" parent="ObstacleNodes" index="3" instance=ExtResource("3_p4qjr")]
+position = Vector2(2356.9998, 3531)
+
+[node name="Fence5" parent="ObstacleNodes" index="4" instance=ExtResource("3_p4qjr")]
+position = Vector2(2775.0002, 3358)
+
+[node name="Fence6" parent="ObstacleNodes" index="5" instance=ExtResource("3_p4qjr")]
+position = Vector2(3198.9998, 3179)
+
+[node name="Fence7" parent="ObstacleNodes" index="6" instance=ExtResource("3_p4qjr")]
+position = Vector2(3639, 3006)
+
+[node name="Fence8" parent="ObstacleNodes" index="7" instance=ExtResource("3_p4qjr")]
+position = Vector2(4078.9998, 2837.0002)
+
+[node name="Fence9" parent="ObstacleNodes" index="8" instance=ExtResource("3_p4qjr")]
+position = Vector2(4523.9995, 2664)
+
+[node name="Fence10" parent="ObstacleNodes" index="9" instance=ExtResource("3_p4qjr")]
+position = Vector2(4942, 2491)
+
+[node name="Fence11" parent="ObstacleNodes" index="10" instance=ExtResource("3_p4qjr")]
+position = Vector2(5400.9995, 2329)
+
+[node name="Fence12" parent="ObstacleNodes" index="11" instance=ExtResource("3_p4qjr")]
+position = Vector2(5840.9995, 2156)
+
+[node name="Fence13" parent="ObstacleNodes" index="12" instance=ExtResource("3_p4qjr")]
+position = Vector2(6280.9995, 1987.0004)
+
+[node name="Fence14" parent="ObstacleNodes" index="13" instance=ExtResource("3_p4qjr")]
+position = Vector2(6725.999, 1814.0001)
+
+[node name="Fence15" parent="ObstacleNodes" index="14" instance=ExtResource("3_p4qjr")]
+position = Vector2(7144, 1641.0001)
+
+[node name="Fence16" parent="ObstacleNodes" index="15" instance=ExtResource("3_p4qjr")]
+position = Vector2(7567.999, 1462.0001)
+
+[node name="Fence17" parent="ObstacleNodes" index="16" instance=ExtResource("3_p4qjr")]
+position = Vector2(8007.9995, 1289.0001)

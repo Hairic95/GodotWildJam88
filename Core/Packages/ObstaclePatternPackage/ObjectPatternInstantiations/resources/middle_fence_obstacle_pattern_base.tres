@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ObstaclePattern" load_steps=2 format=3 uid="uid://dluejw8bjcbbt"]
+
+[ext_resource type="Script" uid="uid://7uvyiocsial6" path="res://Core/Packages/ObstaclePatternPackage/ObstaclePatternResource.gd" id="1_qurdr"]
+
+[resource]
+script = ExtResource("1_qurdr")
+package_type = 2
+array_ind = 2
+metadata/_custom_type_script = "uid://7uvyiocsial6"

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://drekf23qslcg"]
+
+[ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_rvd1j"]
+[ext_resource type="Resource" uid="uid://b65sbh1gg0hnc" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/shield_power_up_res.tres" id="2_xk7x3"]
+[ext_resource type="Texture2D" uid="uid://chulp65b4tqvg" path="res://assets/textures/Shield/shield_icon.png" id="3_fqtr8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8ax3"]
+radius = 67.26812
+
+[node name="ShieldPowerUp" instance=ExtResource("1_rvd1j")]
+scale = Vector2(5, 5)
+package_resource = ExtResource("2_xk7x3")
+
+[node name="Timer" parent="." index="1"]
+wait_time = 15.0
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_fqtr8")
+
+[node name="PackageArea" parent="." index="3" groups=["PowerUp"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PackageArea" index="0"]
+shape = SubResource("CircleShape2D_m8ax3")

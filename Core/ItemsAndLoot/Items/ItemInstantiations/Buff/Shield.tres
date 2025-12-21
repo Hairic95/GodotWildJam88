@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bjg01xpvgtnyh"]
-
-[ext_resource type="Script" uid="uid://dhew86rj3wjtq" path="res://Core/ItemsAndLoot/Items/items.gd" id="1_mjqsa"]
-
-[resource]
-script = ExtResource("1_mjqsa")
-item_name = "Shield"
-alternative_tile_id = 2
-metadata/_custom_type_script = "uid://dhew86rj3wjtq"
