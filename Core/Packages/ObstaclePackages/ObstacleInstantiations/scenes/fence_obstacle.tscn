@@ -12,3 +12,6 @@ package_resource = ExtResource("2_jgkby")
 y_sort_enabled = true
 texture = ExtResource("2_ys3sp")
 offset = Vector2(0, -61.05)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PackageArea" index="0"]
+polygon = PackedVector2Array(-20.8, -10.999999, 8.4, -24.399998, 11.4, -8.4, -10.2, 1.9999999, -21.4, -4.7999997)
