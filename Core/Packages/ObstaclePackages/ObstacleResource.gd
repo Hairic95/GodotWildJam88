@@ -32,9 +32,9 @@ func choose_random_text():
 					return ACTUAL_ROCK_3
 		ObstacleTypes.PineTree:
 			match(randi()%2):
-				1:
+				0:
 					return TREE_1
-				2:
+				1:
 					return TREE_2
 		ObstacleTypes.Fence:
 			return FENCE

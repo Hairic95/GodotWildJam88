@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0ou5vmweaq3p"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ou5vmweaq3p"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_hxxr0"]
 [ext_resource type="Resource" uid="uid://dluejw8bjcbbt" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/middle_fence_obstacle_pattern_base.tres" id="2_upba5"]
 [ext_resource type="PackedScene" uid="uid://b3q0qfiim1xij" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/fence_obstacle.tscn" id="3_w0wj8"]
+[ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="4_upba5"]
 
 [node name="MiddleFenceObstaclePatternNode" instance=ExtResource("1_hxxr0")]
 package_resource = ExtResource("2_upba5")
@@ -60,3 +61,48 @@ position = Vector2(10755.999, 228.00024)
 
 [node name="Fence20" parent="ObstacleNodes" index="17" instance=ExtResource("3_w0wj8")]
 position = Vector2(11174, 55.000244)
+
+[node name="Tree" parent="ObstacleNodes" index="18" instance=ExtResource("4_upba5")]
+position = Vector2(-9509.999, 1958.9999)
+
+[node name="Tree5" parent="ObstacleNodes" index="19" instance=ExtResource("4_upba5")]
+position = Vector2(-5418, 2206)
+
+[node name="Tree6" parent="ObstacleNodes" index="20" instance=ExtResource("4_upba5")]
+position = Vector2(-6924.0005, 4229)
+
+[node name="Tree7" parent="ObstacleNodes" index="21" instance=ExtResource("4_upba5")]
+position = Vector2(-2742.0005, 4409)
+
+[node name="Tree8" parent="ObstacleNodes" index="22" instance=ExtResource("4_upba5")]
+position = Vector2(-2315.0002, 6005)
+
+[node name="Tree9" parent="ObstacleNodes" index="23" instance=ExtResource("4_upba5")]
+position = Vector2(5980.999, -3144.999)
+
+[node name="Tree10" parent="ObstacleNodes" index="24" instance=ExtResource("4_upba5")]
+position = Vector2(7892, -1774.0001)
+
+[node name="Tree11" parent="ObstacleNodes" index="25" instance=ExtResource("4_upba5")]
+position = Vector2(10365, -2044.0001)
+
+[node name="Tree12" parent="ObstacleNodes" index="26" instance=ExtResource("4_upba5")]
+position = Vector2(11759, -88.00012)
+
+[node name="Tree13" parent="ObstacleNodes" index="27" instance=ExtResource("4_upba5")]
+position = Vector2(14974, 1.9999924)
+
+[node name="Tree14" parent="ObstacleNodes" index="28" instance=ExtResource("4_upba5")]
+position = Vector2(17334.998, 1801)
+
+[node name="Tree15" parent="ObstacleNodes" index="29" instance=ExtResource("4_upba5")]
+position = Vector2(20123, 2295)
+
+[node name="Tree2" parent="ObstacleNodes" index="30" instance=ExtResource("4_upba5")]
+position = Vector2(-11520, -67.99988)
+
+[node name="Tree3" parent="ObstacleNodes" index="31" instance=ExtResource("4_upba5")]
+position = Vector2(-11976, 1350.9999)
+
+[node name="Tree4" parent="ObstacleNodes" index="32" instance=ExtResource("4_upba5")]
+position = Vector2(-14493.001, -1249.9999)
