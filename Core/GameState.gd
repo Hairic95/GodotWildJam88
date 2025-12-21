@@ -1,6 +1,6 @@
 extends Node
 
-signal gameOver
+
 
 var dash = 100
 
@@ -15,13 +15,16 @@ var speed = 4000
 var real_speed_value = speed
 var tile_size : Vector2 = Vector2(-274,-119)
 
+signal gameOver
 signal set_game_state(state: States)
 signal stauts_complete(status:StatusEffect)
 signal change_speed_amount
 signal decrease_frost(amount)
 signal change_map_speed_(new_val)
 
-
+func _ready() -> void:
+	#gameOver
+	gameOver.connect(stop_game)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
@@ -31,6 +34,12 @@ func change_state_to(state : States):
 	starting_state = state
 	set_state()
 	
+func reset_values():
+	speed = 4000
+
+func stop_game():
+	speed = 0
+
 func change_speed(amount):
 	change_map_speed(amount)
 	var new_speed = clampi(player_speed + amount, -4, 4)

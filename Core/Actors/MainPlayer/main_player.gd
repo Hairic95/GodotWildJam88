@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var sledge: Node2D
+
+@onready var sledge: CharacterBody2D = $Sledge
 
 @export var path : Path2D
 @export var path_follow : PathFollow2D
@@ -123,18 +124,18 @@ func jump():
 	delete_collision()
 	jumping = true
 	
-	var tweensled = get_tree().create_tween()
+	#var tweensled = get_tree().create_tween()
 	
-	var sled_initial = sledge.position
-	var jump_height_pos = sled_initial + Vector2(0,-550)
+	#var sled_initial = sledge.position
+	#var jump_height_pos = sled_initial + Vector2(0,-550)
 	
-	tweensled.tween_property(sledge, "position",jump_height_pos, 0.3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT)
+	#tweensled.tween_property(sledge, "position",jump_height_pos, 0.3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT)
 	 
 	var tween = get_tree().create_tween()
 	await tween.tween_property(self, "position", Vector2(jump_height,-jump_height), 0.3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUINT).finished
 	
-	var tweensled2 = get_tree().create_tween()
-	tweensled2.tween_property(sledge, "position", sled_initial, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE)
+	#var tweensled2 = get_tree().create_tween()
+	#tweensled2.tween_property(sledge, "position", sled_initial, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE)
 	
 	var tween2 = get_tree().create_tween()
 	await tween2.tween_property(self, "position", initial_pos, 0.4).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE).finished

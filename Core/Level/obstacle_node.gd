@@ -68,6 +68,10 @@ func _ready() -> void:
 func start_timers():
 	obstacle_pattern_spawn_timer.start()
 
+func remove_children():
+	for child in get_children():
+		child.queue_free()
+
 func on_object_pattern_spawn():
 	var object_pattern_arr = OBSTACLE_PATTERN_UP_LOOT_TABLE.item_results
 	if object_pattern_arr.size() > 0:

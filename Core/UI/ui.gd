@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var node_2d: Node2D = $".."
 @onready var dash_bar: TextureProgressBar = %DashBar
 var score = 0
+
 const status_effect_node = preload("uid://yj1c6bxdbf7f")
 @onready var status_h_box_container: HBoxContainer = %StatusHBoxContainer
 @onready var avalanche_path_2d_3: Path2D = $"../AvalanchePath2D3"
@@ -23,6 +24,7 @@ func _ready() -> void:
 	replay_button.pressed.connect(on_replay_button_pressed)
 	
 func on_game_over():
+	%FinalScoreLabel.text = str(int(score))
 	%GameOverPanel.show()
 	
 func on_replay_button_pressed():
@@ -59,5 +61,6 @@ func on_player_take_dmg(dmg):
 
 func set_label_y(y):
 	score_label.text = str(int(abs(y)))
+	score = y
 
 	

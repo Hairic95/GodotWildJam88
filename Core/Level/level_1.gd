@@ -17,8 +17,11 @@ var starting_tile_position : Vector2i= Vector2i.ZERO
 
 signal update_y(y)
 
+var score = 0
+
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
+	GameState.reset_values()
 	anim.play("Idle")
 	sprite_1.play("idle")
 	sprite_2.play("idle")
@@ -41,6 +44,11 @@ func on_set_game_state(state: GameState.States):
 			ui.show()
 			camera_2d.enabled = true
 			obstacle_node.start_timers()
+
+func _process(delta: float) -> void:
+	if !pause:
+		score = score + delta * GameState.real_speed_value/1000
+		update_y.emit(score)
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("zoom_debug"):
@@ -66,6 +74,8 @@ func _input(_event: InputEvent) -> void:
 func on_game_over():
 	FmodServer.set_global_parameter_by_name("Stage",2)
 	if !debug:
+		%ObjectPatternTimer.stop()
+		obstacle_node.remove_children()
 		pause = true
 
 func reset_tiles():

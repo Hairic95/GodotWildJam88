@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_6dov7")
-damage = 30
+damage = 50
 obstacle_type = 3
 material_type = 1
 package_type = 1
