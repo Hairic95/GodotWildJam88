@@ -11,15 +11,15 @@ func change_frame(frame: int) -> void:
 	$Sprite2D.frame = frame
 	match(frame):
 		0:
-			$Arms.position = Vector2(-391.0, 28.0)
+			$Arms.position = Vector2(-211.0, -143.0)
 			$Arms.rotation_degrees = -22.9
-			$Line2D.points[0] = Vector2(-112.0, -22.0)
+			$Line2D.points[0] = Vector2(-17.143, -1.286)
 			
 		1:
-			$Arms.position = Vector2(-275.0, -11.0)
+			$Arms.position = Vector2(-126.0, -171.0)
 			$Arms.rotation_degrees = 0
-			$Line2D.points[0] = Vector2(0, 0)
+			$Line2D.points[0] = Vector2(-0.571, 4.429)
 		2:
-			$Arms.position = Vector2(-144.0, -130.0)
+			$Arms.position = Vector2(3.0, -278.0)
 			$Arms.rotation_degrees = 16.3
-			$Line2D.points[0] = Vector2(14.0, -26)
+			$Line2D.points[0] = Vector2(27.714, -15.857)

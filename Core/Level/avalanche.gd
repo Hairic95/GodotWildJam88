@@ -16,7 +16,10 @@ func _ready() -> void:
 	less_snowy()
 
 func on_decrease_frost(amount):
-	frost_meter -= amount
+	var new_amount = frost_meter + amount
+	frost_meter = clampf(new_amount, 0,100)
+	change_frost.emit(frost_meter)
+	
 
 func on_area_entered(area):
 	if area is FrostArea and !dog_in:
@@ -47,6 +50,7 @@ func on_area_exit(area):
 
 func _process(delta: float) -> void:
 	if dog_in:
+		print(frost_meter)
 		frost_meter += delta * 8
 		change_frost.emit(frost_meter)
 		
