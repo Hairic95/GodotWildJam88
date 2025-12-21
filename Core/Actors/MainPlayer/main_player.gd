@@ -14,6 +14,7 @@ var dash_speed = 80
 @onready var hitbox: Area2D = $Hitbox
 signal take_dmg
 signal set_status_effect(status:StatusEffect)
+signal healed(new_health)
 var jumping = false
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
@@ -31,8 +32,12 @@ func _ready() -> void:
 	health_manager.took_damage.connect(hit_flash)
 	hitbox.increase_speed.connect(on_increase_speed)
 	hitbox.get_crunk.connect(on_get_crunk)
+	health_manager.health_updated.connect(on_health_update)
 	GameState.stauts_complete.connect(on_status_effect_end)
 	initial_pos = position
+
+func on_health_update(cur_health: int, max_health: int):
+	healed.emit(cur_health)
 
 func hit_flash(dmg):
 	var tween : Tween = get_tree().create_tween()

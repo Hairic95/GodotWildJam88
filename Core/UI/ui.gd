@@ -14,6 +14,7 @@ const status_effect_node = preload("uid://yj1c6bxdbf7f")
 
 func _ready() -> void:
 	main_player.take_dmg.connect(on_player_take_dmg)
+	main_player.healed.connect(new_health)
 	main_player.set_status_effect.connect(on_set_status_effect)
 	node_2d.update_y.connect(set_label_y)
 	GameState.on_dash_changed.connect(on_dash_updated)
@@ -22,6 +23,9 @@ func _ready() -> void:
 	avalanche_path_2d_3.change_frost.connect(on_change_frost)
 	GameState.gameOver.connect(on_game_over)
 	replay_button.pressed.connect(on_replay_button_pressed)
+	
+func new_health(cur_health):
+	%HealthBar.value = cur_health
 	
 func on_game_over():
 	%FinalScoreLabel.text = str(int(score))
