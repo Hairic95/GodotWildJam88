@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn1fmh3g6bmrn"]
+
+[ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_ukp4v"]
+[ext_resource type="Script" uid="uid://cv545e2frii50" path="res://Core/Packages/PowerUpPackages/PowerUpResource.gd" id="2_ou3qs"]
+[ext_resource type="Texture2D" uid="uid://dy8y8wfruf8wg" path="res://assets/textures/LAKE.png" id="3_k5tju"]
+
+[sub_resource type="Resource" id="Resource_dfwou"]
+script = ExtResource("2_ou3qs")
+metadata/_custom_type_script = "uid://cv545e2frii50"
+
+[node name="PackageBase" instance=ExtResource("1_ukp4v")]
+package_resource = SubResource("Resource_dfwou")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_k5tju")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PackageArea" index="0"]
+polygon = PackedVector2Array(-71, 1, -77, 23, -61, 49, -6, 61, 50, 43, 80, 1, 76, -37, 20, -53, -25, -48, -54, -29)

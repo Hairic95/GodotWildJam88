@@ -7,6 +7,7 @@ class_name PackageNode
 
 func _ready() -> void:
 	
+	
 	if package_resource.package_type == Package.PackageTypes.Obstacles:
 		var text = package_resource.choose_random_text()
 		scale = package_resource.return_random_scale()

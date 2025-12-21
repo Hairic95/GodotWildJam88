@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_qvbw5")
 damage = 15
+obstacle_type = 1
 material_type = 1
 package_type = 1
 array_ind = 1

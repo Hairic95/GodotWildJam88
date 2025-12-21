@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=7 format=3 uid="uid://c2esp0r6b14vi"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://c2esp0r6b14vi"]
 
 [ext_resource type="Script" uid="uid://c5ro3gr3ihoa0" path="res://Core/ItemsAndLoot/LootTable/LootObject.gd" id="1_pir8w"]
 [ext_resource type="Resource" uid="uid://4nmak1mn5g8a" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/heal_power_up_res.tres" id="2_8jyof"]
@@ -6,9 +6,10 @@
 [ext_resource type="Resource" uid="uid://b65sbh1gg0hnc" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/shield_power_up_res.tres" id="3_ums3q"]
 [ext_resource type="Resource" uid="uid://7yne2j4c56pw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/speed_power_up_res.tres" id="4_a0udk"]
 [ext_resource type="Resource" uid="uid://bajefwshditvx" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/warm_power_up_res.tres" id="5_wes1u"]
+[ext_resource type="Resource" uid="uid://07ipy0wfdkkk" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/alcohol_power_up.tres" id="6_ums3q"]
 
 [resource]
 script = ExtResource("2_8xsim")
 item_drop_count = 1
-item_list = Array[ExtResource("1_pir8w")]([ExtResource("2_8jyof"), ExtResource("3_ums3q"), ExtResource("4_a0udk"), ExtResource("5_wes1u")])
+item_list = Array[ExtResource("1_pir8w")]([ExtResource("2_8jyof"), ExtResource("3_ums3q"), ExtResource("4_a0udk"), ExtResource("5_wes1u"), ExtResource("6_ums3q")])
 metadata/_custom_type_script = "uid://dfjhjahglsj8h"

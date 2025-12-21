@@ -1,12 +1,9 @@
-[gd_scene load_steps=87 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=86 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
 [ext_resource type="Texture2D" uid="uid://b7o5ejcuk2ye1" path="res://assets/textures/tiles/tile_outer_0.png" id="2_480ue"]
-[ext_resource type="Resource" uid="uid://2xx0sbw5i066" path="res://Core/ItemsAndLoot/LootTable/ObstaclePatternLootTable/ObstaclePatternLootTable.tres" id="2_fangi"]
 [ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/Fence.png" id="2_ro1wp"]
-[ext_resource type="Resource" uid="uid://cn14own3ppdtq" path="res://Core/ItemsAndLoot/LootTable/BuffLootTable/BuffLootTable1.tres" id="3_60kn6"]
-[ext_resource type="Resource" uid="uid://ba7nlfsoi4d4o" path="res://Core/ItemsAndLoot/LootTable/ObstaclePatternLootTable/side_folliage.tres" id="4_fbnga"]
 [ext_resource type="Texture2D" uid="uid://m03ht014cy2o" path="res://assets/textures/tile_test_3.png" id="4_fqbln"]
 [ext_resource type="Texture2D" uid="uid://bu2vfb4tutdjm" path="res://assets/textures/tiles/tile_border_right.png" id="4_m5qiu"]
 [ext_resource type="Texture2D" uid="uid://cgsmkgjgo5cav" path="res://assets/textures/tiles/tile_border_top.png" id="5_hx8i2"]
@@ -49,6 +46,8 @@
 [ext_resource type="Script" uid="uid://cctlwn8v27n0p" path="res://Core/Level/obstacle_node.gd" id="34_ynqfr"]
 [ext_resource type="Texture2D" uid="uid://c78mj2ywp2gpt" path="res://assets/textures/ui/frost_bar_progress.png" id="35_uqlyo"]
 [ext_resource type="Resource" uid="uid://c2esp0r6b14vi" path="res://Core/Packages/PowerUpPackages/PowerUpLootTable.tres" id="35_ynqfr"]
+[ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="35_yukla"]
+[ext_resource type="PackedScene" uid="uid://b47rksibvsuiy" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/scenes/obstacle_pattern_forest.tscn" id="36_hgavx"]
 [ext_resource type="Resource" uid="uid://cwqvrbexybrpx" path="res://Core/Packages/ObstaclePackages/ObstacleLootTable.tres" id="36_yukla"]
 [ext_resource type="Resource" uid="uid://ctv3sxha2fh3s" path="res://Core/Packages/ObstaclePatternPackage/ObstaclePatternLootTable.tres" id="37_hgavx"]
 [ext_resource type="PackedScene" uid="uid://bprbu06rjqh7i" path="res://Debug/debug_ui.tscn" id="49_vbedj"]
@@ -350,9 +349,6 @@ shader_parameter/size = Vector2(0.04, 0.05)
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_cpp6p")
-obstacle_loot_table = ExtResource("2_fangi")
-power_up_loot_table = ExtResource("3_60kn6")
-folliage_loot_table = ExtResource("4_fbnga")
 metadata/_edit_vertical_guides_ = [-59218.0]
 
 [node name="GameSpeedTimer" type="Timer" parent="."]
@@ -378,9 +374,13 @@ POWER_UP_LOOT_TABLE = ExtResource("35_ynqfr")
 OBSTACLE_UP_LOOT_TABLE = ExtResource("36_yukla")
 OBSTACLE_PATTERN_UP_LOOT_TABLE = ExtResource("37_hgavx")
 
+[node name="Alcohol" parent="SpawnNode/ObstacleNode" instance=ExtResource("35_yukla")]
+position = Vector2(8928.767, 3531.8538)
+
+[node name="ObstaclePatternNode" parent="SpawnNode/ObstacleNode" instance=ExtResource("36_hgavx")]
+
 [node name="PowerUpSpawnTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0
-autostart = true
 
 [node name="ObstacleSpawnTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0
@@ -388,10 +388,6 @@ wait_time = 3.0
 [node name="ObjectPatternTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0
 autostart = true
-
-[node name="ObstacleTiles" type="TileMapLayer" parent="."]
-y_sort_enabled = true
-tile_set = SubResource("TileSet_ropvc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.1, 0.1)

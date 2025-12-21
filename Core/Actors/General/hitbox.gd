@@ -73,7 +73,11 @@ func on_hit_power_up(power_up_resource : PowerUp):
 			FmodServer.play_one_shot("event:/SFX/Upgrade")
 			GameState.decrease_frost.emit(power_up_resource.amount)
 		PowerUp.PowerUpTypes.FirstAid:
-			pass
+			FmodServer.play_one_shot("event:/SFX/Upgrade")
+			health_manager.heal(power_up_resource.amount)
+		PowerUp.PowerUpTypes.Alcohol:
+			FmodServer.play_one_shot("event:/SFX/Alcohol")
+			get_crunk.emit()
 	
 	
 

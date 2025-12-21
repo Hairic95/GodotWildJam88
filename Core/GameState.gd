@@ -11,7 +11,7 @@ enum States {MainMenu, Game}
 var starting_state = States.MainMenu
 var player_speed = 0
 
-var speed = 200
+var speed = 4000
 var tile_size : Vector2 = Vector2(-274,-119)
 
 signal set_game_state(state: States)

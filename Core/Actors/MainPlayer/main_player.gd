@@ -56,8 +56,6 @@ func on_take_dmg(amount):
 		GameState.change_speed(-1)
 	take_dmg.emit(amount)
 	
-	
-
 func _process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right",  "ui_down", "ui_up")
 	var what_frame = $Sprite2D.frame

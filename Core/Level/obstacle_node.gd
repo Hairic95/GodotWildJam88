@@ -18,6 +18,7 @@ const HEAL_POWER_UP = preload("uid://qoco88rr8v17")
 const SHIELD_POWER_UP = preload("uid://drekf23qslcg")
 const SPEED_POWER_UP = preload("uid://db3jbxtm7jia0")
 const WARM_POWER_UP = preload("uid://b038xil7kovth")
+const ALCOHOL_POWER_UP = preload("uid://v32vmxw56lpw")
 
 @export var OBSTACLE_UP_LOOT_TABLE : LootTable
 
@@ -28,7 +29,9 @@ const ROCK_OBSTACLE = preload("uid://c4kjvua2wp2q4")
 @export var OBSTACLE_PATTERN_UP_LOOT_TABLE : LootTable
 
 const OBSTACLE_PATTERN_FOREST = preload("uid://b47rksibvsuiy")
-
+const DRUNK_FOREST_OBSTACLE_PATTERN = preload("uid://cx0brrstrxfd")
+const MIDDLE_FENCE_OBSTACLE_PATTERN_NODE = preload("uid://b0ou5vmweaq3p")
+const RIGHT_FENCE_OBSTACLE_PATTERN_NODE = preload("uid://pevi364ibsvw")
 
 
 var package_dictionary = {
@@ -36,7 +39,9 @@ var package_dictionary = {
 		HEAL_POWER_UP, 
 		SHIELD_POWER_UP, 
 		SPEED_POWER_UP, 
-		WARM_POWER_UP]
+		WARM_POWER_UP,
+		ALCOHOL_POWER_UP
+		]
 		,
 	"Obstacle" = [
 		TREE,
@@ -44,7 +49,11 @@ var package_dictionary = {
 		FENCE_OBSTACLE
 	],
 	"ObstaclePattern" = [
-		OBSTACLE_PATTERN_FOREST
+		OBSTACLE_PATTERN_FOREST,
+		DRUNK_FOREST_OBSTACLE_PATTERN,
+		MIDDLE_FENCE_OBSTACLE_PATTERN_NODE,
+		RIGHT_FENCE_OBSTACLE_PATTERN_NODE
+		
 	]
 }
 
