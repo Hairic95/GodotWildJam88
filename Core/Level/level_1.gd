@@ -17,6 +17,8 @@ var starting_tile_position : Vector2i= Vector2i.ZERO
 
 signal update_y(y)
 
+var score = 0
+
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
 	GameState.reset_values()
@@ -42,6 +44,10 @@ func on_set_game_state(state: GameState.States):
 			ui.show()
 			camera_2d.enabled = true
 			obstacle_node.start_timers()
+
+func _process(delta: float) -> void:
+	score = score + delta * GameState.real_speed_value/1000
+	update_y.emit(score)
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("zoom_debug"):
