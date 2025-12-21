@@ -3,7 +3,6 @@ extends Node2D
 @export var pause : bool = false
 @export var debug: bool = false
 
-
 # this is stationary
 @onready var ground_tile_layer: TileMapLayer = $GroundTiles
 @onready var ui: CanvasLayer = $UI
@@ -11,24 +10,13 @@ extends Node2D
 @onready var sprite_1: AnimatedSprite2D = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Sprite1
 @onready var sprite_2: AnimatedSprite2D = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Sprite2
 @onready var anim: AnimationPlayer = $AvalanchePath2D3/AvalanchePathFollow2D/Avalache/Anim
+@onready var obstacle_node: Node2D = $SpawnNode/ObstacleNode
 
 var player_position
 var starting_tile_position : Vector2i= Vector2i.ZERO
 
 signal update_y(y)
 
-var speed_dictionary = {
-	-4: 0.2,
-	-3: 0.2,
-	-2: 0.2,
-	-1: 0.2,
-	0: 0.2,
-	1: 0.2,
-	2: 0.2,
-	3: 0.2,
-	4: 0.2
-}
-var speed_inc_val = speed_dictionary[GameState.player_speed]
 
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
@@ -53,6 +41,7 @@ func on_set_game_state(state: GameState.States):
 			pause = false
 			ui.show()
 			camera_2d.enabled = true
+			obstacle_node.start_timers()
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("zoom_debug"):

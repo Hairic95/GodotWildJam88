@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://v32vmxw56lpw"]
+[gd_scene load_steps=6 format=3 uid="uid://v32vmxw56lpw"]
 
 [ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_2k5ne"]
 [ext_resource type="Resource" uid="uid://07ipy0wfdkkk" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/Resources/alcohol_power_up.tres" id="2_8or6r"]
 [ext_resource type="Texture2D" uid="uid://bfne2yu0vwvt6" path="res://assets/textures/debuffs/alchol.png" id="3_8or6r"]
+[ext_resource type="Script" uid="uid://cs4gco7rjq4a0" path="res://Core/Packages/package_area.gd" id="4_rk1u0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8or6r"]
 size = Vector2(88.5076, 170.9167)
@@ -13,6 +14,9 @@ package_resource = ExtResource("2_8or6r")
 
 [node name="Sprite2D" parent="." index="2"]
 texture = ExtResource("3_8or6r")
+
+[node name="PackageArea" parent="." index="3"]
+script = ExtResource("4_rk1u0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PackageArea" index="0"]
 position = Vector2(14.171156, -6.345379)

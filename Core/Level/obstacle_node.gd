@@ -63,6 +63,8 @@ func _ready() -> void:
 	obstacle_pattern_spawn_timer.timeout.connect(on_object_pattern_spawn)
 	child_entered_tree.connect(on_package_enter_tree)
 
+func start_timers():
+	obstacle_pattern_spawn_timer.start()
 
 func on_object_pattern_spawn():
 	var object_pattern_arr = OBSTACLE_PATTERN_UP_LOOT_TABLE.item_results
@@ -70,7 +72,6 @@ func on_object_pattern_spawn():
 		var obstacle_pattern = object_pattern_arr[0]
 		if obstacle_pattern is ObstaclePattern:
 			spawn_object_pattern(obstacle_pattern)
-
 
 func spawn_object_pattern(package_resource):
 	var object_pattern_node_scene : PackedScene = package_dictionary["ObstaclePattern"][package_resource.array_ind] 
