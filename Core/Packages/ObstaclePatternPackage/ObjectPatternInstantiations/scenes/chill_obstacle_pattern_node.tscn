@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx47bcxo70tn0"]
+
+[ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_qnd4c"]
+[ext_resource type="Resource" uid="uid://bsix30dqb2ks7" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/chill_obstacle_pattern_node.tres" id="2_qnd4c"]
+[ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="3_8hcgv"]
+[ext_resource type="PackedScene" uid="uid://c4kjvua2wp2q4" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/rock_obstacle.tscn" id="4_ss6ya"]
+
+[node name="ObstaclePatternNode" instance=ExtResource("1_qnd4c")]
+package_resource = ExtResource("2_qnd4c")
+
+[node name="Tree" parent="ObstacleNodes" index="0" instance=ExtResource("3_8hcgv")]
+position = Vector2(-7093.9995, 3178.9998)
+
+[node name="Tree2" parent="ObstacleNodes" index="1" instance=ExtResource("3_8hcgv")]
+position = Vector2(-8507, 1244.0001)
+
+[node name="Tree3" parent="ObstacleNodes" index="2" instance=ExtResource("3_8hcgv")]
+position = Vector2(-3117.0015, 3716)
+
+[node name="Tree4" parent="ObstacleNodes" index="3" instance=ExtResource("3_8hcgv")]
+position = Vector2(-491.0005, 5666)
+
+[node name="Tree5" parent="ObstacleNodes" index="4" instance=ExtResource("3_8hcgv")]
+position = Vector2(-3745.9998, 1520.001)
+
+[node name="Tree6" parent="ObstacleNodes" index="5" instance=ExtResource("3_8hcgv")]
+position = Vector2(-1136.0002, 3194)
+
+[node name="Tree7" parent="ObstacleNodes" index="6" instance=ExtResource("3_8hcgv")]
+position = Vector2(9980.999, -1012.9995)
+
+[node name="Tree8" parent="ObstacleNodes" index="7" instance=ExtResource("3_8hcgv")]
+position = Vector2(9843, 875.9999)
+
+[node name="Tree9" parent="ObstacleNodes" index="8" instance=ExtResource("3_8hcgv")]
+position = Vector2(13835, 830)
+
+[node name="Tree10" parent="ObstacleNodes" index="9" instance=ExtResource("3_8hcgv")]
+position = Vector2(13175, 2917.9998)
+
+[node name="Tree11" parent="ObstacleNodes" index="10" instance=ExtResource("3_8hcgv")]
+position = Vector2(13175, 2917.9998)
+
+[node name="Tree12" parent="ObstacleNodes" index="11" instance=ExtResource("3_8hcgv")]
+position = Vector2(16292, 2549)
+
+[node name="Tree13" parent="ObstacleNodes" index="12" instance=ExtResource("3_8hcgv")]
+position = Vector2(16154.001, 5021)
+
+[node name="Tree14" parent="ObstacleNodes" index="13" instance=ExtResource("3_8hcgv")]
+position = Vector2(21145, 5343.0005)
+
+[node name="RockObstacle" parent="ObstacleNodes" index="14" instance=ExtResource("4_ss6ya")]
+position = Vector2(-5870.9995, 259.99997)
+
+[node name="RockObstacle2" parent="ObstacleNodes" index="15" instance=ExtResource("4_ss6ya")]
+position = Vector2(-4868, 3306.9998)
+
+[node name="RockObstacle3" parent="ObstacleNodes" index="16" instance=ExtResource("4_ss6ya")]
+position = Vector2(1801.9995, 4868)
+
+[node name="RockObstacle4" parent="ObstacleNodes" index="17" instance=ExtResource("4_ss6ya")]
+position = Vector2(4589, 6763)
+
+[node name="RockObstacle5" parent="ObstacleNodes" index="18" instance=ExtResource("4_ss6ya")]
+position = Vector2(4180, 4756.0005)
+
+[node name="RockObstacle6" parent="ObstacleNodes" index="19" instance=ExtResource("4_ss6ya")]
+position = Vector2(17502, 873.00024)
+
+[node name="RockObstacle7" parent="ObstacleNodes" index="20" instance=ExtResource("4_ss6ya")]
+position = Vector2(19267.002, 5221)

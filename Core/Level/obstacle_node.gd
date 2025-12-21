@@ -33,7 +33,7 @@ const DRUNK_FOREST_OBSTACLE_PATTERN = preload("uid://cx0brrstrxfd")
 const MIDDLE_FENCE_OBSTACLE_PATTERN_NODE = preload("uid://b0ou5vmweaq3p")
 const RIGHT_FENCE_OBSTACLE_PATTERN_NODE = preload("uid://pevi364ibsvw")
 const YETI_OBSTACLE_PATTERN_NODE = preload("uid://brcfi8tcxhqym")
-
+const CHILL_OBSTACLE_PATTERN_NODE = preload("uid://dx47bcxo70tn0")
 
 var package_dictionary = {
 	"PowerUp" = [
@@ -54,8 +54,8 @@ var package_dictionary = {
 		DRUNK_FOREST_OBSTACLE_PATTERN,
 		MIDDLE_FENCE_OBSTACLE_PATTERN_NODE,
 		RIGHT_FENCE_OBSTACLE_PATTERN_NODE,
-		YETI_OBSTACLE_PATTERN_NODE
-		
+		YETI_OBSTACLE_PATTERN_NODE,
+		CHILL_OBSTACLE_PATTERN_NODE
 	]
 }
 
