@@ -1,4 +1,3 @@
-@tool
 extends Package
 class_name PowerUp
 
@@ -13,7 +12,6 @@ const WARMUP_GEAR = preload("uid://blhumbjqm0cmr")
 const HEAL_ITEM = preload("uid://bhvr8axan1epr")
 
 func return_texture():
-	print(power_up_types)
 	match(power_up_types):
 		PowerUpTypes.Speed:
 			return MONSTER_ENERGY

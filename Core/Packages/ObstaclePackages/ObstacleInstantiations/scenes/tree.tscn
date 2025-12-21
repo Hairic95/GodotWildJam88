@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce3oehf3dmi37"]
+
+[ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_0nflt"]
+[ext_resource type="Texture2D" uid="uid://dyvqp112xt05k" path="res://assets/textures/tree_1.png" id="2_schr4"]
+[ext_resource type="Resource" uid="uid://8uptc3sv3hb1" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/Resources/Tree.tres" id="2_xe0ls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_schr4"]
+size = Vector2(122, 65)
+
+[node name="Tree" instance=ExtResource("1_0nflt")]
+package_resource = ExtResource("2_xe0ls")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_schr4")
+offset = Vector2(0, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PackageArea" index="0"]
+position = Vector2(12, -12.5)
+shape = SubResource("RectangleShape2D_schr4")

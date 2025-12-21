@@ -107,7 +107,7 @@ func _physics_process(delta: float) -> void:
 		var global_obstacle_tile_position = obstacle_tile_layer.map_to_local(next_tile_pos())
 		
 		
-		#ground remains at pos : Vector2(0,0)
+		#ground remains apos : Vector2(0,0)
 		var offset_obstacle_position = global_obstacle_tile_position 
 		
 		

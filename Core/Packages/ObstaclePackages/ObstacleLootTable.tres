@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=4 format=3 uid="uid://cwqvrbexybrpx"]
+
+[ext_resource type="Script" uid="uid://c5ro3gr3ihoa0" path="res://Core/ItemsAndLoot/LootTable/LootObject.gd" id="1_e7cfn"]
+[ext_resource type="Resource" uid="uid://8uptc3sv3hb1" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/Resources/Tree.tres" id="2_m3lox"]
+[ext_resource type="Script" uid="uid://dfjhjahglsj8h" path="res://Core/ItemsAndLoot/LootTable/LootTable.gd" id="2_s3p3r"]
+
+[resource]
+script = ExtResource("2_s3p3r")
+item_drop_count = 1
+item_list = Array[ExtResource("1_e7cfn")]([ExtResource("2_m3lox")])
+metadata/_custom_type_script = "uid://dfjhjahglsj8h"

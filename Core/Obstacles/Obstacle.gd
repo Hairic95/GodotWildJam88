@@ -1,7 +1,7 @@
 extends Area2D
-class_name Obstacle
-const rock_texture_1 = preload("uid://dstdu8701nytv")
 
+
+const rock_texture_1 = preload("uid://dstdu8701nytv")
 var rock_texture_2 = preload("res://assets/textures/actual_rock_2.png")
 var rock_texture_3 = preload("res://assets/textures/actual_rock_3.png")
 
