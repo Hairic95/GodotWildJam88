@@ -366,8 +366,10 @@ tile_set = SubResource("TileSet_ropvc")
 script = ExtResource("18_riabc")
 
 [node name="SpawnNode" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="ObstacleNode" type="Node2D" parent="SpawnNode" node_paths=PackedStringArray("power_up_spawn_timer", "obstacle_spawn_timer", "obstacle_pattern_spawn_timer")]
+y_sort_enabled = true
 script = ExtResource("34_ynqfr")
 power_up_spawn_timer = NodePath("../PowerUpSpawnTimer")
 obstacle_spawn_timer = NodePath("../ObstacleSpawnTimer")

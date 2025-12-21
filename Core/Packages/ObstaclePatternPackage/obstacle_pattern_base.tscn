@@ -238,6 +238,7 @@ tile_size = Vector2i(274, 119)
 sources/0 = SubResource("TileSetScenesCollectionSource_j2onh")
 
 [node name="ObstaclePatternNode" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_x6ejt")
 
 [node name="Timer" type="Timer" parent="."]

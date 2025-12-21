@@ -61,8 +61,7 @@ func on_object_pattern_spawn():
 		var obstacle_pattern = object_pattern_arr[0]
 		if obstacle_pattern is ObstaclePattern:
 			spawn_object_pattern(obstacle_pattern)
-		else:
-			print("not")
+
 
 func spawn_object_pattern(package_resource):
 	var object_pattern_node_scene : PackedScene = package_dictionary["ObstaclePattern"][package_resource.array_ind] 
