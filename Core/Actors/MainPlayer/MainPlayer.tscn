@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hj8a032o00v8"]
+[gd_scene load_steps=21 format=3 uid="uid://hj8a032o00v8"]
 
 [ext_resource type="Script" uid="uid://cqm0m6k1lx6ji" path="res://Core/Actors/MainPlayer/main_player.gd" id="1_fnqva"]
 [ext_resource type="Shader" uid="uid://1d5st4ofdu8w" path="res://VFX/hit_flash_shader.gdshader" id="2_vmln1"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://lhbpgu1bpmcw" path="res://Core/Actors/MainPlayer/playerCollisionShape.tscn" id="5_xswx7"]
 [ext_resource type="Texture2D" uid="uid://dx26qd3egsesg" path="res://assets/textures/Shield/shield.png" id="6_3bxq0"]
 [ext_resource type="Texture2D" uid="uid://chulp65b4tqvg" path="res://assets/textures/Shield/shield_icon.png" id="8_26ywm"]
+[ext_resource type="PackedScene" uid="uid://cry3o088480dv" path="res://Core/Actors/Sledge/sledge.tscn" id="9_gevsh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_26ywm"]
 resource_local_to_scene = true
@@ -152,3 +153,6 @@ texture = ExtResource("8_26ywm")
 [node name="LeashPosition" type="Marker2D" parent="."]
 position = Vector2(127, 6)
 gizmo_extents = 130.8
+
+[node name="Sledge" parent="." instance=ExtResource("9_gevsh")]
+position = Vector2(-524, -212)

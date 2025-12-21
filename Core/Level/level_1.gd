@@ -19,6 +19,7 @@ signal update_y(y)
 
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
+	GameState.reset_values()
 	anim.play("Idle")
 	sprite_1.play("idle")
 	sprite_2.play("idle")
