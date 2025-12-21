@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx47bcxo70tn0"]
+[gd_scene load_steps=6 format=3 uid="uid://dx47bcxo70tn0"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_qnd4c"]
 [ext_resource type="Resource" uid="uid://bsix30dqb2ks7" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/chill_obstacle_pattern_node.tres" id="2_qnd4c"]
 [ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="3_8hcgv"]
 [ext_resource type="PackedScene" uid="uid://c4kjvua2wp2q4" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/rock_obstacle.tscn" id="4_ss6ya"]
+[ext_resource type="PackedScene" uid="uid://drekf23qslcg" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/shield_power_up.tscn" id="5_kcxcp"]
 
 [node name="ObstaclePatternNode" instance=ExtResource("1_qnd4c")]
 package_resource = ExtResource("2_qnd4c")
@@ -70,3 +71,6 @@ position = Vector2(17502, 873.00024)
 
 [node name="RockObstacle7" parent="ObstacleNodes" index="20" instance=ExtResource("4_ss6ya")]
 position = Vector2(19267.002, 5221)
+
+[node name="ShieldPowerUp" parent="ObstacleNodes" index="21" instance=ExtResource("5_kcxcp")]
+position = Vector2(9588.001, 2862)
