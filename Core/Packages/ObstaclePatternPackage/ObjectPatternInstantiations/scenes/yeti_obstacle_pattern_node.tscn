@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://brcfi8tcxhqym"]
+[gd_scene load_steps=7 format=3 uid="uid://brcfi8tcxhqym"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_avjbf"]
 [ext_resource type="Script" uid="uid://bcy5jjhsuf76t" path="res://Core/Packages/ObstaclePackages/obstacle_path_follow.gd" id="2_4v4t8"]
 [ext_resource type="Resource" uid="uid://dncmak5tn8gxa" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/yeti_obstacle_pattern_node.tres" id="2_e7hk6"]
 [ext_resource type="PackedScene" uid="uid://dcygx407jrdlc" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/yeti_obstacle.tscn" id="3_e7hk6"]
+[ext_resource type="PackedScene" uid="uid://db3jbxtm7jia0" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/speed_power_up.tscn" id="5_e7hk6"]
 
 [sub_resource type="Curve2D" id="Curve2D_4v4t8"]
 _data = {
@@ -27,3 +28,6 @@ rotates = false
 [node name="YetiObstacle" parent="ObstacleNodes/Path2D/PathFollow2D" index="0" instance=ExtResource("3_e7hk6")]
 position = Vector2(73.751465, 71.25781)
 rotation = 1.1794974
+
+[node name="SpeedPowerUp" parent="ObstacleNodes" index="1" instance=ExtResource("5_e7hk6")]
+position = Vector2(9178.999, 4644.9995)

@@ -16,8 +16,8 @@ func _ready() -> void:
 	main_player.set_status_effect.connect(on_set_status_effect)
 	node_2d.update_y.connect(set_label_y)
 	GameState.on_dash_changed.connect(on_dash_updated)
-	GameState.change_speed_amount.connect(on_change_player_speed)
-	on_change_player_speed()
+	GameState.change_map_speed_.connect(on_change_map_speed)
+	on_change_map_speed(GameState.speed)
 	avalanche_path_2d_3.change_frost.connect(on_change_frost)
 	GameState.gameOver.connect(on_game_over)
 	replay_button.pressed.connect(on_replay_button_pressed)
@@ -46,25 +46,8 @@ func on_set_status_effect(_status_effect : StatusEffect):
 	%StatusHBoxContainer.add_child(status_effect)
 	status_effect.setup(_status_effect)
 
-func on_change_player_speed():
-	var speed = GameState.player_speed
-	
-	if GameState.player_speed < 0:
-		match(GameState.player_speed):
-			0:
-				speed = 90
-			-1:
-				speed = 80
-			-2:
-				speed = 60
-			-3:
-				speed = 40
-			-4:
-				speed = 20
-	else:
-		speed *= 100
-	
-	%player_speed_label.text = str(speed)
+func on_change_map_speed(new_speed):
+	%player_speed_label.text = str(new_speed)
 
 func on_dash_updated(dash):
 	dash_bar.value = dash
