@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://t4asulrv2tto"]
+[gd_scene load_steps=6 format=3 uid="uid://t4asulrv2tto"]
 
 [ext_resource type="Script" uid="uid://4a7pu7pq6lqf" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://d3ksey2fw1u7v" path="res://Core/Level/level1.tscn" id="1_vasa2"]
 [ext_resource type="Texture2D" uid="uid://c5mdtr1xanln7" path="res://assets/textures/main menu.png" id="2_h7iqs"]
+[ext_resource type="Shader" uid="uid://dwwq05am4cpj6" path="res://VFX/snow_shader.gdshader" id="4_4fuuu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxrkv"]
+shader = ExtResource("4_4fuuu")
+shader_parameter/count = 200
+shader_parameter/slant = 0.18300001195237997
+shader_parameter/speed = 5.2430002490425
+shader_parameter/blur = 0.00450000021375
+shader_parameter/colour = Color(0.7609375, 0.7609375, 0.7609375, 1)
+shader_parameter/size = Vector2(0.04, 0.05)
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -62,5 +72,20 @@ text = "Quit"
 
 [node name="Level" parent="." instance=ExtResource("1_vasa2")]
 visible = false
+
+[node name="SnowShader" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_dxrkv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -329.0
+offset_top = -146.0
+offset_right = 357.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="MainMenu/ColorRect/QuitButton" to="." method="_on_quit_button_pressed"]

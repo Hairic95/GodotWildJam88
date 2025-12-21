@@ -46,8 +46,9 @@ func on_set_game_state(state: GameState.States):
 			obstacle_node.start_timers()
 
 func _process(delta: float) -> void:
-	score = score + delta * GameState.real_speed_value/1000
-	update_y.emit(score)
+	if !pause:
+		score = score + delta * GameState.real_speed_value/1000
+		update_y.emit(score)
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("zoom_debug"):
@@ -73,6 +74,8 @@ func _input(_event: InputEvent) -> void:
 func on_game_over():
 	FmodServer.set_global_parameter_by_name("Stage",2)
 	if !debug:
+		%ObjectPatternTimer.stop()
+		obstacle_node.remove_children()
 		pause = true
 
 func reset_tiles():

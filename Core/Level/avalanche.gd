@@ -36,7 +36,7 @@ func super_snowy():
 
 func less_snowy():
 	var tween = get_tree().create_tween()
-	tween.tween_property(%SnowShader,"material:shader_parameter/count", 300, 2.0)
+	tween.tween_property(%SnowShader,"material:shader_parameter/count", 200, 2.0)
 	
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 5.0, 2.0)
@@ -51,7 +51,7 @@ func on_area_exit(area):
 func _process(delta: float) -> void:
 	if dog_in:
 		print(frost_meter)
-		frost_meter += delta * 8
+		frost_meter += delta * 11
 		change_frost.emit(frost_meter)
 		
 func on_change_speed():
