@@ -14,6 +14,7 @@ func _ready() -> void:
 	avalanche_area_2d.area_exited.connect(on_area_exit)
 	GameState.decrease_frost.connect(on_decrease_frost)
 	less_snowy()
+	on_change_speed()
 
 func on_decrease_frost(amount):
 	var new_amount = frost_meter + amount
