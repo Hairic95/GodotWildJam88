@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Obstacle" load_steps=2 format=3 uid="uid://gidxga4cm134"]
+
+[ext_resource type="Script" uid="uid://bqhq0y16wcejl" path="res://Core/Packages/ObstaclePackages/ObstacleResource.gd" id="1_qvbw5"]
+
+[resource]
+script = ExtResource("1_qvbw5")
+damage = 15
+material_type = 1
+package_type = 1
+metadata/_custom_type_script = "uid://bqhq0y16wcejl"

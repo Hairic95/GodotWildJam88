@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4kjvua2wp2q4"]
+
+[ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_dp6w7"]
+
+[node name="RockObstacle" instance=ExtResource("1_dp6w7")]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
 [ext_resource type="Texture2D" uid="uid://b7o5ejcuk2ye1" path="res://assets/textures/tiles/tile_outer_0.png" id="2_480ue"]
 [ext_resource type="Resource" uid="uid://2xx0sbw5i066" path="res://Core/ItemsAndLoot/LootTable/ObstaclePatternLootTable/ObstaclePatternLootTable.tres" id="2_fangi"]
-[ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/rock.png" id="2_ro1wp"]
+[ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/Fence.png" id="2_ro1wp"]
 [ext_resource type="Resource" uid="uid://cn14own3ppdtq" path="res://Core/ItemsAndLoot/LootTable/BuffLootTable/BuffLootTable1.tres" id="3_60kn6"]
 [ext_resource type="Resource" uid="uid://ba7nlfsoi4d4o" path="res://Core/ItemsAndLoot/LootTable/ObstaclePatternLootTable/side_folliage.tres" id="4_fbnga"]
 [ext_resource type="Texture2D" uid="uid://m03ht014cy2o" path="res://assets/textures/tile_test_3.png" id="4_fqbln"]

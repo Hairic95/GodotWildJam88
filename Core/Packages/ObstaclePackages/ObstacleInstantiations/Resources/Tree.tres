@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_e0jk4")
+obstacle_type = 1
 package_type = 1
 metadata/_custom_type_script = "uid://bqhq0y16wcejl"
