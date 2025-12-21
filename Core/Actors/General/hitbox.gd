@@ -39,6 +39,7 @@ func on_area_entered(area):
 
 func on_hit_obstacle(obstacle_resource : Obstacle):
 	play_obstacle_hit_sound(obstacle_resource)
+	
 	if !invicibilty_frame and !shield_on:
 		health_manager.hurt(obstacle_resource.damage)
 	if shield_on:
@@ -50,11 +51,12 @@ func on_hit_obstacle(obstacle_resource : Obstacle):
 func play_obstacle_hit_sound(obstacle_resource : Obstacle):
 	match(obstacle_resource.material_type):
 		obstacle_resource.Materials.Wood:
-			FmodServer.play_one_shot("event:/SFX/Hit_wood")
+			FmodServer.set_global_parameter_by_name("Bumps",0)
 		obstacle_resource.Materials.Stone:
-			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+			FmodServer.set_global_parameter_by_name("Bumps",1)
 		obstacle_resource.Materials.Metal:
 			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+	FmodServer.play_one_shot("event:/SFX/Bumps")
 
 func delete_area(package_node):
 	package_node.queue_free()
@@ -63,21 +65,21 @@ func on_hit_power_up(power_up_resource : PowerUp):
 	match(power_up_resource.power_up_types):
 		PowerUp.PowerUpTypes.Speed:
 			increase_speed.emit(power_up_resource.amount)
-			FmodServer.play_one_shot("event:/SFX/Upgrade")
+			FmodServer.set_global_parameter_by_name("Pups",1)
 		PowerUp.PowerUpTypes.Shield:
 			%ShieldSprite.show()
-			FmodServer.play_one_shot("event:/SFX/Shield")
+			FmodServer.set_global_parameter_by_name("Pups",0)
 			shield_on = true
 			#FmodServer.set_global_parameter_by_name("Shielded",1)
 		PowerUp.PowerUpTypes.WarmClothes:
-			FmodServer.play_one_shot("event:/SFX/Upgrade")
+			FmodServer.set_global_parameter_by_name("Pups",2)
 			GameState.decrease_frost.emit(power_up_resource.amount)
 		PowerUp.PowerUpTypes.FirstAid:
-			FmodServer.play_one_shot("event:/SFX/Upgrade")
+			FmodServer.set_global_parameter_by_name("Pups",1)
 			health_manager.heal(power_up_resource.amount)
 		PowerUp.PowerUpTypes.Alcohol:
-			FmodServer.play_one_shot("event:/SFX/Alcohol")
 			get_crunk.emit()
+	FmodServer.play_one_shot("event:/SFX/Pups")
 	
 	
 
