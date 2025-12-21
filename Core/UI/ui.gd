@@ -28,11 +28,13 @@ func new_health(cur_health):
 	%HealthBar.value = cur_health
 	
 func on_game_over():
+	avalanche_path_2d_3.push_back()
 	%FinalScoreLabel.text = str(int(score))
 	%GameOverPanel.show()
 	
 func on_replay_button_pressed():
 	FmodServer.play_one_shot("event:/UI/Button")
+	GameState.reset_values()
 	get_tree().reload_current_scene()
 
 func on_change_frost(frost_level):

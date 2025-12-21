@@ -21,6 +21,8 @@ func on_decrease_frost(amount):
 	frost_meter = clampf(new_amount, 0,100)
 	change_frost.emit(frost_meter)
 	
+func push_back():
+	avalanche_path_follow_2d.progress_ratio = 0.0
 
 func on_area_entered(area):
 	if area is FrostArea and !dog_in:
@@ -29,7 +31,7 @@ func on_area_entered(area):
 
 func super_snowy():
 	var tween = get_tree().create_tween()
-	tween.tween_property(%SnowShader,"material:shader_parameter/count", 2000, 2.0)
+	tween.tween_property(%SnowShader,"material:shader_parameter/count", 1200, 2.0)
 	
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(%SnowShader,"material:shader_parameter/speed", 15.0, 2.0)
