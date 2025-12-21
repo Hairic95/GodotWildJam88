@@ -34,7 +34,27 @@ func on_area_entered(area):
 				on_hit_power_up(power_up_resource)
 				call_deferred("delete_area", package_node)
 			Package.PackageTypes.Obstacles:
-				pass
+				var obstacle_resource : Obstacle = package_resource
+				on_hit_obstacle(obstacle_resource)
+
+func on_hit_obstacle(obstacle_resource : Obstacle):
+	play_obstacle_hit_sound(obstacle_resource)
+	if !invicibilty_frame and !shield_on:
+		health_manager.hurt(obstacle_resource.damage)
+	if shield_on:
+		health_manager.hurt(0)
+		FmodServer.set_global_parameter_by_name("Shielded",0)
+		shield_on = false
+		%ShieldSprite.hide()
+	
+func play_obstacle_hit_sound(obstacle_resource : Obstacle):
+	match(obstacle_resource.material_type):
+		obstacle_resource.Materials.Wood:
+			FmodServer.play_one_shot("event:/SFX/Hit_wood")
+		obstacle_resource.Materials.Stone:
+			FmodServer.play_one_shot("event:/SFX/Hit_stone")
+		obstacle_resource.Materials.Metal:
+			FmodServer.play_one_shot("event:/SFX/Hit_stone")
 
 func delete_area(package_node):
 	package_node.queue_free()

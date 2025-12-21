@@ -375,6 +375,7 @@ OBSTACLE_UP_LOOT_TABLE = ExtResource("36_yukla")
 
 [node name="PowerUpSpawnTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0
+autostart = true
 
 [node name="ObstacleSpawnTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0
