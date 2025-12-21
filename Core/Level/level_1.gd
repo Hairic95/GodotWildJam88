@@ -17,7 +17,6 @@ var starting_tile_position : Vector2i= Vector2i.ZERO
 
 signal update_y(y)
 
-
 func _ready() -> void:
 	GameState.gameOver.connect(on_game_over)
 	anim.play("Idle")

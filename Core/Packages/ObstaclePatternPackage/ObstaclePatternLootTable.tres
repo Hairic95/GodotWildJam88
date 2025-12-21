@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=5 format=3 uid="uid://ctv3sxha2fh3s"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://ctv3sxha2fh3s"]
 
 [ext_resource type="Script" uid="uid://c5ro3gr3ihoa0" path="res://Core/ItemsAndLoot/LootTable/LootObject.gd" id="1_t610p"]
 [ext_resource type="Script" uid="uid://dfjhjahglsj8h" path="res://Core/ItemsAndLoot/LootTable/LootTable.gd" id="2_e0ori"]
 [ext_resource type="Resource" uid="uid://dlue06ickkmgr" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/Forest_1_Object_Pattern.tres" id="2_havo5"]
 [ext_resource type="Resource" uid="uid://tjcunlc3cd2b" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/drunk_forest_obstacle_pattern.tres" id="4_4k1yf"]
+[ext_resource type="Resource" uid="uid://dluejw8bjcbbt" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/middle_fence_obstacle_pattern_base.tres" id="4_xiwej"]
+[ext_resource type="Resource" uid="uid://cp3xtt3varv8n" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/right_fence_obstacle_pattern_node.tres" id="5_8lyi2"]
+[ext_resource type="Resource" uid="uid://dncmak5tn8gxa" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/yeti_obstacle_pattern_node.tres" id="6_pwdt4"]
 
 [resource]
 script = ExtResource("2_e0ori")
 item_drop_count = 1
-item_list = Array[ExtResource("1_t610p")]([ExtResource("2_havo5"), ExtResource("4_4k1yf")])
+item_list = Array[ExtResource("1_t610p")]([ExtResource("2_havo5"), ExtResource("4_4k1yf"), ExtResource("4_xiwej"), ExtResource("5_8lyi2"), ExtResource("6_pwdt4")])
 metadata/_custom_type_script = "uid://dfjhjahglsj8h"

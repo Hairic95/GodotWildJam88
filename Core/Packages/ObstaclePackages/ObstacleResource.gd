@@ -4,7 +4,7 @@ class_name Obstacle
 @export var damage : int = 10
 @export var random_scale  : Vector2 = Vector2(4,5)
 
-enum ObstacleTypes {PineTree, Rock, Fence}
+enum ObstacleTypes {PineTree, Rock, Fence, Yeti}
 @export var obstacle_type : ObstacleTypes
 
 enum Materials {Wood, Stone, Metal}

@@ -32,6 +32,7 @@ const OBSTACLE_PATTERN_FOREST = preload("uid://b47rksibvsuiy")
 const DRUNK_FOREST_OBSTACLE_PATTERN = preload("uid://cx0brrstrxfd")
 const MIDDLE_FENCE_OBSTACLE_PATTERN_NODE = preload("uid://b0ou5vmweaq3p")
 const RIGHT_FENCE_OBSTACLE_PATTERN_NODE = preload("uid://pevi364ibsvw")
+const YETI_OBSTACLE_PATTERN_NODE = preload("uid://brcfi8tcxhqym")
 
 
 var package_dictionary = {
@@ -52,7 +53,8 @@ var package_dictionary = {
 		OBSTACLE_PATTERN_FOREST,
 		DRUNK_FOREST_OBSTACLE_PATTERN,
 		MIDDLE_FENCE_OBSTACLE_PATTERN_NODE,
-		RIGHT_FENCE_OBSTACLE_PATTERN_NODE
+		RIGHT_FENCE_OBSTACLE_PATTERN_NODE,
+		YETI_OBSTACLE_PATTERN_NODE
 		
 	]
 }

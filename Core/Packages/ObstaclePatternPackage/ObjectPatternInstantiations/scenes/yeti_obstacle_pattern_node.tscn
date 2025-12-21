@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://brcfi8tcxhqym"]
+
+[ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_avjbf"]
+[ext_resource type="Script" uid="uid://bcy5jjhsuf76t" path="res://Core/Packages/ObstaclePackages/obstacle_path_follow.gd" id="2_4v4t8"]
+[ext_resource type="Resource" uid="uid://dncmak5tn8gxa" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/yeti_obstacle_pattern_node.tres" id="2_e7hk6"]
+[ext_resource type="PackedScene" uid="uid://dcygx407jrdlc" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/yeti_obstacle.tscn" id="3_e7hk6"]
+
+[sub_resource type="Curve2D" id="Curve2D_4v4t8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1111, 715, -494.6032, -247.3016, 494.6032, 247.3016, 7038, 83, -966.7245, -562.0491, 966.7245, 562.0491, 11553, 2684, -1326.4359, 292.26553, 1326.4359, -292.26553, 15994, 1458, -472.12125, 179.85571, 472.12125, -179.85571, 20564, 2350, -876.79663, -112.40982, 876.79663, 112.40982, 25135, 1997, -2428.0522, -427.15732, 2428.0522, 427.15732, 27328, 4933, 0, 0, 0, 0, 31712, 3948)
+}
+point_count = 8
+
+[node name="YetiObstaclePatternNode" instance=ExtResource("1_avjbf")]
+package_resource = ExtResource("2_e7hk6")
+
+[node name="Path2D" type="Path2D" parent="ObstacleNodes" index="0"]
+position = Vector2(-11463, -929)
+curve = SubResource("Curve2D_4v4t8")
+script = ExtResource("2_4v4t8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ObstacleNodes/Path2D" index="0"]
+position = Vector2(1111, 715)
+rotation = -1.1794974
+rotates = false
+
+[node name="YetiObstacle" parent="ObstacleNodes/Path2D/PathFollow2D" index="0" instance=ExtResource("3_e7hk6")]
+position = Vector2(73.751465, 71.25781)
+rotation = 1.1794974
