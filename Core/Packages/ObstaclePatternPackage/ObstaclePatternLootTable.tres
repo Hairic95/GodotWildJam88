@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=3 format=3 uid="uid://ctv3sxha2fh3s"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=4 format=3 uid="uid://ctv3sxha2fh3s"]
 
 [ext_resource type="Script" uid="uid://c5ro3gr3ihoa0" path="res://Core/ItemsAndLoot/LootTable/LootObject.gd" id="1_t610p"]
 [ext_resource type="Script" uid="uid://dfjhjahglsj8h" path="res://Core/ItemsAndLoot/LootTable/LootTable.gd" id="2_e0ori"]
+[ext_resource type="Resource" uid="uid://dlue06ickkmgr" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/Forest_1_Object_Pattern.tres" id="2_havo5"]
 
 [resource]
 script = ExtResource("2_e0ori")
+item_drop_count = 1
+item_list = Array[ExtResource("1_t610p")]([ExtResource("2_havo5")])
 metadata/_custom_type_script = "uid://dfjhjahglsj8h"

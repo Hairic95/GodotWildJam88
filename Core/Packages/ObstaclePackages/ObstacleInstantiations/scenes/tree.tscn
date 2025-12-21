@@ -8,6 +8,7 @@
 size = Vector2(122, 65)
 
 [node name="Tree" instance=ExtResource("1_0nflt")]
+scale = Vector2(5, 5)
 package_resource = ExtResource("2_xe0ls")
 
 [node name="Sprite2D" parent="." index="2"]

@@ -1,0 +1,2 @@
+extends Package
+class_name ObstaclePattern

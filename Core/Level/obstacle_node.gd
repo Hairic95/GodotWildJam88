@@ -2,6 +2,7 @@ extends Node2D
 
 @export var power_up_spawn_timer : Timer
 @export var obstacle_spawn_timer : Timer
+@export var obstacle_pattern_spawn_timer : Timer
 
 @onready var line_2d: Line2D = %Line2D
 
@@ -21,6 +22,13 @@ const WARM_POWER_UP = preload("uid://b038xil7kovth")
 @export var OBSTACLE_UP_LOOT_TABLE : LootTable
 
 const TREE = preload("uid://ce3oehf3dmi37")
+const FENCE_OBSTACLE = preload("uid://b3q0qfiim1xij")
+const ROCK_OBSTACLE = preload("uid://c4kjvua2wp2q4")
+
+@export var OBSTACLE_PATTERN_UP_LOOT_TABLE : LootTable
+
+const OBSTACLE_PATTERN_FOREST = preload("uid://b47rksibvsuiy")
+
 
 
 var package_dictionary = {
@@ -31,18 +39,38 @@ var package_dictionary = {
 		WARM_POWER_UP]
 		,
 	"Obstacle" = [
-		TREE
+		TREE,
+		ROCK_OBSTACLE,
+		FENCE_OBSTACLE
+	],
+	"ObstaclePattern" = [
+		OBSTACLE_PATTERN_FOREST
 	]
 }
 
 func _ready() -> void:
 	power_up_spawn_timer.timeout.connect(on_power_up_spawn)
 	obstacle_spawn_timer.timeout.connect(on_obstacle_spawn)
+	obstacle_pattern_spawn_timer.timeout.connect(on_object_pattern_spawn)
 	child_entered_tree.connect(on_package_enter_tree)
 
 
+func on_object_pattern_spawn():
+	var object_pattern_arr = OBSTACLE_PATTERN_UP_LOOT_TABLE.item_results
+	if object_pattern_arr.size() > 0:
+		var obstacle_pattern = object_pattern_arr[0]
+		if obstacle_pattern is ObstaclePattern:
+			spawn_object_pattern(obstacle_pattern)
+		else:
+			print("not")
+
+func spawn_object_pattern(package_resource):
+	var object_pattern_node_scene : PackedScene = package_dictionary["ObstaclePattern"][package_resource.array_ind] 
+	var object_pattern_node : PackageBody  = object_pattern_node_scene.instantiate()
+	add_child(object_pattern_node)
+	object_pattern_node.global_position = %ObjectPatternMarker2D.global_position
+
 func on_obstacle_spawn():
-	print("spawning")
 	var obstacle_arr = OBSTACLE_UP_LOOT_TABLE.item_results
 	if obstacle_arr.size() > 0:
 		var obstacle = obstacle_arr[0]

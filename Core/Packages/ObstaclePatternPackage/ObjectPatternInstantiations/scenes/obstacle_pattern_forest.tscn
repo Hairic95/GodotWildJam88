@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=4 uid="uid://b47rksibvsuiy"]
+
+[ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_ko5gg"]
+[ext_resource type="Resource" uid="uid://dlue06ickkmgr" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/Forest_1_Object_Pattern.tres" id="2_1jv0y"]
+
+[node name="ObstaclePatternNode" instance=ExtResource("1_ko5gg")]
+package_resource = ExtResource("2_1jv0y")
+
+[node name="ObstacleTileMapLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AADi/1MAAAAAAAAAAQDm/08AAAAAAAAAAQDp/yIAAAAAAAAAAwDq/0sAAAAAAAAAAQDr/0QAAAAAAAAAAgDy/ycAAAAAAAAAAwD6/xwAAAAAAAAAAwAFAFMAAAAAAAAAAgAHADIAAAAAAAAAAwAQABcAAAAAAAAAAwAQAD4AAAAAAAAAAwAcABwAAAAAAAAAAwAfADAAAAAAAAAAAwA=")

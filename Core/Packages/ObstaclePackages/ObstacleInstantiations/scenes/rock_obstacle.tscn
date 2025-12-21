@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4kjvua2wp2q4"]
+[gd_scene load_steps=4 format=3 uid="uid://c4kjvua2wp2q4"]
 
 [ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_dp6w7"]
+[ext_resource type="Resource" uid="uid://gidxga4cm134" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/Resources/RockObstacleRes.tres" id="2_1ljry"]
+[ext_resource type="Texture2D" uid="uid://dstdu8701nytv" path="res://assets/textures/actual_rock.png" id="3_sahgg"]
 
 [node name="RockObstacle" instance=ExtResource("1_dp6w7")]
+scale = Vector2(5, 5)
+package_resource = ExtResource("2_1ljry")
+
+[node name="Sprite2D" parent="." index="2"]
+y_sort_enabled = true
+texture = ExtResource("3_sahgg")
+offset = Vector2(0, -73.065)

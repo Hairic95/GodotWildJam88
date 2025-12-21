@@ -1,2 +1,2 @@
 extends Area2D
-class_name PackageArea
+class_name PackageArea2

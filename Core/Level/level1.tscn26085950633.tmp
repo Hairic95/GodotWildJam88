@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=86 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -50,7 +50,6 @@
 [ext_resource type="Texture2D" uid="uid://c78mj2ywp2gpt" path="res://assets/textures/ui/frost_bar_progress.png" id="35_uqlyo"]
 [ext_resource type="Resource" uid="uid://c2esp0r6b14vi" path="res://Core/Packages/PowerUpPackages/PowerUpLootTable.tres" id="35_ynqfr"]
 [ext_resource type="Resource" uid="uid://cwqvrbexybrpx" path="res://Core/Packages/ObstaclePackages/ObstacleLootTable.tres" id="36_yukla"]
-[ext_resource type="Resource" uid="uid://ctv3sxha2fh3s" path="res://Core/Packages/ObstaclePatternPackage/ObstaclePatternLootTable.tres" id="37_hgavx"]
 [ext_resource type="PackedScene" uid="uid://bprbu06rjqh7i" path="res://Debug/debug_ui.tscn" id="49_vbedj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xo5lp"]
@@ -367,18 +366,16 @@ script = ExtResource("18_riabc")
 
 [node name="SpawnNode" type="Node2D" parent="."]
 
-[node name="ObstacleNode" type="Node2D" parent="SpawnNode" node_paths=PackedStringArray("power_up_spawn_timer", "obstacle_spawn_timer", "obstacle_pattern_spawn_timer")]
+[node name="ObstacleNode" type="Node2D" parent="SpawnNode" node_paths=PackedStringArray("power_up_spawn_timer", "obstacle_spawn_timer")]
 script = ExtResource("34_ynqfr")
 power_up_spawn_timer = NodePath("../PowerUpSpawnTimer")
 obstacle_spawn_timer = NodePath("../ObstacleSpawnTimer")
-obstacle_pattern_spawn_timer = NodePath("../ObjectPatternTimer")
 POWER_UP_LOOT_TABLE = ExtResource("35_ynqfr")
 OBSTACLE_UP_LOOT_TABLE = ExtResource("36_yukla")
-OBSTACLE_PATTERN_UP_LOOT_TABLE = ExtResource("37_hgavx")
+OBSTACLE_PATTERN_UP_LOOT_TABLE = ExtResource("2_fangi")
 
 [node name="PowerUpSpawnTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0
-autostart = true
 
 [node name="ObstacleSpawnTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0
@@ -726,7 +723,7 @@ unique_name_in_owner = true
 
 [node name="ObjectPatternMarker2D" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(9103, 3987)
+position = Vector2(9312.393, 3718.0933)
 
 [node name="DebugUI" parent="." instance=ExtResource("49_vbedj")]
 visible = false

@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3q0qfiim1xij"]
+[gd_scene load_steps=4 format=3 uid="uid://b3q0qfiim1xij"]
 
 [ext_resource type="PackedScene" uid="uid://dw87sxiqvtey2" path="res://Core/Packages/PackageBase.tscn" id="1_vgjaw"]
+[ext_resource type="Resource" uid="uid://bl18phwfukyee" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/Resources/FenceObstacle.tres" id="2_jgkby"]
+[ext_resource type="Texture2D" uid="uid://yy6oll5h0nya" path="res://assets/textures/Fence.png" id="2_ys3sp"]
 
 [node name="Fence" instance=ExtResource("1_vgjaw")]
+scale = Vector2(5, 5)
+package_resource = ExtResource("2_jgkby")
+
+[node name="Sprite2D" parent="." index="2"]
+y_sort_enabled = true
+texture = ExtResource("2_ys3sp")
+offset = Vector2(0, -61.05)

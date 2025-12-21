@@ -8,6 +8,7 @@
 radius = 1.0
 
 [node name="PackageBase" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_gsxc6")
 
 [node name="CollisionBodyShape2D" type="CollisionShape2D" parent="."]
