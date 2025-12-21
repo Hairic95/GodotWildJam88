@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=4 uid="uid://d3ksey2fw1u7v"]
+[gd_scene load_steps=87 format=4 uid="uid://d3ksey2fw1u7v"]
 
 [ext_resource type="Texture2D" uid="uid://cktrnoob1w6kl" path="res://assets/textures/tiles/tile_inner_0.png" id="1_ad4l5"]
 [ext_resource type="Script" uid="uid://dx8r8343b8g0y" path="res://Core/Level/level_1.gd" id="1_cpp6p"]
@@ -45,12 +45,10 @@
 [ext_resource type="Texture2D" uid="uid://dcbbvoaw2vmss" path="res://assets/textures/avalache_face.png" id="33_gvukp"]
 [ext_resource type="Script" uid="uid://cctlwn8v27n0p" path="res://Core/Level/obstacle_node.gd" id="34_ynqfr"]
 [ext_resource type="Texture2D" uid="uid://c78mj2ywp2gpt" path="res://assets/textures/ui/frost_bar_progress.png" id="35_uqlyo"]
-[ext_resource type="Texture2D" uid="uid://df8mj7662sgfq" path="res://assets/textures/gameover_bg.png" id="47_am5yv"]
 [ext_resource type="Resource" uid="uid://c2esp0r6b14vi" path="res://Core/Packages/PowerUpPackages/PowerUpLootTable.tres" id="35_ynqfr"]
-[ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="35_yukla"]
-[ext_resource type="PackedScene" uid="uid://b47rksibvsuiy" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/scenes/obstacle_pattern_forest.tscn" id="36_hgavx"]
 [ext_resource type="Resource" uid="uid://cwqvrbexybrpx" path="res://Core/Packages/ObstaclePackages/ObstacleLootTable.tres" id="36_yukla"]
 [ext_resource type="Resource" uid="uid://ctv3sxha2fh3s" path="res://Core/Packages/ObstaclePatternPackage/ObstaclePatternLootTable.tres" id="37_hgavx"]
+[ext_resource type="Texture2D" uid="uid://df8mj7662sgfq" path="res://assets/textures/gameover_bg.png" id="47_am5yv"]
 [ext_resource type="PackedScene" uid="uid://bprbu06rjqh7i" path="res://Debug/debug_ui.tscn" id="49_vbedj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xo5lp"]
@@ -382,11 +380,6 @@ obstacle_pattern_spawn_timer = NodePath("../ObjectPatternTimer")
 POWER_UP_LOOT_TABLE = ExtResource("35_ynqfr")
 OBSTACLE_UP_LOOT_TABLE = ExtResource("36_yukla")
 OBSTACLE_PATTERN_UP_LOOT_TABLE = ExtResource("37_hgavx")
-
-[node name="Alcohol" parent="SpawnNode/ObstacleNode" instance=ExtResource("35_yukla")]
-position = Vector2(8928.767, 3531.8538)
-
-[node name="ObstaclePatternNode" parent="SpawnNode/ObstacleNode" instance=ExtResource("36_hgavx")]
 
 [node name="PowerUpSpawnTimer" type="Timer" parent="SpawnNode"]
 wait_time = 3.0

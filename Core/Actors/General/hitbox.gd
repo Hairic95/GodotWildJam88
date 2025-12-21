@@ -71,12 +71,13 @@ func on_hit_power_up(power_up_resource : PowerUp):
 			shield_on = true
 			#FmodServer.set_global_parameter_by_name("Shielded",1)
 		PowerUp.PowerUpTypes.WarmClothes:
-			FmodServer.set_global_parameter_by_name("Pups",2)
+			FmodServer.set_global_parameter_by_name("Pups",1)
 			GameState.decrease_frost.emit(power_up_resource.amount)
 		PowerUp.PowerUpTypes.FirstAid:
 			FmodServer.set_global_parameter_by_name("Pups",1)
 			health_manager.heal(power_up_resource.amount)
 		PowerUp.PowerUpTypes.Alcohol:
+			FmodServer.set_global_parameter_by_name("Pups",2)
 			get_crunk.emit()
 	FmodServer.play_one_shot("event:/SFX/Pups")
 	
