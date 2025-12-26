@@ -1,0 +1,255 @@
+[gd_scene load_steps=10 format=3 uid="uid://dskr3h3nkc1yf"]
+
+[ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_23gn5"]
+[ext_resource type="Resource" uid="uid://bgkb2xsou5t64" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/rock_tree_obstacle_pattern_node.tres" id="2_23gn5"]
+[ext_resource type="PackedScene" uid="uid://c4kjvua2wp2q4" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/rock_obstacle.tscn" id="3_g2aao"]
+[ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="4_76he6"]
+[ext_resource type="PackedScene" uid="uid://drekf23qslcg" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/shield_power_up.tscn" id="5_gnt0p"]
+[ext_resource type="Script" uid="uid://bcy5jjhsuf76t" path="res://Core/Packages/ObstaclePackages/obstacle_path_follow.gd" id="6_g2aao"]
+[ext_resource type="PackedScene" uid="uid://dcygx407jrdlc" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/yeti_obstacle.tscn" id="7_76he6"]
+[ext_resource type="PackedScene" uid="uid://db3jbxtm7jia0" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/speed_power_up.tscn" id="8_76he6"]
+
+[sub_resource type="Curve2D" id="Curve2D_gnt0p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1111, 715, -494.6032, -247.3016, 494.6032, 247.3016, 7038, 83, -966.7245, -562.0491, 966.7245, 562.0491, 11553, 2684, -1326.4359, 292.26553, 1326.4359, -292.26553, 15994, 1458, -472.12125, 179.85571, 472.12125, -179.85571, 20564, 2350, -876.79663, -112.40982, 876.79663, 112.40982, 25135, 1997, -2428.0522, -427.15732, 2428.0522, 427.15732, 27328, 4933, 0, 0, 0, 0, 31712, 3948)
+}
+point_count = 8
+
+[node name="RockTreeObstaclePatternNode" instance=ExtResource("1_23gn5")]
+package_resource = ExtResource("2_23gn5")
+
+[node name="RockObstacle" parent="ObstacleNodes" index="0" instance=ExtResource("3_g2aao")]
+position = Vector2(-997.99994, 2886.9998)
+
+[node name="RockObstacle2" parent="ObstacleNodes" index="1" instance=ExtResource("3_g2aao")]
+position = Vector2(122.99994, 2626)
+
+[node name="RockObstacle3" parent="ObstacleNodes" index="2" instance=ExtResource("3_g2aao")]
+position = Vector2(1536, 2273)
+
+[node name="RockObstacle4" parent="ObstacleNodes" index="3" instance=ExtResource("3_g2aao")]
+position = Vector2(2350, 2887.0002)
+
+[node name="RockObstacle41" parent="ObstacleNodes" index="4" instance=ExtResource("3_g2aao")]
+position = Vector2(-997.99994, 2886.9998)
+
+[node name="RockObstacle45" parent="ObstacleNodes" index="5" instance=ExtResource("3_g2aao")]
+position = Vector2(-9154.999, 2124.9998)
+
+[node name="RockObstacle46" parent="ObstacleNodes" index="6" instance=ExtResource("3_g2aao")]
+position = Vector2(-8033.9995, 1864)
+
+[node name="RockObstacle47" parent="ObstacleNodes" index="7" instance=ExtResource("3_g2aao")]
+position = Vector2(-6620.9995, 1511)
+
+[node name="RockObstacle48" parent="ObstacleNodes" index="8" instance=ExtResource("3_g2aao")]
+position = Vector2(-5806.9995, 2125.0002)
+
+[node name="RockObstacle49" parent="ObstacleNodes" index="9" instance=ExtResource("3_g2aao")]
+position = Vector2(-9154.999, 2124.9998)
+
+[node name="RockObstacle50" parent="ObstacleNodes" index="10" instance=ExtResource("3_g2aao")]
+position = Vector2(-5681, 3759.9995)
+
+[node name="RockObstacle51" parent="ObstacleNodes" index="11" instance=ExtResource("3_g2aao")]
+position = Vector2(-4560.001, 3499)
+
+[node name="RockObstacle52" parent="ObstacleNodes" index="12" instance=ExtResource("3_g2aao")]
+position = Vector2(-3147.0007, 3146)
+
+[node name="RockObstacle53" parent="ObstacleNodes" index="13" instance=ExtResource("3_g2aao")]
+position = Vector2(-2333.0007, 3760)
+
+[node name="RockObstacle54" parent="ObstacleNodes" index="14" instance=ExtResource("3_g2aao")]
+position = Vector2(-5681, 3759.9995)
+
+[node name="RockObstacle55" parent="ObstacleNodes" index="15" instance=ExtResource("3_g2aao")]
+position = Vector2(-1575.0005, 5357.9995)
+
+[node name="RockObstacle56" parent="ObstacleNodes" index="16" instance=ExtResource("3_g2aao")]
+position = Vector2(-454.00146, 5097)
+
+[node name="RockObstacle57" parent="ObstacleNodes" index="17" instance=ExtResource("3_g2aao")]
+position = Vector2(958.9988, 4744)
+
+[node name="RockObstacle58" parent="ObstacleNodes" index="18" instance=ExtResource("3_g2aao")]
+position = Vector2(1772.9988, 5358)
+
+[node name="RockObstacle59" parent="ObstacleNodes" index="19" instance=ExtResource("3_g2aao")]
+position = Vector2(-1575.0005, 5357.9995)
+
+[node name="RockObstacle42" parent="ObstacleNodes" index="20" instance=ExtResource("3_g2aao")]
+position = Vector2(122.99994, 2626)
+
+[node name="RockObstacle43" parent="ObstacleNodes" index="21" instance=ExtResource("3_g2aao")]
+position = Vector2(1536, 2273)
+
+[node name="RockObstacle44" parent="ObstacleNodes" index="22" instance=ExtResource("3_g2aao")]
+position = Vector2(2350, 2887.0002)
+
+[node name="RockObstacle5" parent="ObstacleNodes" index="23" instance=ExtResource("3_g2aao")]
+position = Vector2(2041.9998, 4176.9995)
+
+[node name="RockObstacle6" parent="ObstacleNodes" index="24" instance=ExtResource("3_g2aao")]
+position = Vector2(3162.9998, 3916)
+
+[node name="RockObstacle7" parent="ObstacleNodes" index="25" instance=ExtResource("3_g2aao")]
+position = Vector2(4576, 3563)
+
+[node name="RockObstacle8" parent="ObstacleNodes" index="26" instance=ExtResource("3_g2aao")]
+position = Vector2(5390, 4177)
+
+[node name="RockObstacle9" parent="ObstacleNodes" index="27" instance=ExtResource("3_g2aao")]
+position = Vector2(4852, 5558.9995)
+
+[node name="RockObstacle10" parent="ObstacleNodes" index="28" instance=ExtResource("3_g2aao")]
+position = Vector2(5973, 5298)
+
+[node name="RockObstacle11" parent="ObstacleNodes" index="29" instance=ExtResource("3_g2aao")]
+position = Vector2(7386, 4945)
+
+[node name="RockObstacle12" parent="ObstacleNodes" index="30" instance=ExtResource("3_g2aao")]
+position = Vector2(8200, 5559)
+
+[node name="RockObstacle13" parent="ObstacleNodes" index="31" instance=ExtResource("3_g2aao")]
+position = Vector2(4130, 2687.9998)
+
+[node name="RockObstacle14" parent="ObstacleNodes" index="32" instance=ExtResource("3_g2aao")]
+position = Vector2(5251, 2427.0002)
+
+[node name="RockObstacle15" parent="ObstacleNodes" index="33" instance=ExtResource("3_g2aao")]
+position = Vector2(6664, 2074.0002)
+
+[node name="RockObstacle16" parent="ObstacleNodes" index="34" instance=ExtResource("3_g2aao")]
+position = Vector2(7478, 2688.0002)
+
+[node name="RockObstacle17" parent="ObstacleNodes" index="35" instance=ExtResource("3_g2aao")]
+position = Vector2(7140, 3915.9995)
+
+[node name="RockObstacle18" parent="ObstacleNodes" index="36" instance=ExtResource("3_g2aao")]
+position = Vector2(8261, 3655)
+
+[node name="RockObstacle19" parent="ObstacleNodes" index="37" instance=ExtResource("3_g2aao")]
+position = Vector2(9674, 3302)
+
+[node name="RockObstacle20" parent="ObstacleNodes" index="38" instance=ExtResource("3_g2aao")]
+position = Vector2(10488, 3916)
+
+[node name="Tree" parent="ObstacleNodes" index="39" instance=ExtResource("4_76he6")]
+position = Vector2(1105.9999, 3346.9998)
+
+[node name="Tree11" parent="ObstacleNodes" index="40" instance=ExtResource("4_76he6")]
+position = Vector2(474.00018, 5688)
+
+[node name="Tree12" parent="ObstacleNodes" index="41" instance=ExtResource("4_76he6")]
+position = Vector2(-3427.9998, 4257.0005)
+
+[node name="Tree13" parent="ObstacleNodes" index="42" instance=ExtResource("4_76he6")]
+position = Vector2(-7014, 2845)
+
+[node name="Tree2" parent="ObstacleNodes" index="43" instance=ExtResource("4_76he6")]
+position = Vector2(6449.9995, 3132)
+
+[node name="Tree3" parent="ObstacleNodes" index="44" instance=ExtResource("4_76he6")]
+position = Vector2(9291, 4499)
+
+[node name="Tree4" parent="ObstacleNodes" index="45" instance=ExtResource("4_76he6")]
+position = Vector2(4208.0005, 4591)
+
+[node name="Tree5" parent="ObstacleNodes" index="46" instance=ExtResource("4_76he6")]
+position = Vector2(6788, 5927.0005)
+
+[node name="RockObstacle21" parent="ObstacleNodes" index="47" instance=ExtResource("3_g2aao")]
+position = Vector2(12492, 786.9995)
+
+[node name="RockObstacle22" parent="ObstacleNodes" index="48" instance=ExtResource("3_g2aao")]
+position = Vector2(13613, 525.99976)
+
+[node name="RockObstacle23" parent="ObstacleNodes" index="49" instance=ExtResource("3_g2aao")]
+position = Vector2(15026, 172.99973)
+
+[node name="RockObstacle24" parent="ObstacleNodes" index="50" instance=ExtResource("3_g2aao")]
+position = Vector2(15840, 787)
+
+[node name="RockObstacle25" parent="ObstacleNodes" index="51" instance=ExtResource("3_g2aao")]
+position = Vector2(15532, 2076.9993)
+
+[node name="RockObstacle26" parent="ObstacleNodes" index="52" instance=ExtResource("3_g2aao")]
+position = Vector2(16653, 1815.9998)
+
+[node name="RockObstacle27" parent="ObstacleNodes" index="53" instance=ExtResource("3_g2aao")]
+position = Vector2(18066, 1462.9998)
+
+[node name="RockObstacle28" parent="ObstacleNodes" index="54" instance=ExtResource("3_g2aao")]
+position = Vector2(18880, 2076.9998)
+
+[node name="RockObstacle29" parent="ObstacleNodes" index="55" instance=ExtResource("3_g2aao")]
+position = Vector2(18342, 3458.9993)
+
+[node name="RockObstacle30" parent="ObstacleNodes" index="56" instance=ExtResource("3_g2aao")]
+position = Vector2(19463, 3197.9998)
+
+[node name="RockObstacle31" parent="ObstacleNodes" index="57" instance=ExtResource("3_g2aao")]
+position = Vector2(20876, 2844.9998)
+
+[node name="RockObstacle32" parent="ObstacleNodes" index="58" instance=ExtResource("3_g2aao")]
+position = Vector2(21690, 3458.9998)
+
+[node name="RockObstacle33" parent="ObstacleNodes" index="59" instance=ExtResource("3_g2aao")]
+position = Vector2(17620, 587.9995)
+
+[node name="RockObstacle34" parent="ObstacleNodes" index="60" instance=ExtResource("3_g2aao")]
+position = Vector2(18741, 326.99997)
+
+[node name="RockObstacle35" parent="ObstacleNodes" index="61" instance=ExtResource("3_g2aao")]
+position = Vector2(20154, -26.00003)
+
+[node name="RockObstacle36" parent="ObstacleNodes" index="62" instance=ExtResource("3_g2aao")]
+position = Vector2(20968, 588)
+
+[node name="RockObstacle37" parent="ObstacleNodes" index="63" instance=ExtResource("3_g2aao")]
+position = Vector2(20630, 1815.9993)
+
+[node name="RockObstacle38" parent="ObstacleNodes" index="64" instance=ExtResource("3_g2aao")]
+position = Vector2(21751, 1554.9998)
+
+[node name="RockObstacle39" parent="ObstacleNodes" index="65" instance=ExtResource("3_g2aao")]
+position = Vector2(23164, 1201.9998)
+
+[node name="RockObstacle40" parent="ObstacleNodes" index="66" instance=ExtResource("3_g2aao")]
+position = Vector2(23978, 1815.9998)
+
+[node name="Tree6" parent="ObstacleNodes" index="67" instance=ExtResource("4_76he6")]
+position = Vector2(14596, 1246.9995)
+
+[node name="Tree7" parent="ObstacleNodes" index="68" instance=ExtResource("4_76he6")]
+position = Vector2(19939.998, 1031.9998)
+
+[node name="Tree8" parent="ObstacleNodes" index="69" instance=ExtResource("4_76he6")]
+position = Vector2(22781, 2398.9998)
+
+[node name="Tree9" parent="ObstacleNodes" index="70" instance=ExtResource("4_76he6")]
+position = Vector2(17698, 2490.9998)
+
+[node name="Tree10" parent="ObstacleNodes" index="71" instance=ExtResource("4_76he6")]
+position = Vector2(20278, 3827.0002)
+
+[node name="ShieldPowerUp" parent="ObstacleNodes" index="72" instance=ExtResource("5_gnt0p")]
+position = Vector2(11982.999, 5687.9995)
+
+[node name="Path2D" type="Path2D" parent="ObstacleNodes" index="73"]
+position = Vector2(-11463, -929)
+curve = SubResource("Curve2D_gnt0p")
+script = ExtResource("6_g2aao")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ObstacleNodes/Path2D" index="0"]
+position = Vector2(1111, 715)
+rotation = -1.1794974
+rotates = false
+
+[node name="YetiObstacle" parent="ObstacleNodes/Path2D/PathFollow2D" index="0" instance=ExtResource("7_76he6")]
+position = Vector2(73.751465, 71.25781)
+rotation = 1.1794974
+
+[node name="SpeedPowerUp" parent="ObstacleNodes" index="74" instance=ExtResource("8_76he6")]
+position = Vector2(20868.998, 5595.9995)

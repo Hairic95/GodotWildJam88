@@ -36,6 +36,8 @@ const YETI_OBSTACLE_PATTERN_NODE = preload("uid://brcfi8tcxhqym")
 const CHILL_OBSTACLE_PATTERN_NODE = preload("uid://dx47bcxo70tn0")
 const LOVE_FOREST_OBSTACLE_PATTERN_NODE = preload("uid://cphiht84cryqt")
 const FENCE_ROCK_OBSTACLE_PATTERN_NODE = preload("uid://c3a7bg6vhaxiw")
+const COOL_FENCE_OBSTACLE_PATTERN_NODE = preload("uid://dbln63d2ycp8u")
+const ROCK_TREE_OBSTACLE_PATTERN_NODE = preload("uid://dskr3h3nkc1yf")
 
 
 var package_dictionary = {
@@ -60,7 +62,9 @@ var package_dictionary = {
 		YETI_OBSTACLE_PATTERN_NODE,
 		CHILL_OBSTACLE_PATTERN_NODE, 
 		LOVE_FOREST_OBSTACLE_PATTERN_NODE,
-		FENCE_ROCK_OBSTACLE_PATTERN_NODE
+		FENCE_ROCK_OBSTACLE_PATTERN_NODE,
+		COOL_FENCE_OBSTACLE_PATTERN_NODE,
+		ROCK_TREE_OBSTACLE_PATTERN_NODE
 	]
 }
 

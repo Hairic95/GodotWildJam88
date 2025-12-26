@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx47bcxo70tn0"]
+[gd_scene load_steps=9 format=3 uid="uid://dx47bcxo70tn0"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_qnd4c"]
 [ext_resource type="Resource" uid="uid://bsix30dqb2ks7" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/chill_obstacle_pattern_node.tres" id="2_qnd4c"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c4kjvua2wp2q4" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/rock_obstacle.tscn" id="4_ss6ya"]
 [ext_resource type="PackedScene" uid="uid://drekf23qslcg" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/shield_power_up.tscn" id="5_kcxcp"]
 [ext_resource type="PackedScene" uid="uid://qoco88rr8v17" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/heal_power_up.tscn" id="6_8hcgv"]
+[ext_resource type="PackedScene" uid="uid://db3jbxtm7jia0" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/speed_power_up.tscn" id="7_gpsjk"]
+[ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="8_21evk"]
 
 [node name="ObstaclePatternNode" instance=ExtResource("1_qnd4c")]
 package_resource = ExtResource("2_qnd4c")
@@ -74,7 +76,13 @@ position = Vector2(17502, 873.00024)
 position = Vector2(19267.002, 5221)
 
 [node name="ShieldPowerUp" parent="ObstacleNodes" index="21" instance=ExtResource("5_kcxcp")]
-position = Vector2(9588.001, 2862)
+position = Vector2(6010.003, 1971.0001)
 
 [node name="HealPowerUp" parent="ObstacleNodes" index="22" instance=ExtResource("6_8hcgv")]
-position = Vector2(6663.9995, 3715.9998)
+position = Vector2(4068, 2518)
+
+[node name="SpeedPowerUp" parent="ObstacleNodes" index="23" instance=ExtResource("7_gpsjk")]
+position = Vector2(8030.9995, 1197.9999)
+
+[node name="Alcohol" parent="ObstacleNodes" index="24" instance=ExtResource("8_21evk")]
+position = Vector2(2302.9998, 3224.9998)

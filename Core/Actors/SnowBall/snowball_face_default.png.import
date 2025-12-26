@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca50hx0heobmv"
 path.s3tc="res://.godot/imported/snowball_face_default.png-43738c93bf76fb580c45bb72b957f282.s3tc.ctex"
+path.etc2="res://.godot/imported/snowball_face_default.png-43738c93bf76fb580c45bb72b957f282.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Core/Actors/SnowBall/snowball_face_default.png"
-dest_files=["res://.godot/imported/snowball_face_default.png-43738c93bf76fb580c45bb72b957f282.s3tc.ctex"]
+dest_files=["res://.godot/imported/snowball_face_default.png-43738c93bf76fb580c45bb72b957f282.s3tc.ctex", "res://.godot/imported/snowball_face_default.png-43738c93bf76fb580c45bb72b957f282.etc2.ctex"]
 
 [params]
 

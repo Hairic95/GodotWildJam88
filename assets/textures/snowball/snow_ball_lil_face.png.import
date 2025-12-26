@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://br0q8e2rbrnh4"
 path.s3tc="res://.godot/imported/snow_ball_lil_face.png-f8ab746f2727cef8c2bfb229e8c2a038.s3tc.ctex"
+path.etc2="res://.godot/imported/snow_ball_lil_face.png-f8ab746f2727cef8c2bfb229e8c2a038.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/snowball/snow_ball_lil_face.png"
-dest_files=["res://.godot/imported/snow_ball_lil_face.png-f8ab746f2727cef8c2bfb229e8c2a038.s3tc.ctex"]
+dest_files=["res://.godot/imported/snow_ball_lil_face.png-f8ab746f2727cef8c2bfb229e8c2a038.s3tc.ctex", "res://.godot/imported/snow_ball_lil_face.png-f8ab746f2727cef8c2bfb229e8c2a038.etc2.ctex"]
 
 [params]
 

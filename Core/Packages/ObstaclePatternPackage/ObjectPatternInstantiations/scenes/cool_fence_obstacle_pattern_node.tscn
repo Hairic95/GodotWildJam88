@@ -1,0 +1,216 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbln63d2ycp8u"]
+
+[ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_4aj12"]
+[ext_resource type="Resource" uid="uid://c2jhu45ltpbho" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/cool_fence_obstacle_pattern_node.tres" id="2_5usai"]
+[ext_resource type="PackedScene" uid="uid://b3q0qfiim1xij" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/fence_obstacle.tscn" id="2_jagre"]
+[ext_resource type="PackedScene" uid="uid://c4kjvua2wp2q4" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/rock_obstacle.tscn" id="3_5usai"]
+[ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="4_j7hxy"]
+[ext_resource type="PackedScene" uid="uid://qoco88rr8v17" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/heal_power_up.tscn" id="5_hkvik"]
+[ext_resource type="PackedScene" uid="uid://b038xil7kovth" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/warm_power_up.tscn" id="6_kukcy"]
+
+[node name="CoolFenceObstaclePatternNode" instance=ExtResource("1_4aj12")]
+package_resource = ExtResource("2_5usai")
+
+[node name="Fence" parent="ObstacleNodes" index="0" instance=ExtResource("2_jagre")]
+position = Vector2(-6641.9995, 6740)
+
+[node name="Fence2" parent="ObstacleNodes" index="1" instance=ExtResource("2_jagre")]
+position = Vector2(-6201.9995, 6567)
+
+[node name="Fence3" parent="ObstacleNodes" index="2" instance=ExtResource("2_jagre")]
+position = Vector2(-5761.9995, 6398)
+
+[node name="Fence4" parent="ObstacleNodes" index="3" instance=ExtResource("2_jagre")]
+position = Vector2(-5317, 6225)
+
+[node name="Fence5" parent="ObstacleNodes" index="4" instance=ExtResource("2_jagre")]
+position = Vector2(-4898.999, 6052)
+
+[node name="Fence6" parent="ObstacleNodes" index="5" instance=ExtResource("2_jagre")]
+position = Vector2(-4475, 5873)
+
+[node name="Fence7" parent="ObstacleNodes" index="6" instance=ExtResource("2_jagre")]
+position = Vector2(-4034.9995, 5700)
+
+[node name="Fence8" parent="ObstacleNodes" index="7" instance=ExtResource("2_jagre")]
+position = Vector2(-3594.9998, 5531)
+
+[node name="Fence9" parent="ObstacleNodes" index="8" instance=ExtResource("2_jagre")]
+position = Vector2(-3150, 5358)
+
+[node name="Fence10" parent="ObstacleNodes" index="9" instance=ExtResource("2_jagre")]
+position = Vector2(-2731.9995, 5185)
+
+[node name="Fence11" parent="ObstacleNodes" index="10" instance=ExtResource("2_jagre")]
+position = Vector2(-2273, 5023)
+
+[node name="Fence12" parent="ObstacleNodes" index="11" instance=ExtResource("2_jagre")]
+position = Vector2(-1833, 4850)
+
+[node name="Fence13" parent="ObstacleNodes" index="12" instance=ExtResource("2_jagre")]
+position = Vector2(-1393, 4681)
+
+[node name="Fence14" parent="ObstacleNodes" index="13" instance=ExtResource("2_jagre")]
+position = Vector2(-948.0005, 4508)
+
+[node name="Fence15" parent="ObstacleNodes" index="14" instance=ExtResource("2_jagre")]
+position = Vector2(-529.9995, 4335)
+
+[node name="Fence16" parent="ObstacleNodes" index="15" instance=ExtResource("2_jagre")]
+position = Vector2(-106.00049, 4156)
+
+[node name="Fence17" parent="ObstacleNodes" index="16" instance=ExtResource("2_jagre")]
+position = Vector2(334, 3983)
+
+[node name="Fence18" parent="ObstacleNodes" index="17" instance=ExtResource("2_jagre")]
+position = Vector2(4711, 2857)
+
+[node name="Fence19" parent="ObstacleNodes" index="18" instance=ExtResource("2_jagre")]
+position = Vector2(5151, 2684)
+
+[node name="Fence20" parent="ObstacleNodes" index="19" instance=ExtResource("2_jagre")]
+position = Vector2(5591, 2515)
+
+[node name="Fence21" parent="ObstacleNodes" index="20" instance=ExtResource("2_jagre")]
+position = Vector2(6035.9995, 2342)
+
+[node name="Fence22" parent="ObstacleNodes" index="21" instance=ExtResource("2_jagre")]
+position = Vector2(6454.0005, 2169)
+
+[node name="Fence23" parent="ObstacleNodes" index="22" instance=ExtResource("2_jagre")]
+position = Vector2(6877.9995, 1990)
+
+[node name="Fence24" parent="ObstacleNodes" index="23" instance=ExtResource("2_jagre")]
+position = Vector2(7318, 1817)
+
+[node name="Fence25" parent="ObstacleNodes" index="24" instance=ExtResource("2_jagre")]
+position = Vector2(7757.9995, 1648)
+
+[node name="Fence26" parent="ObstacleNodes" index="25" instance=ExtResource("2_jagre")]
+position = Vector2(8202.999, 1475)
+
+[node name="Fence27" parent="ObstacleNodes" index="26" instance=ExtResource("2_jagre")]
+position = Vector2(8621, 1302)
+
+[node name="Fence28" parent="ObstacleNodes" index="27" instance=ExtResource("2_jagre")]
+position = Vector2(9079.999, 1140)
+
+[node name="Fence29" parent="ObstacleNodes" index="28" instance=ExtResource("2_jagre")]
+position = Vector2(9519.999, 967)
+
+[node name="Fence52" parent="ObstacleNodes" index="29" instance=ExtResource("2_jagre")]
+position = Vector2(3514.0005, 6788.9995)
+
+[node name="Fence53" parent="ObstacleNodes" index="30" instance=ExtResource("2_jagre")]
+position = Vector2(3959, 6615.9995)
+
+[node name="Fence54" parent="ObstacleNodes" index="31" instance=ExtResource("2_jagre")]
+position = Vector2(4377.001, 6442.9995)
+
+[node name="Fence55" parent="ObstacleNodes" index="32" instance=ExtResource("2_jagre")]
+position = Vector2(4836, 6280.9995)
+
+[node name="Fence56" parent="ObstacleNodes" index="33" instance=ExtResource("2_jagre")]
+position = Vector2(5276, 6107.9995)
+
+[node name="Fence30" parent="ObstacleNodes" index="34" instance=ExtResource("2_jagre")]
+position = Vector2(9959.999, 798)
+
+[node name="Fence31" parent="ObstacleNodes" index="35" instance=ExtResource("2_jagre")]
+position = Vector2(10404.998, 625)
+
+[node name="Fence32" parent="ObstacleNodes" index="36" instance=ExtResource("2_jagre")]
+position = Vector2(10823, 452)
+
+[node name="Fence33" parent="ObstacleNodes" index="37" instance=ExtResource("2_jagre")]
+position = Vector2(11246.998, 273)
+
+[node name="Fence34" parent="ObstacleNodes" index="38" instance=ExtResource("2_jagre")]
+position = Vector2(11686.999, 100.00001)
+
+[node name="Fence35" parent="ObstacleNodes" index="39" instance=ExtResource("2_jagre")]
+position = Vector2(2444.0002, 980.0001)
+
+[node name="Fence36" parent="ObstacleNodes" index="40" instance=ExtResource("2_jagre")]
+position = Vector2(2884.0002, 807.0001)
+
+[node name="Fence37" parent="ObstacleNodes" index="41" instance=ExtResource("2_jagre")]
+position = Vector2(3324.0002, 638.0001)
+
+[node name="Fence38" parent="ObstacleNodes" index="42" instance=ExtResource("2_jagre")]
+position = Vector2(3768.9998, 465.00012)
+
+[node name="Fence39" parent="ObstacleNodes" index="43" instance=ExtResource("2_jagre")]
+position = Vector2(4187.001, 292.00012)
+
+[node name="Fence40" parent="ObstacleNodes" index="44" instance=ExtResource("2_jagre")]
+position = Vector2(4611, 113.00012)
+
+[node name="Fence41" parent="ObstacleNodes" index="45" instance=ExtResource("2_jagre")]
+position = Vector2(5051, -59.999878)
+
+[node name="Fence42" parent="ObstacleNodes" index="46" instance=ExtResource("2_jagre")]
+position = Vector2(5491, -228.99988)
+
+[node name="Fence43" parent="ObstacleNodes" index="47" instance=ExtResource("2_jagre")]
+position = Vector2(5935.999, -401.99988)
+
+[node name="Fence44" parent="ObstacleNodes" index="48" instance=ExtResource("2_jagre")]
+position = Vector2(6354, -574.9999)
+
+[node name="Fence45" parent="ObstacleNodes" index="49" instance=ExtResource("2_jagre")]
+position = Vector2(6812.999, -736.9999)
+
+[node name="Fence46" parent="ObstacleNodes" index="50" instance=ExtResource("2_jagre")]
+position = Vector2(7252.999, -909.9999)
+
+[node name="Fence47" parent="ObstacleNodes" index="51" instance=ExtResource("2_jagre")]
+position = Vector2(7692.999, -1078.9999)
+
+[node name="Fence48" parent="ObstacleNodes" index="52" instance=ExtResource("2_jagre")]
+position = Vector2(8137.998, -1251.9999)
+
+[node name="Fence49" parent="ObstacleNodes" index="53" instance=ExtResource("2_jagre")]
+position = Vector2(8556, -1424.9999)
+
+[node name="Fence50" parent="ObstacleNodes" index="54" instance=ExtResource("2_jagre")]
+position = Vector2(8979.998, -1603.9999)
+
+[node name="Fence51" parent="ObstacleNodes" index="55" instance=ExtResource("2_jagre")]
+position = Vector2(9419.999, -1776.9999)
+
+[node name="RockObstacle" parent="ObstacleNodes" index="56" instance=ExtResource("3_5usai")]
+position = Vector2(9050.999, 73.99999)
+
+[node name="RockObstacle2" parent="ObstacleNodes" index="57" instance=ExtResource("3_5usai")]
+position = Vector2(1038.0005, 5810.9995)
+
+[node name="RockObstacle3" parent="ObstacleNodes" index="58" instance=ExtResource("3_5usai")]
+position = Vector2(2448, 4871)
+
+[node name="Tree" parent="ObstacleNodes" index="59" instance=ExtResource("4_j7hxy")]
+position = Vector2(-3436.9998, 3189.9998)
+
+[node name="Tree2" parent="ObstacleNodes" index="60" instance=ExtResource("4_j7hxy")]
+position = Vector2(-6133, 4328)
+
+[node name="Tree3" parent="ObstacleNodes" index="61" instance=ExtResource("4_j7hxy")]
+position = Vector2(14541, 1237)
+
+[node name="Tree4" parent="ObstacleNodes" index="62" instance=ExtResource("4_j7hxy")]
+position = Vector2(10509.999, 3240)
+
+[node name="Tree5" parent="ObstacleNodes" index="63" instance=ExtResource("4_j7hxy")]
+position = Vector2(717.00195, 8582)
+
+[node name="Tree6" parent="ObstacleNodes" index="64" instance=ExtResource("4_j7hxy")]
+position = Vector2(10954.999, -1779.998)
+
+[node name="HealPowerUp" parent="ObstacleNodes" index="65" instance=ExtResource("5_hkvik")]
+position = Vector2(4745, 1495)
+
+[node name="HealPowerUp2" parent="ObstacleNodes" index="66" instance=ExtResource("5_hkvik")]
+position = Vector2(7498, 448.00006)
+
+[node name="WarmPowerUp" parent="ObstacleNodes" index="67" instance=ExtResource("6_kukcy")]
+position = Vector2(6029.9995, 844.99994)

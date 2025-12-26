@@ -83,4 +83,4 @@ position = Vector2(6783.0015, 5692)
 position = Vector2(15139, 3588)
 
 [node name="WarmPowerUp" parent="ObstacleNodes" index="24" instance=ExtResource("6_bpgqn")]
-position = Vector2(7487.9995, 3269.9998)
+position = Vector2(6697, 3765.0002)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cphiht84cryqt"]
+[gd_scene load_steps=6 format=3 uid="uid://cphiht84cryqt"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_cenbn"]
 [ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="2_54ymp"]
 [ext_resource type="Resource" uid="uid://bgahuswtkncao" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/love_forest_obstacle_pattern_node.tres" id="2_vc7g4"]
 [ext_resource type="PackedScene" uid="uid://qoco88rr8v17" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/heal_power_up.tscn" id="3_vc7g4"]
+[ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="5_vc7g4"]
 
 [node name="LoveForestObstaclePatternNode" instance=ExtResource("1_cenbn")]
 package_resource = ExtResource("2_vc7g4")
@@ -26,5 +27,11 @@ position = Vector2(6956.0015, 2334)
 [node name="HealPowerUp" parent="ObstacleNodes" index="5" instance=ExtResource("3_vc7g4")]
 position = Vector2(2333.9998, 3055.9998)
 
-[node name="HealPowerUp2" parent="ObstacleNodes" index="6" instance=ExtResource("3_vc7g4")]
+[node name="Alcohol" parent="ObstacleNodes" index="6" instance=ExtResource("5_vc7g4")]
+position = Vector2(3290.9998, 2717.9998)
+
+[node name="Alcohol2" parent="ObstacleNodes" index="7" instance=ExtResource("5_vc7g4")]
+position = Vector2(10259.999, 2554)
+
+[node name="HealPowerUp2" parent="ObstacleNodes" index="8" instance=ExtResource("3_vc7g4")]
 position = Vector2(11393.999, 2150)

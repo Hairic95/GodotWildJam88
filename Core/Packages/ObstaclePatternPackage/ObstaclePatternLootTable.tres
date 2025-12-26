@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=11 format=3 uid="uid://ctv3sxha2fh3s"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=13 format=3 uid="uid://ctv3sxha2fh3s"]
 
 [ext_resource type="Script" uid="uid://c5ro3gr3ihoa0" path="res://Core/ItemsAndLoot/LootTable/LootObject.gd" id="1_t610p"]
 [ext_resource type="Script" uid="uid://dfjhjahglsj8h" path="res://Core/ItemsAndLoot/LootTable/LootTable.gd" id="2_e0ori"]
@@ -10,9 +10,11 @@
 [ext_resource type="Resource" uid="uid://bsix30dqb2ks7" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/chill_obstacle_pattern_node.tres" id="7_8lyi2"]
 [ext_resource type="Resource" uid="uid://bgahuswtkncao" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/love_forest_obstacle_pattern_node.tres" id="8_pwdt4"]
 [ext_resource type="Resource" uid="uid://cw3cdly5gi1wf" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/fence_rock_obstacle_pattern_node.tres" id="9_gc8mj"]
+[ext_resource type="Resource" uid="uid://c2jhu45ltpbho" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/cool_fence_obstacle_pattern_node.tres" id="10_c76yf"]
+[ext_resource type="Resource" uid="uid://bgkb2xsou5t64" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/rock_tree_obstacle_pattern_node.tres" id="11_cp0vx"]
 
 [resource]
 script = ExtResource("2_e0ori")
 item_drop_count = 1
-item_list = Array[ExtResource("1_t610p")]([ExtResource("2_havo5"), ExtResource("4_4k1yf"), ExtResource("4_xiwej"), ExtResource("5_8lyi2"), ExtResource("6_pwdt4"), ExtResource("7_8lyi2"), ExtResource("8_pwdt4"), ExtResource("9_gc8mj")])
+item_list = Array[ExtResource("1_t610p")]([ExtResource("2_havo5"), ExtResource("4_4k1yf"), ExtResource("4_xiwej"), ExtResource("5_8lyi2"), ExtResource("6_pwdt4"), ExtResource("7_8lyi2"), ExtResource("8_pwdt4"), ExtResource("9_gc8mj"), ExtResource("10_c76yf"), ExtResource("11_cp0vx")])
 metadata/_custom_type_script = "uid://dfjhjahglsj8h"

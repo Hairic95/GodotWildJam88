@@ -1,4 +1,3 @@
-@tool
 extends LootObject
 class_name Package
 

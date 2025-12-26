@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx0brrstrxfd"]
+[gd_scene load_steps=8 format=3 uid="uid://cx0brrstrxfd"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_gho2l"]
 [ext_resource type="Resource" uid="uid://tjcunlc3cd2b" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/drunk_forest_obstacle_pattern.tres" id="2_dgsbd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3q0qfiim1xij" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/fence_obstacle.tscn" id="4_pb2cs"]
 [ext_resource type="PackedScene" uid="uid://c4kjvua2wp2q4" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/rock_obstacle.tscn" id="5_pb2cs"]
 [ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="6_dgsbd"]
+[ext_resource type="PackedScene" uid="uid://db3jbxtm7jia0" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/speed_power_up.tscn" id="7_piq3f"]
 
 [node name="DrunkForestObstaclePattern" instance=ExtResource("1_gho2l")]
 package_resource = ExtResource("2_dgsbd")
@@ -129,3 +130,9 @@ position = Vector2(6039, 4385.0005)
 
 [node name="Alcohol7" parent="ObstacleNodes" index="39" instance=ExtResource("6_dgsbd")]
 position = Vector2(9181, 3997.0005)
+
+[node name="SpeedPowerUp" parent="ObstacleNodes" index="40" instance=ExtResource("7_piq3f")]
+position = Vector2(17790.998, 5412.9995)
+
+[node name="SpeedPowerUp2" parent="ObstacleNodes" index="41" instance=ExtResource("7_piq3f")]
+position = Vector2(6774.003, 5848)

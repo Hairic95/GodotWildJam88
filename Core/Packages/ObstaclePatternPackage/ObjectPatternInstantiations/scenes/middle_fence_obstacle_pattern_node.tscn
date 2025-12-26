@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0ou5vmweaq3p"]
+[gd_scene load_steps=8 format=3 uid="uid://b0ou5vmweaq3p"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_hxxr0"]
 [ext_resource type="Resource" uid="uid://dluejw8bjcbbt" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/middle_fence_obstacle_pattern_base.tres" id="2_upba5"]
 [ext_resource type="PackedScene" uid="uid://b3q0qfiim1xij" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/fence_obstacle.tscn" id="3_w0wj8"]
 [ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="4_upba5"]
+[ext_resource type="PackedScene" uid="uid://drekf23qslcg" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/shield_power_up.tscn" id="5_w0wj8"]
+[ext_resource type="PackedScene" uid="uid://db3jbxtm7jia0" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/speed_power_up.tscn" id="6_e48ld"]
+[ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="7_lv4do"]
 
 [node name="MiddleFenceObstaclePatternNode" instance=ExtResource("1_hxxr0")]
 package_resource = ExtResource("2_upba5")
@@ -106,3 +109,12 @@ position = Vector2(-11976, 1350.9999)
 
 [node name="Tree4" parent="ObstacleNodes" index="32" instance=ExtResource("4_upba5")]
 position = Vector2(-14493.001, -1249.9999)
+
+[node name="ShieldPowerUp" parent="ObstacleNodes" index="33" instance=ExtResource("5_w0wj8")]
+position = Vector2(6137.9995, 5035.9995)
+
+[node name="SpeedPowerUp" parent="ObstacleNodes" index="34" instance=ExtResource("6_e48ld")]
+position = Vector2(12414.999, 2596.9998)
+
+[node name="Alcohol" parent="ObstacleNodes" index="35" instance=ExtResource("7_lv4do")]
+position = Vector2(6528.9995, 1928.9999)

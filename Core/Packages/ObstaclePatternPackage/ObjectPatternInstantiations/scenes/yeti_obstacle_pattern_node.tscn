@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://brcfi8tcxhqym"]
+[gd_scene load_steps=9 format=3 uid="uid://brcfi8tcxhqym"]
 
 [ext_resource type="PackedScene" uid="uid://uncc3u4vxwju" path="res://Core/Packages/ObstaclePatternPackage/obstacle_pattern_base.tscn" id="1_avjbf"]
 [ext_resource type="Script" uid="uid://bcy5jjhsuf76t" path="res://Core/Packages/ObstaclePackages/obstacle_path_follow.gd" id="2_4v4t8"]
 [ext_resource type="Resource" uid="uid://dncmak5tn8gxa" path="res://Core/Packages/ObstaclePatternPackage/ObjectPatternInstantiations/resources/yeti_obstacle_pattern_node.tres" id="2_e7hk6"]
 [ext_resource type="PackedScene" uid="uid://dcygx407jrdlc" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/yeti_obstacle.tscn" id="3_e7hk6"]
 [ext_resource type="PackedScene" uid="uid://db3jbxtm7jia0" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/speed_power_up.tscn" id="5_e7hk6"]
+[ext_resource type="PackedScene" uid="uid://ce3oehf3dmi37" path="res://Core/Packages/ObstaclePackages/ObstacleInstantiations/scenes/tree_obstacle.tscn" id="6_p4e7t"]
+[ext_resource type="PackedScene" uid="uid://v32vmxw56lpw" path="res://Core/Packages/PowerUpPackages/PowerUpPackageInstantiations/scenes/alcohol_power_up.tscn" id="7_yl6xs"]
 
 [sub_resource type="Curve2D" id="Curve2D_4v4t8"]
 _data = {
@@ -31,3 +33,117 @@ rotation = 1.1794974
 
 [node name="SpeedPowerUp" parent="ObstacleNodes" index="1" instance=ExtResource("5_e7hk6")]
 position = Vector2(9178.999, 4644.9995)
+
+[node name="Tree" parent="ObstacleNodes" index="2" instance=ExtResource("6_p4e7t")]
+position = Vector2(-3584.9998, 2715.9998)
+
+[node name="Tree2" parent="ObstacleNodes" index="3" instance=ExtResource("6_p4e7t")]
+position = Vector2(-6120, 2535)
+
+[node name="Tree3" parent="ObstacleNodes" index="4" instance=ExtResource("6_p4e7t")]
+position = Vector2(-4092, 3983)
+
+[node name="Tree4" parent="ObstacleNodes" index="5" instance=ExtResource("6_p4e7t")]
+position = Vector2(-1992.0002, 3693.0002)
+
+[node name="Tree5" parent="ObstacleNodes" index="6" instance=ExtResource("6_p4e7t")]
+position = Vector2(-5939, 3765)
+
+[node name="Tree6" parent="ObstacleNodes" index="7" instance=ExtResource("6_p4e7t")]
+position = Vector2(-2753.0002, 5032)
+
+[node name="Tree7" parent="ObstacleNodes" index="8" instance=ExtResource("6_p4e7t")]
+position = Vector2(-4491, 5322.0005)
+
+[node name="Tree8" parent="ObstacleNodes" index="9" instance=ExtResource("6_p4e7t")]
+position = Vector2(-6519.0005, 5069)
+
+[node name="Tree9" parent="ObstacleNodes" index="10" instance=ExtResource("6_p4e7t")]
+position = Vector2(-9739.999, 1793.9998)
+
+[node name="Tree10" parent="ObstacleNodes" index="11" instance=ExtResource("6_p4e7t")]
+position = Vector2(-12274.999, 1613)
+
+[node name="Tree11" parent="ObstacleNodes" index="12" instance=ExtResource("6_p4e7t")]
+position = Vector2(-10246.999, 3061)
+
+[node name="Tree12" parent="ObstacleNodes" index="13" instance=ExtResource("6_p4e7t")]
+position = Vector2(-8146.999, 2771.0002)
+
+[node name="Tree13" parent="ObstacleNodes" index="14" instance=ExtResource("6_p4e7t")]
+position = Vector2(-12093.999, 2843)
+
+[node name="Tree14" parent="ObstacleNodes" index="15" instance=ExtResource("6_p4e7t")]
+position = Vector2(-8907.999, 4110)
+
+[node name="Tree15" parent="ObstacleNodes" index="16" instance=ExtResource("6_p4e7t")]
+position = Vector2(-10645.999, 4400.0005)
+
+[node name="Tree16" parent="ObstacleNodes" index="17" instance=ExtResource("6_p4e7t")]
+position = Vector2(-12674, 4147)
+
+[node name="Tree17" parent="ObstacleNodes" index="18" instance=ExtResource("6_p4e7t")]
+position = Vector2(1484, 5315.9995)
+
+[node name="Tree18" parent="ObstacleNodes" index="19" instance=ExtResource("6_p4e7t")]
+position = Vector2(-1051, 5135)
+
+[node name="Tree19" parent="ObstacleNodes" index="20" instance=ExtResource("6_p4e7t")]
+position = Vector2(977, 6583)
+
+[node name="Tree20" parent="ObstacleNodes" index="21" instance=ExtResource("6_p4e7t")]
+position = Vector2(3077, 6293)
+
+[node name="Tree33" parent="ObstacleNodes" index="22" instance=ExtResource("6_p4e7t")]
+position = Vector2(4464, 4362.0005)
+
+[node name="Tree34" parent="ObstacleNodes" index="23" instance=ExtResource("6_p4e7t")]
+position = Vector2(11809, 3600)
+
+[node name="Tree21" parent="ObstacleNodes" index="24" instance=ExtResource("6_p4e7t")]
+position = Vector2(-870, 6365)
+
+[node name="Tree22" parent="ObstacleNodes" index="25" instance=ExtResource("6_p4e7t")]
+position = Vector2(2316, 7632)
+
+[node name="Tree23" parent="ObstacleNodes" index="26" instance=ExtResource("6_p4e7t")]
+position = Vector2(578, 7922)
+
+[node name="Tree24" parent="ObstacleNodes" index="27" instance=ExtResource("6_p4e7t")]
+position = Vector2(-1450.001, 7669)
+
+[node name="Tree25" parent="ObstacleNodes" index="28" instance=ExtResource("6_p4e7t")]
+position = Vector2(11063, -3274.9995)
+
+[node name="Tree26" parent="ObstacleNodes" index="29" instance=ExtResource("6_p4e7t")]
+position = Vector2(8528, -3455.999)
+
+[node name="Tree27" parent="ObstacleNodes" index="30" instance=ExtResource("6_p4e7t")]
+position = Vector2(10556, -2007.999)
+
+[node name="Tree28" parent="ObstacleNodes" index="31" instance=ExtResource("6_p4e7t")]
+position = Vector2(12656, -2297.999)
+
+[node name="Tree29" parent="ObstacleNodes" index="32" instance=ExtResource("6_p4e7t")]
+position = Vector2(8709, -2225.999)
+
+[node name="Tree30" parent="ObstacleNodes" index="33" instance=ExtResource("6_p4e7t")]
+position = Vector2(11895, -958.999)
+
+[node name="Tree31" parent="ObstacleNodes" index="34" instance=ExtResource("6_p4e7t")]
+position = Vector2(10157, -668.999)
+
+[node name="Tree32" parent="ObstacleNodes" index="35" instance=ExtResource("6_p4e7t")]
+position = Vector2(8128.999, -921.999)
+
+[node name="Alcohol" parent="ObstacleNodes" index="36" instance=ExtResource("7_yl6xs")]
+position = Vector2(-229.99998, 2717.9998)
+
+[node name="Alcohol2" parent="ObstacleNodes" index="37" instance=ExtResource("7_yl6xs")]
+position = Vector2(2134.9998, 3087)
+
+[node name="Alcohol3" parent="ObstacleNodes" index="38" instance=ExtResource("7_yl6xs")]
+position = Vector2(11148.999, 538.00024)
+
+[node name="Alcohol4" parent="ObstacleNodes" index="39" instance=ExtResource("7_yl6xs")]
+position = Vector2(9168, -382.99988)

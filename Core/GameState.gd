@@ -36,6 +36,7 @@ func change_state_to(state : States):
 	
 func reset_values():
 	speed = 4000
+	real_speed_value = speed
 	player_speed = 0
 
 func stop_game():

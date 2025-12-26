@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cprc04414p7bc"
 path.s3tc="res://.godot/imported/snowball_lil_circle.png-2d7779c2a4cc6a7d0b96d65d6b372604.s3tc.ctex"
+path.etc2="res://.godot/imported/snowball_lil_circle.png-2d7779c2a4cc6a7d0b96d65d6b372604.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Core/Actors/SnowBall/snowball_lil_circle.png"
-dest_files=["res://.godot/imported/snowball_lil_circle.png-2d7779c2a4cc6a7d0b96d65d6b372604.s3tc.ctex"]
+dest_files=["res://.godot/imported/snowball_lil_circle.png-2d7779c2a4cc6a7d0b96d65d6b372604.s3tc.ctex", "res://.godot/imported/snowball_lil_circle.png-2d7779c2a4cc6a7d0b96d65d6b372604.etc2.ctex"]
 
 [params]
 
